@@ -52,6 +52,51 @@ def Act_attack(model, image, T):
 def create_model(model_name, encoding, time, num_labels, znorm,encode_in):
     if 'vgg' in model_name:
         model = VGG(model_name, encoding, time, num_labels, znorm,3,encode_in)
+    elif model_name == 'sewresnet' or model_name == 'sew_resnet34':
+        from models.SEWResNet import sew_resnet34
+        model = sew_resnet34(
+            T=time,
+            connect_f='ADD',
+            num_classes=num_labels,
+            encoding=encoding,
+            model_encode=encode_in,
+        )
+    elif model_name == 'sewresnet18' or model_name == 'sew_resnet18':
+        from models.SEWResNet import sew_resnet18
+        model = sew_resnet18(
+            T=time,
+            connect_f='ADD',
+            num_classes=num_labels,
+            encoding=encoding,
+            model_encode=encode_in,
+        )
+    elif model_name == 'sewresnet50' or model_name == 'sew_resnet50':
+        from models.SEWResNet import sew_resnet50
+        model = sew_resnet50(
+            T=time,
+            connect_f='ADD',
+            num_classes=num_labels,
+            encoding=encoding,
+            model_encode=encode_in,
+        )
+    elif model_name == 'sewresnet101' or model_name == 'sew_resnet101':
+        from models.SEWResNet import sew_resnet101
+        model = sew_resnet101(
+            T=time,
+            connect_f='ADD',
+            num_classes=num_labels,
+            encoding=encoding,
+            model_encode=encode_in,
+        )
+    elif model_name == 'sewresnet152' or model_name == 'sew_resnet152':
+        from models.SEWResNet import sew_resnet152
+        model = sew_resnet152(
+            T=time,
+            connect_f='ADD',
+            num_classes=num_labels,
+            encoding=encoding,
+            model_encode=encode_in,
+        )
     else:
         raise AssertionError("model not supported")
     return model
