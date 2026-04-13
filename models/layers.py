@@ -63,24 +63,31 @@ class RateBp(torch.autograd.Function):
     @staticmethod
     def forward(ctx, x):
         mem = 0.
+        mem_pot = []
         spike_pot = []
         T = x.shape[0]
         for t in range(T):
             mem = mem + x[t, ...]
+            mem_pot.append(mem) 
             spike = ((mem - 1.) > 0).float()
             mem = (1 - spike) * mem
             spike_pot.append(spike)
+            
         out = torch.stack(spike_pot, dim=0)
-        ctx.save_for_backward(out)
+        stacked_mem = torch.stack(mem_pot, dim=0) 
+        ctx.save_for_backward(stacked_mem)
         return out
     
     @staticmethod
     def backward(ctx, grad_output):
-        out, = ctx.saved_tensors
-        T = out.shape[0]
-        out = out.mean(0).unsqueeze(0)
-        grad_input = grad_output * (out > 0).float()
-        return grad_input
+        stacked_mem, = ctx.saved_tensors
+        # out = out.mean(0).unsqueeze(0)
+        # grad_input = grad_output * (out > 0).float()
+        # return grad_input
+        avg_rate = stacked_mem.mean(0).unsqueeze(0)
+        surrogate_grad = (1 - torch.abs(avg_rate - 0.5) * 2).clamp(min=0) 
+        
+        return grad_output * surrogate_grad
 
 class SgNormal(torch.autograd.Function):
     @staticmethod
@@ -133,38 +140,6 @@ class LIFSpike(nn.Module):
             x = self.relu(x)
         return x
     
-class LIFSpikeIN(nn.Module):
-    def __init__(self, T=1, thresh=1.0, tau=1., gama=0.5):
-        super(LIFSpikeIN, self).__init__()
-        self.act = SgNormal.apply
-        self.thresh = thresh
-        self.tau = tau
-        self.gama = gama
-        self.expand = ExpandTemporalDim(T)
-        self.merge = MergeTemporalDim(T)
-        self.relu = nn.ReLU(inplace=True)
-        self.ratebp = RateBp.apply
-        self.mode = 'bptt'
-        self.T = T
-
-    def forward(self, x):
-        if self.mode == 'bptr' and self.T > 0:
-            x = self.expand(x)
-            x = self.ratebp(x)
-            x = self.merge(x)
-        elif self.T > 0:
-            mem = 0
-            spike_pot = []
-            for t in range(self.T):
-                mem = mem * self.tau + x[t, ...]
-                spike = self.act(mem - self.thresh, self.gama)
-                mem = (1 - spike) * mem
-                spike_pot.append(spike)
-            x = torch.stack(spike_pot, dim=0)
-        else:
-            x = self.relu(x)
-        return x
-
 
 def const_encode(x, T):
     x = x.repeat(T, 1, 1, 1)
