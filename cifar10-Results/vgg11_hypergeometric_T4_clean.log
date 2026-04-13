@@ -1,5 +1,0 @@
-[2026-04-12 19:36:37,114][main_test.py][line:115][INFO] {'workers': 8, 'batch_size': 128, 'seed': 42, 'optim': 'sgd', 'suffix': '', 'dataset': 'cifar10', 'model': 'vgg11', 'time': 4, 'epochs': 200, 'lr': 0.1, 'device': '0', 'special': 'l2', 'beta': 0.0005, 'attack': '', 'eps': 8, 'attack_mode': 'bptt', 'alpha': 2, 'steps': 4, 'encoding': 'hypergeometric', 'resume': False, 'TET': False, 'center': False}
-[2026-04-12 19:36:37,115][main_test.py][line:116][INFO] start testing!
-[2026-04-12 19:37:04,632][main_test.py][line:115][INFO] {'workers': 8, 'batch_size': 128, 'seed': 42, 'optim': 'sgd', 'suffix': '', 'dataset': 'cifar10', 'model': 'vgg11', 'time': 4, 'epochs': 200, 'lr': 0.1, 'device': '0', 'special': 'l2', 'beta': 0.0005, 'attack': '', 'eps': 8, 'attack_mode': 'bptt', 'alpha': 2, 'steps': 4, 'encoding': 'hypergeometric', 'resume': False, 'TET': False, 'center': False}
-[2026-04-12 19:37:04,632][main_test.py][line:116][INFO] start testing!
-[2026-04-12 19:37:07,766][main_test.py][line:119][INFO] Final Test Accu: 85.1
