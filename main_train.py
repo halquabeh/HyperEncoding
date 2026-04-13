@@ -27,7 +27,7 @@ parser.add_argument('-special','--special', default='l2', type=str, help='[reg, 
 parser.add_argument('-beta','--beta',default=5e-4, type=float,help='regulation beta')
 parser.add_argument('--attack',default='', type=str,help='attack')
 parser.add_argument('-eps','--eps',default=8, type=float, metavar='N',help='attack eps')
-parser.add_argument('-atk_m','--attack_mode',default='bptt', type=str,help='[bptt, bptr, '']')
+parser.add_argument('-bpmode','--bpmode',default='bptt', type=str,help='[bptt, bptr, '']')
 # only PGD
 parser.add_argument('-alpha','--alpha',default=2, type=float, metavar='N', help='pgd attack alpha')
 parser.add_argument('-steps','--steps',default=4, type=int, metavar='N', help='pgd attack steps')
@@ -82,11 +82,11 @@ def main():
 
     model = create_model(args.model.lower(), args.encoding, args.time, num_labels, znorm,False)
     model.to(device)
-    model.set_simulation_time(args.time)
+    model.set_simulation_time(args.time,args.bpmode)
 
-    if args.attack_mode == 'bptt':
+    if args.bpmode == 'bptt':
         ff = BPTT_attack
-    elif args.attack_mode == 'bptr':
+    elif args.bpmode == 'bptr':
         ff = BPTR_attack
     else:
         ff = None

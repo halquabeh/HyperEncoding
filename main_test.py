@@ -25,7 +25,7 @@ parser.add_argument('-special','--special', default='l2', type=str, help='[reg, 
 parser.add_argument('-beta','--beta',default=5e-4, type=float,help='regulation beta')
 parser.add_argument('--attack',default='', type=str,help='attack')
 parser.add_argument('-eps','--eps',default=8, type=float, metavar='N',help='attack eps')
-parser.add_argument('-atk_m','--attack_mode',default='bptt', type=str,help='[bptt, bptr, '']')
+parser.add_argument('-bpmode','--bpmode',default='bptt', type=str,help='[bptt, bptr, '']')
 # only PGD
 parser.add_argument('-alpha','--alpha',default=2, type=float, metavar='N', help='pgd attack alpha')
 parser.add_argument('-steps','--steps',default=4, type=int, metavar='N', help='pgd attack steps')
@@ -86,7 +86,7 @@ def main():
     logger.info('loaded saved weights!')  
 
     model.load_state_dict(checkpoint['model_state_dict'])
-    model.set_simulation_time(args.time)
+    model.set_simulation_time(args.time,args.bpmode)
     model.to(device)
     logger.info('model moved to device!')  
 

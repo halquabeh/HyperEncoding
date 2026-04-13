@@ -6,15 +6,17 @@ import numpy as np
 from models.layers import ConvexCombination, rate_encode
 
 def generate_id(args):
-    identifier = f'{args.model}_{args.encoding}_T{args.time}'
+    identifier = f'model_{args.model}_encoding_{args.encoding}_Time_{args.time}'
     if args.attack.lower() in ['fgsm','pgd','gn','sea']:
-        identifier += f'_{args.encoding}'
-        identifier += '_[%f][%s]' %( args.eps, args.attack_mode)
+        identifier += f'_atck_{args.attack}'
+        identifier += '_eps_[%f]' %( args.eps)
     else:
-        identifier += '_clean'
+        identifier += '_atck_clean'
     if args.special == 'reg':
-        identifier += '_RAT'
+        identifier += '_reg_RAT'
     identifier += args.suffix
+    if args.bpmode == 'bptr':
+        identifier += '_bpmode_bptr'
     return identifier
 
 def arsnn_reg(net, beta):
