@@ -11,9 +11,23 @@ Bhaskar Mukhoty, Hilal AlQuabeh, Bin Gu
 ```bash
 conda create --name hypergeom python=3.10 -y
 conda activate hypergeom
-pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu124
+# install torch/torchvision/torchaudio from the section below
 pip install -r requirements.txt
 ```
+
+### PyTorch install
+
+Install PyTorch separately before `pip install -r requirements.txt` so the correct CUDA build is selected for your machine.
+
+For RTX 5090 / Blackwell GPUs, use PyTorch 2.8+ with a CUDA 12.8+ build. Current stable example:
+
+```bash
+pip install torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0 --index-url https://download.pytorch.org/whl/cu128
+```
+
+For older NVIDIA GPUs, you can use any compatible PyTorch build from the official selector:
+
+https://pytorch.org/get-started/locally/
 
 ## Usage 
 Signed Rate Encoding (--signed) 
