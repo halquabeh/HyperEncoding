@@ -1,8 +1,9 @@
 import torch
 import torch.nn as nn
+from attacks.base import Attack
 # this is torch attack module
 
-class PGD:
+class PGD(Attack):
     r"""
     altered from torchattack
     """
@@ -12,11 +13,12 @@ class PGD:
         self.alpha = alpha
         self.steps = steps
         self.random_start = random_start
-        self._supported_mode = ['default', 'targeted']
+        self.supported_mode = ['default', 'targeted']
         self.forward_function = forward_function
         self.T = T
         self.signed = signed
         self.m = m
+        self.set_device(device)
     def forward(self, images, labels):
         r"""
         Overridden.

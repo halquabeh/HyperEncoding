@@ -1,19 +1,21 @@
 import torch
 import torch.nn as nn
+from attacks.base import Attack
 
 
-class SEA:
+class SEA(Attack):
     r"""
     altered from torchattack
     """
     def __init__(self, model, device, forward_function=None, eps=0.007, T=None, signed=False, **kwargs):
-        super().__init__("FGSM", model)
+        super().__init__("SEA", model)
         
         self.eps = int(eps)
-        self._supported_mode = ['default', 'targeted']
+        self.supported_mode = ['default', 'targeted']
         self.forward_function = forward_function
         self.T = T
         self.signed = signed
+        self.set_device(device)
 
     def forward(self, images, labels):
         r"""

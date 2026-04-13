@@ -1,6 +1,7 @@
 import torch
+from attacks.base import Attack
 
-class GN:
+class GN(Attack):
     r"""
     Add Gaussian Noise.
     altered from torchattack
@@ -10,10 +11,11 @@ class GN:
     def __init__(self, model, device, forward_function=None, eps=0.1, T=None, signed=False, **kwargs):
         super().__init__("GN", model)
         self.eps = eps
-        self._supported_mode = ['default']
+        self.supported_mode = ['default']
         self.forward_function = forward_function
         self.T = T
         self.signed = signed
+        self.set_device(device)
 
     def forward(self, images, labels=None):
         r"""
