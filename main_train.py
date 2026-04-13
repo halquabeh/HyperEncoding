@@ -1,9 +1,11 @@
 import argparse
 import os
+import random
+import numpy as np
 import torch
 import torch.nn as nn
 from data_loaders import cifar10, cifar100, imagenet100, svhn, mnist, fashion_mnist
-from functions import create_model, BPTT_attack, BPTR_attack, get_logger
+from functions import create_model, seed_all, BPTT_attack, BPTR_attack, get_logger
 from utils import train, val,generate_id
 
 parser = argparse.ArgumentParser()
@@ -67,13 +69,16 @@ def main():
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
 
-    # seed_all(args.seed) # im commenting this because Im not sure if it does what it should
-    # replacing with this random generator 
+    seed_all(args.seed)
     g = torch.Generator()
     g.manual_seed(args.seed)
 
-    train_loader = torch.utils.data.DataLoader(train_dataset,generator=g, batch_size=args.batch_size, shuffle=True, num_workers=args.workers, pin_memory=True)
-    test_loader = torch.utils.data.DataLoader(val_dataset,generator=g, batch_size=args.batch_size, shuffle=False, num_workers=args.workers, pin_memory=True)
+    def worker_init_fn(worker_id):
+        np.random.seed(args.seed + worker_id)
+        random.seed(args.seed + worker_id)
+
+    train_loader = torch.utils.data.DataLoader(train_dataset, generator=g, batch_size=args.batch_size, shuffle=True, num_workers=args.workers, pin_memory=True, worker_init_fn=worker_init_fn)
+    test_loader = torch.utils.data.DataLoader(val_dataset, generator=g, batch_size=args.batch_size, shuffle=False, num_workers=args.workers, pin_memory=True, worker_init_fn=worker_init_fn)
 
     model = create_model(args.model.lower(), args.encoding, args.time, num_labels, znorm,False)
     model.to(device)

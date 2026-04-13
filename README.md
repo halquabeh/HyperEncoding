@@ -7,7 +7,13 @@ Bhaskar Mukhoty, Hilal AlQuabeh, Bin Gu
 
 
 ## Requirements
-The conda environment is supplied in requirements.txt
+
+```bash
+conda create --name hypergeom python=3.10 -y
+conda activate hypergeom
+pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu124
+pip install -r requirements.txt
+```
 
 ## Usage 
 Signed Rate Encoding (--signed) 

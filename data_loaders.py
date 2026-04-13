@@ -6,7 +6,7 @@ import torchvision
 import torchvision.transforms as transforms
 from torchvision.datasets import CIFAR10, CIFAR100, FashionMNIST, MNIST, SVHN
 
-path = "/home/velibor/datasets_shared"
+path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 
 
 def calculate_norms(train_dataset, val_dataset):
