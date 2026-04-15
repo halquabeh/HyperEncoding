@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 from spikingjelly.clock_driven import layer
 #from models.Layers_ import *
-from models.layers import LIFSpikeIN, TensorNormalization, ExpandTemporalDim, rate_encode
+from models.layers import LIFSpikeIN, TensorNormalization, ExpandTemporalDim, rate_encode, const_encode
 
 #from spikingjelly.clock_driven import neuron as cext_neuron
 __all__ = ['SEWResNet', 'sew_resnet18', 'sew_resnet34', 'sew_resnet50', 'sew_resnet101',
@@ -230,10 +230,10 @@ class SEWResNet(nn.Module):
     def _forward_impl(self, x):
         if self.model_encode:
             if self.T > 0:
-                if self.encoding == 'rate':
-                    x = rate_encode(x, self.T, self.signed)      #rate encoding
-                #elif self.encoding == 'const':
-                #    x = const_encode(x, self.T)    #constant encoding
+                if self.encoding in ['rate', 'signed', 'hypergeometric']:
+                    x = rate_encode(x, self.T, self.encoding)
+                elif self.encoding == 'const':
+                    x = const_encode(x, self.T)
                 else:
                     print("--encoding/atk_encoding not reconginzed")     
         x = self.conv1(x)

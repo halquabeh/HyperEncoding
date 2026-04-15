@@ -5,6 +5,14 @@ import numpy as np
 
 from models.layers import ConvexCombination, rate_encode
 
+
+def _set_attack_model_encoding(model, enabled):
+    """Support both VGG (`encode`) and SEWResNet (`model_encode`) attack paths."""
+    if hasattr(model, "encode"):
+        model.encode = enabled
+    if hasattr(model, "model_encode"):
+        model.model_encode = enabled
+
 def generate_id(args):
     identifier = f'model_{args.model}_encoding_{args.encoding}_Time_{args.time}'
     if args.attack.lower() in ['fgsm','pgd','gn','sea']:
@@ -59,9 +67,9 @@ def train(model, device, train_loader, criterion, optimizer, T, atk, beta, parse
             images = atk(images, labels.to(device))
         elif atk is not None:
             atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
-            atk.model.encode=True
+            _set_attack_model_encoding(atk.model, True)
             images = atk(images, labels.to(device))
-            atk.model.encode = False
+            _set_attack_model_encoding(atk.model, False)
             images = rate_encode(images, T, model.encoding)
         else:
             images = rate_encode(images, T, model.encoding)
@@ -102,9 +110,9 @@ def val(model, test_loader, device, T, atk=None):
             inputs = atk(inputs, targets.to(device))
         elif atk is not None:
             # atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
-            atk.model.encode=True
+            _set_attack_model_encoding(atk.model, True)
             inputs = atk(inputs, targets.to(device))
-            atk.model.encode=False
+            _set_attack_model_encoding(atk.model, False)
             inputs = rate_encode(inputs, T, model.encoding)
         else:
             inputs = rate_encode(inputs, T, model.encoding)

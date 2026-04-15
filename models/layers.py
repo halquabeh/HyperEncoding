@@ -139,6 +139,13 @@ class LIFSpike(nn.Module):
         else:
             x = self.relu(x)
         return x
+
+
+class LIFSpikeIN(LIFSpike):
+    """Backward-compatible alias used by SEWResNet."""
+
+    def __init__(self, T=0, thresh=1.0, tau=1.0, gama=1.0):
+        super().__init__(T=T, thresh=thresh, tau=tau, gama=gama)
     
 
 def const_encode(x, T):

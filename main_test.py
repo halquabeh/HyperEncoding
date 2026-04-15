@@ -1,9 +1,11 @@
 import argparse
 import os
+import random
+import numpy as np
 import torch
 import torch.nn as nn
 from data_loaders import cifar10, cifar100, imagenet100, svhn, mnist, fashion_mnist
-from functions import create_model, BPTT_attack, BPTR_attack, get_logger
+from functions import create_model, BPTT_attack, BPTR_attack, get_logger, seed_all
 from utils import train, val,generate_id
 from attacks import FGSM,PGD,GN,SEA
 parser = argparse.ArgumentParser()
@@ -25,7 +27,7 @@ parser.add_argument('-special','--special', default='l2', type=str, help='[reg, 
 parser.add_argument('-beta','--beta',default=5e-4, type=float,help='regulation beta')
 parser.add_argument('--attack',default='', type=str,help='attack')
 parser.add_argument('-eps','--eps',default=8, type=float, metavar='N',help='attack eps')
-parser.add_argument('-bpmode','--bpmode',default='bptt', type=str,help='[bptt, bptr, '']')
+parser.add_argument('--bpmode', dest='bpmode', default='bptt', type=str, help='[bptt, bptr, \'\']')
 # only PGD
 parser.add_argument('-alpha','--alpha',default=2, type=float, metavar='N', help='pgd attack alpha')
 parser.add_argument('-steps','--steps',default=4, type=int, metavar='N', help='pgd attack steps')
@@ -74,11 +76,23 @@ def main():
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
 
-    # seed_all(args.seed) # im commenting this because Im not sure if it does what it should
-    # replacing with this random generator 
+    seed_all(args.seed)
     g = torch.Generator()
     g.manual_seed(args.seed)
-    test_loader = torch.utils.data.DataLoader(val_dataset,generator=g, batch_size=args.batch_size, shuffle=False, num_workers=args.workers, pin_memory=True)
+
+    def worker_init_fn(worker_id):
+        np.random.seed(args.seed + worker_id)
+        random.seed(args.seed + worker_id)
+
+    test_loader = torch.utils.data.DataLoader(
+        val_dataset,
+        generator=g,
+        batch_size=args.batch_size,
+        shuffle=False,
+        num_workers=args.workers,
+        pin_memory=True,
+        worker_init_fn=worker_init_fn,
+    )
     logger.info('loaded data!')  
 
     model = create_model(args.model.lower(), args.encoding, args.time, num_labels, znorm,False)
@@ -90,9 +104,9 @@ def main():
     model.to(device)
     logger.info('model moved to device!')  
 
-    if args.attack_mode == 'bptt':
+    if args.bpmode == 'bptt':
         ff = BPTT_attack
-    elif args.attack_mode == 'bptr':
+    elif args.bpmode == 'bptr':
         ff = BPTR_attack
     else:
         ff = None
