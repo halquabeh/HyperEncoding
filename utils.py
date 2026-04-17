@@ -61,7 +61,7 @@ def train(model, device, train_loader, criterion, optimizer, T, atk, beta, parse
         optimizer.zero_grad()
         labels = labels.to(device)
         images = images.to(device)
-        if atk.__class__.__name__=='SEA':
+        if atk is not None and atk.__class__.__name__ == 'SEA':
             atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
             images = rate_encode(images, T, model.encoding)
             images = atk(images, labels.to(device))
@@ -104,7 +104,7 @@ def val(model, test_loader, device, T, atk=None):
     for batch_idx, (inputs, targets) in enumerate(test_loader):
         inputs = inputs.to(device)
    
-        if atk.__class__.__name__=='SEA':
+        if atk is not None and atk.__class__.__name__ == 'SEA':
             atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
             inputs = rate_encode(inputs, T, model.encoding)
             inputs = atk(inputs, targets.to(device))
@@ -148,7 +148,7 @@ def val2(model, test_loader, device, T, m, atk=None):
     for batch_idx, (inputs, targets) in enumerate(test_loader):
         inputs = inputs.to(device)
    
-        if atk.__class__.__name__=='SEA':
+        if atk is not None and atk.__class__.__name__ == 'SEA':
             atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
             atk.model.model_encode=False
             inputs = rate_encode(inputs, T, model.signed)
@@ -186,7 +186,7 @@ def compute_k(model, data_loader, device, T, atk=None):
     for batch_idx, (inputs, targets) in enumerate(data_loader):
         inputs = inputs.to(device)
    
-        if atk.__class__.__name__=='SEA':
+        if atk is not None and atk.__class__.__name__ == 'SEA':
             print("Attack not supported.")
         elif atk is not None:
             atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)

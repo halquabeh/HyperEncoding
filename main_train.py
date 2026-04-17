@@ -5,6 +5,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 from data_loaders import cifar10, cifar100, imagenet100, svhn, mnist, fashion_mnist
+from attacks import FGSM, PGD, GN, SEA
 from functions import create_model, seed_all, BPTT_attack, BPTR_attack, get_logger
 from utils import train, val,generate_id
 
@@ -92,13 +93,13 @@ def main():
         ff = None
 
     if args.attack.lower() == 'fgsm':
-        atk = attack.FGSM(model, device, forward_function=ff, eps=args.eps / 255, T=args.time, signed=args.center)
+        atk = FGSM(model, device, forward_function=ff, eps=args.eps / 255, T=args.time, signed=args.center)
     elif args.attack.lower() == 'sea':
-        atk = attack.SEA(model, device, forward_function=ff, eps=args.eps, T=args.time, signed=args.center)
+        atk = SEA(model, device, forward_function=ff, eps=args.eps, T=args.time, signed=args.center)
     elif args.attack.lower() == 'pgd':
-        atk = attack.PGD(model, device, forward_function=ff, eps=args.eps / 255, alpha=args.alpha / 255, steps=args.steps, T=args.time, signed=args.center)
+        atk = PGD(model, device, forward_function=ff, eps=args.eps / 255, alpha=args.alpha / 255, steps=args.steps, T=args.time, signed=args.center)
     elif args.attack.lower() == 'gn':
-        atk = attack.GN(model, device, eps=args.eps / 255, signed = args.center)
+        atk = GN(model, device, eps=args.eps / 255, signed=args.center)
     else:
         atk = None
 
