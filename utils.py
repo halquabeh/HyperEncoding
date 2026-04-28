@@ -3,8 +3,14 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 
-from models.layers import ConvexCombination, rate_encode
+from models.layers import ConvexCombination, rate_encode,const_encode
 
+def encoding_out(inputs,encoding,T):
+    if encoding.lower() == 'const':
+        return const_encode(inputs, T)
+    elif encoding in ['rate','signed','hypergeometric']:
+        return rate_encode(inputs, T, encoding)
+    else:print('This is not recognized encoding')
 
 def _set_attack_model_encoding(model, enabled):
     """Support both VGG (`encode`) and SEWResNet (`model_encode`) attack paths."""
@@ -63,17 +69,19 @@ def train(model, device, train_loader, criterion, optimizer, T, atk, beta, parse
         images = images.to(device)
         if atk is not None and atk.__class__.__name__ == 'SEA':
             atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
-            images = rate_encode(images, T, model.encoding)
+            # images = rate_encode(images, T, model.encoding) 
+            images = encoding_out(images,model.encoding,T)
             images = atk(images, labels.to(device))
         elif atk is not None:
             atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
             _set_attack_model_encoding(atk.model, True)
             images = atk(images, labels.to(device))
             _set_attack_model_encoding(atk.model, False)
-            images = rate_encode(images, T, model.encoding)
+            # images = rate_encode(images, T, model.encoding)
+            images = encoding_out(images,model.encoding,T)
         else:
-            images = rate_encode(images, T, model.encoding)
-        
+            # images = rate_encode(images, T, model.encoding)
+            images = encoding_out(images,model.encoding,T)
         if T > 0:
             outs = model(images)
             outputs = outs.mean(0)   
@@ -106,16 +114,17 @@ def val(model, test_loader, device, T, atk=None):
    
         if atk is not None and atk.__class__.__name__ == 'SEA':
             atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
-            inputs = rate_encode(inputs, T, model.encoding)
+            # inputs = rate_encode(inputs, T, model.encoding)
+            inputs = encoding_out(inputs,model.encoding,T)
             inputs = atk(inputs, targets.to(device))
         elif atk is not None:
             # atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
             _set_attack_model_encoding(atk.model, True)
             inputs = atk(inputs, targets.to(device))
             _set_attack_model_encoding(atk.model, False)
-            inputs = rate_encode(inputs, T, model.encoding)
+            inputs = encoding_out(inputs,model.encoding,T)
         else:
-            inputs = rate_encode(inputs, T, model.encoding)
+            inputs = encoding_out(inputs,model.encoding,T)
 
         with torch.no_grad():
             if T > 0:
@@ -151,7 +160,8 @@ def val2(model, test_loader, device, T, m, atk=None):
         if atk is not None and atk.__class__.__name__ == 'SEA':
             atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
             atk.model.model_encode=False
-            inputs = rate_encode(inputs, T, model.signed)
+            # inputs = rate_encode(inputs, T, model.signed)
+            inputs = encoding_out(inputs,model.encoding,T)
             inputs = atk(inputs, targets.to(device))  #with T
         elif atk is not None:
             atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)

@@ -22,7 +22,7 @@ parser.add_argument('-T','--time',default=4, type=int,metavar='N',help='snn simu
 # training configuration
 parser.add_argument('--epochs',default=200,type=int,metavar='N',help='number of total epochs to run')
 parser.add_argument('-lr','--lr',default=0.1,type=float,metavar='LR', help='initial learning rate')
-parser.add_argument('-dev','--device',default='0',type=str,help='device')
+parser.add_argument('-dev','--device',default='1',type=str,help='device')
 # adv training configuration
 parser.add_argument('-special','--special', default='l2', type=str, help='[reg, l2]')
 parser.add_argument('-beta','--beta',default=5e-4, type=float,help='regulation beta')
