@@ -60,6 +60,13 @@ python main_train.py --dataset svhn --signed --attack sea --eps 5      # Rate en
 #### Training Imagenet-100
 python main_train.py --dataset imagenet100 --signed --model sewresnet 
 
+#### Download helpers
+python scripts/download_imagenet100.py
+
+python scripts/download_imagenet1000.py --token $HF_TOKEN
+
+`ILSVRC/imagenet-1k` on Hugging Face is gated, so you need to accept the dataset terms and authenticate first.
+
 #### Testing
 The testing usage with hyper-parameters are supplied in run_test_{dataset}.sh
 
