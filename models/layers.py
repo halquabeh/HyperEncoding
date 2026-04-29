@@ -24,127 +24,127 @@ def normalizex(tensor, mean, std):
         std = std.to(tensor.device)
     return tensor.sub(mean).div(std)
 
-class MergeTemporalDim(nn.Module):
-    def __init__(self, T):
-        super().__init__()
-        self.T = T
+# class MergeTemporalDim(nn.Module):
+#     def __init__(self, T):
+#         super().__init__()
+#         self.T = T
 
-    def forward(self, x_seq: torch.Tensor):
-        return x_seq.flatten(0, 1).contiguous()
+#     def forward(self, x_seq: torch.Tensor):
+#         return x_seq.flatten(0, 1).contiguous()
 
-class ExpandTemporalDim(nn.Module):
-    def __init__(self, T):
-        super().__init__()
-        self.T = T
+# class ExpandTemporalDim(nn.Module):
+#     def __init__(self, T):
+#         super().__init__()
+#         self.T = T
 
-    def forward(self, x_seq: torch.Tensor):
-        y_shape = [self.T, int(x_seq.shape[0]/self.T)]
-        y_shape.extend(x_seq.shape[1:])
-        return x_seq.view(y_shape)
+#     def forward(self, x_seq: torch.Tensor):
+#         y_shape = [self.T, int(x_seq.shape[0]/self.T)]
+#         y_shape.extend(x_seq.shape[1:])
+#         return x_seq.view(y_shape)
 
-class ZIF(torch.autograd.Function):
-    @staticmethod
-    def forward(ctx, input, gama):
-        out = (input >= 0).float()
-        L = torch.tensor([gama])
-        ctx.save_for_backward(input, out, L)
-        return out
+# class ZIF(torch.autograd.Function):
+#     @staticmethod
+#     def forward(ctx, input, gama):
+#         out = (input >= 0).float()
+#         L = torch.tensor([gama])
+#         ctx.save_for_backward(input, out, L)
+#         return out
 
-    @staticmethod
-    def backward(ctx, grad_output):
-        (input, out, others) = ctx.saved_tensors
-        gama = others[0].item()
-        grad_input = grad_output
-        tmp = (1 / gama) * (1 / gama) * ((gama - input.abs()).clamp(min=0))
-        grad_input = grad_input * tmp
-        return grad_input, None
+#     @staticmethod
+#     def backward(ctx, grad_output):
+#         (input, out, others) = ctx.saved_tensors
+#         gama = others[0].item()
+#         grad_input = grad_output
+#         tmp = (1 / gama) * (1 / gama) * ((gama - input.abs()).clamp(min=0))
+#         grad_input = grad_input * tmp
+#         return grad_input, None
 
-class RateBp(torch.autograd.Function):
-    @staticmethod
-    def forward(ctx, x):
-        mem = 0.
-        mem_pot = []
-        spike_pot = []
-        T = x.shape[0]
-        for t in range(T):
-            mem = mem + x[t, ...]
-            mem_pot.append(mem) 
-            spike = ((mem - 1.) > 0).float()
-            mem = (1 - spike) * mem
-            spike_pot.append(spike)
+# class RateBp(torch.autograd.Function):
+#     @staticmethod
+#     def forward(ctx, x):
+#         mem = 0.
+#         mem_pot = []
+#         spike_pot = []
+#         T = x.shape[0]
+#         for t in range(T):
+#             mem = mem + x[t, ...]
+#             mem_pot.append(mem) 
+#             spike = ((mem - 1.) > 0).float()
+#             mem = (1 - spike) * mem
+#             spike_pot.append(spike)
             
-        out = torch.stack(spike_pot, dim=0)
-        stacked_mem = torch.stack(mem_pot, dim=0) 
-        ctx.save_for_backward(stacked_mem.mean(0).unsqueeze(0))
-        return out
+#         out = torch.stack(spike_pot, dim=0)
+#         stacked_mem = torch.stack(mem_pot, dim=0) 
+#         ctx.save_for_backward(stacked_mem.mean(0).unsqueeze(0))
+#         return out
     
-    @staticmethod
-    def backward(ctx, grad_output):
-        avg_rate, = ctx.saved_tensors
-        # out = out.mean(0).unsqueeze(0)
-        # grad_input = grad_output * (out > 0).float()
-        # return grad_input
-        surrogate_grad = (1 - torch.abs(avg_rate - 0.5) * 2).clamp(min=0) 
+#     @staticmethod
+#     def backward(ctx, grad_output):
+#         avg_rate, = ctx.saved_tensors
+#         # out = out.mean(0).unsqueeze(0)
+#         # grad_input = grad_output * (out > 0).float()
+#         # return grad_input
+#         surrogate_grad = (1 - torch.abs(avg_rate - 0.5) * 2).clamp(min=0) 
         
-        return grad_output * surrogate_grad
+#         return grad_output * surrogate_grad
 
-class SgNormal(torch.autograd.Function):
-    @staticmethod
-    def forward(ctx, input_, gama):
-        L = torch.tensor([gama])
-        ctx.save_for_backward(input_,L)
-        out = (input_ > 0).float()
-        return out
+# class SgNormal(torch.autograd.Function):
+#     @staticmethod
+#     def forward(ctx, input_, gama):
+#         L = torch.tensor([gama])
+#         ctx.save_for_backward(input_,L)
+#         out = (input_ > 0).float()
+#         return out
 
 
-    @staticmethod
-    def backward(ctx, grad_output):
-        (input_,others) = ctx.saved_tensors
-        gama = others[0].item()
-        grad_input = grad_output.clone()
-        grad = grad_input*torch.exp(-(input_**2)/(2*(gama**2)))/(gama*torch.sqrt(2*torch.tensor(torch.pi)))
-        return grad, None
+#     @staticmethod
+#     def backward(ctx, grad_output):
+#         (input_,others) = ctx.saved_tensors
+#         gama = others[0].item()
+#         grad_input = grad_output.clone()
+#         grad = grad_input*torch.exp(-(input_**2)/(2*(gama**2)))/(gama*torch.sqrt(2*torch.tensor(torch.pi)))
+#         return grad, None
     
-class LIFSpike(nn.Module):
-    def __init__(self, T, thresh=1.0, tau=1., gama=1.0):
-        super(LIFSpike, self).__init__()
-        self.act = ZIF.apply
-        self.thresh = thresh
-        self.tau = tau
-        self.gama = gama
-        self.expand = ExpandTemporalDim(T)
-        self.merge = MergeTemporalDim(T)
-        self.relu = nn.ReLU(inplace=True)
-        self.ratebp = RateBp.apply
-        self.mode = 'bptt'
-        self.T = T
+# class LIFSpike(nn.Module):
+#     def __init__(self, T, thresh=1.0, tau=1., gama=1.0):
+#         super(LIFSpike, self).__init__()
+#         self.act = ZIF.apply
+#         self.thresh = thresh
+#         self.tau = tau
+#         self.gama = gama
+#         self.expand = ExpandTemporalDim(T)
+#         self.merge = MergeTemporalDim(T)
+#         self.relu = nn.ReLU(inplace=True)
+#         self.ratebp = RateBp.apply
+#         self.mode = 'bptt'
+#         self.T = T
 
-    def forward(self, x):
-        if self.mode == 'bptr' and self.T > 0:
-            x = self.expand(x)
-            x = self.ratebp(x)
-            x = self.merge(x)
-        elif self.T > 0:
-            x = self.expand(x)
-            mem = 0
-            spike_pot = []
-            for t in range(self.T):
-                mem = mem * self.tau + x[t, ...]
-                spike = self.act(mem - self.thresh, self.gama)
-                mem = (1 - spike) * mem
-                spike_pot.append(spike)
-            x = torch.stack(spike_pot, dim=0)
-            x = self.merge(x)
-        else:
-            x = self.relu(x)
-        return x
+#     def forward(self, x):
+#         if self.mode == 'bptr' and self.T > 0:
+#             x = self.expand(x)
+#             x = self.ratebp(x)
+#             x = self.merge(x)
+#         elif self.T > 0:
+#             x = self.expand(x)
+#             mem = 0
+#             spike_pot = []
+#             for t in range(self.T):
+#                 mem = mem * self.tau + x[t, ...]
+#                 spike = self.act(mem - self.thresh, self.gama)
+#                 mem = (1 - spike) * mem
+#                 spike_pot.append(spike)
+#             x = torch.stack(spike_pot, dim=0)
+#             x = self.merge(x)
+#         else:
+#             x = self.relu(x)
+#         return x
 
 
-class LIFSpikeIN(LIFSpike):
-    """Backward-compatible alias used by SEWResNet."""
+# class LIFSpikeIN(LIFSpike):
+#     """Backward-compatible alias used by SEWResNet."""
 
-    def __init__(self, T=0, thresh=1.0, tau=1.0, gama=1.0):
-        super().__init__(T=T, thresh=thresh, tau=tau, gama=gama)
+#     def __init__(self, T=0, thresh=1.0, tau=1.0, gama=1.0):
+#         super().__init__(T=T, thresh=thresh, tau=tau, gama=gama)
     
 
 def const_encode(x, T):

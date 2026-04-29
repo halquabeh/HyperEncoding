@@ -99,4 +99,6 @@ def create_model(model_name, encoding, time, num_labels, znorm,encode_in):
         )
     else:
         raise AssertionError("model not supported")
+    if hasattr(model, 'spike_backend'):
+        print(f"[SpikingJelly] spike backend: {model.spike_backend}")
     return model

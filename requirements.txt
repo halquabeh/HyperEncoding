@@ -3,3 +3,4 @@ numpy
 git+https://github.com/fra31/auto-attack.git
 spikingjelly
 datasets
+cupy-cuda12x

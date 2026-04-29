@@ -3,6 +3,7 @@ import torch.nn as nn
 from spikingjelly.activation_based import functional, layer, neuron, surrogate
 
 from models.layers import TensorNormalization, rate_encode, const_encode
+from models.spiking_backend import set_default_backend
 
 __all__ = ['SEWResNet', 'sew_resnet18', 'sew_resnet34', 'sew_resnet50', 'sew_resnet101',
            'sew_resnet152']
@@ -18,7 +19,9 @@ class SpikeActIN(nn.Module):
         self.spike = neuron.IFNode(
             v_threshold=thresh,
             v_reset=0.0,
-            surrogate_function=surrogate.PiecewiseQuadratic(alpha=1.0 / gama),
+            # ATan has CUDA codegen support in SpikingJelly's CuPy backend,
+            # while PiecewiseQuadratic does not on the version we use here.
+            surrogate_function=surrogate.ATan(alpha=1.0 / gama),
             detach_reset=False,
         )
 
@@ -77,9 +80,9 @@ class BasicBlock(nn.Module):
             identity = self.downsample(x)
 
         if self.connect_f == 'ADD':
-            out += identity
+            out = out + identity
         elif self.connect_f == 'AND':
-            out *= identity
+            out = out * identity
         elif self.connect_f == 'IAND':
             out = identity * (1. - out)
         else:
@@ -129,9 +132,9 @@ class Bottleneck(nn.Module):
             identity = self.downsample(x)
 
         if self.connect_f == 'ADD':
-            out += identity
+            out = out + identity
         elif self.connect_f == 'AND':
-            out *= identity
+            out = out * identity
         elif self.connect_f == 'IAND':
             out = identity * (1. - out)
         else:
@@ -164,6 +167,7 @@ class SEWResNet(nn.Module):
         self.model_encode = model_encode
         self.norm = TensorNormalization((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
         self.connect_f = connect_f
+        self.spike_backend = 'torch'
         if norm_layer is None:
             norm_layer = layer.BatchNorm2d
         self._norm_layer = norm_layer
@@ -209,6 +213,7 @@ class SEWResNet(nn.Module):
         self.T = T
         self.mode = mode
         functional.set_step_mode(self, 'm' if T > 0 else 's')
+        self.spike_backend = set_default_backend(self, T)
         functional.reset_net(self)
         for module in self.modules():
             if isinstance(module, SpikeActIN):

@@ -3,6 +3,7 @@ import torch.nn as nn
 from spikingjelly.activation_based import functional, layer, neuron, surrogate
 
 from models.layers import TensorNormalization, rate_encode, const_encode
+from models.spiking_backend import set_default_backend
 
 cfg = {
     'vgg5' : [[64, 'A'], 
@@ -52,7 +53,9 @@ class SpikeAct(nn.Module):
             decay_input=False,
             v_threshold=thresh,
             v_reset=0.0,
-            surrogate_function=surrogate.PiecewiseQuadratic(alpha=1.0 / gama),
+            # ATan has CUDA codegen support in SpikingJelly's CuPy backend,
+            # while PiecewiseQuadratic does not on the version we use here.
+            surrogate_function=surrogate.ATan(alpha=1.0 / gama),
             detach_reset=False,
         )
 
@@ -73,6 +76,7 @@ class VGG(nn.Module):
         self.init_channels = init_c
         self.encoding = encoding
         self.encode = encode_in
+        self.spike_backend = 'torch'
 
         if vgg_name == 'vgg11' or vgg_name == 'vgg5':
             self.W = 16 
@@ -135,6 +139,7 @@ class VGG(nn.Module):
         self.T = T
         self.mode = mode
         functional.set_step_mode(self, 'm' if T > 0 else 's')
+        self.spike_backend = set_default_backend(self, T)
         functional.reset_net(self)
         for module in self.modules():
             if isinstance(module, SpikeAct):
