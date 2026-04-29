@@ -9,7 +9,7 @@ import torch.nn as nn
 from autoattack import AutoAttack
 
 import attack
-from data_loaders import cifar10, cifar100, imagenet100, svhn
+from data_loaders import cifar10, cifar100, imagenet100, imagenet1000, svhn
 from functions import (
     Act_attack,
     BPTT_attack,
@@ -62,6 +62,11 @@ def main():
     elif args.dataset.lower() == 'imagenet100':
         num_labels = 100
         train_dataset, _, znorm = imagenet100(normalized=args.signed)
+    elif args.dataset.lower() == 'imagenet1000':
+        num_labels = 1000
+        train_dataset, _, znorm = imagenet1000(normalized=args.signed)
+    else:
+        raise ValueError(f"Unsupported dataset: {args.dataset}")
 
     log_dir = '%s-Results' % args.dataset
 

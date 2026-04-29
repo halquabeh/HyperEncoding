@@ -141,22 +141,36 @@ def svhn(normalized=False):
     return train_dataset, val_dataset, norm
 
 
-def imagenet100(normalized=False):
+def _imagenet_folder_dataset(root_dir, norm_file_prefix, normalized=False):
     transform_train = transforms.Compose([transforms.RandomResizedCrop(224), transforms.RandomHorizontalFlip(), transforms.ToTensor()])
     transform_test = transforms.Compose([transforms.CenterCrop(224), transforms.ToTensor()])
     norm = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 
-    train_dataset = torchvision.datasets.ImageFolder(os.path.join(os.path.join(path, 'Image100'), 'train.X'), transform_train)
-    val_dataset = torchvision.datasets.ImageFolder(os.path.join(os.path.join(path, 'Image100'), 'val.X'), transform_test)
+    dataset_root = os.path.join(path, root_dir)
+    train_dataset = torchvision.datasets.ImageFolder(os.path.join(dataset_root, 'train.X'), transform_train)
+    val_dataset = torchvision.datasets.ImageFolder(os.path.join(dataset_root, 'val.X'), transform_test)
 
     if normalized:
-        norm, _ = get_norms(train_dataset, val_dataset, norm_file='norms/norm_imageNet100.pkl', norm1_file='norms/norm1_imageNet100.pkl')
+        norm, _ = get_norms(
+            train_dataset,
+            val_dataset,
+            norm_file=f'norms/norm_{norm_file_prefix}.pkl',
+            norm1_file=f'norms/norm1_{norm_file_prefix}.pkl',
+        )
         transform_train = transforms.Compose([transforms.RandomResizedCrop(224), transforms.RandomHorizontalFlip(), transforms.ToTensor(), transforms.Normalize(norm, (1,))])
         transform_test = transforms.Compose([transforms.CenterCrop(224), transforms.ToTensor(), transforms.Normalize(norm, (1,))])
-        train_dataset = torchvision.datasets.ImageFolder(os.path.join(os.path.join(path, 'Image100'), 'train.X'), transform_train)
-        val_dataset = torchvision.datasets.ImageFolder(os.path.join(os.path.join(path, 'Image100'), 'val.X'), transform_test)
+        train_dataset = torchvision.datasets.ImageFolder(os.path.join(dataset_root, 'train.X'), transform_train)
+        val_dataset = torchvision.datasets.ImageFolder(os.path.join(dataset_root, 'val.X'), transform_test)
 
     return train_dataset, val_dataset, norm
+
+
+def imagenet100(normalized=False):
+    return _imagenet_folder_dataset('Image100', 'imageNet100', normalized=normalized)
+
+
+def imagenet1000(normalized=False):
+    return _imagenet_folder_dataset('Image1000', 'imageNet1000', normalized=normalized)
 
 
 if __name__ == "__main__":

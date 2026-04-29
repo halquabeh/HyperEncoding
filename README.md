@@ -60,6 +60,9 @@ python main_train.py --dataset svhn --signed --attack sea --eps 5      # Rate en
 #### Training Imagenet-100
 python main_train.py --dataset imagenet100 --signed --model sewresnet 
 
+#### Training Imagenet-1000
+python main_train.py --dataset imagenet1000 --signed --model sewresnet
+
 #### Download helpers
 python scripts/download_imagenet100.py
 

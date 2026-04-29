@@ -4,7 +4,7 @@ import random
 import numpy as np
 import torch
 import torch.nn as nn
-from data_loaders import cifar10, cifar100, imagenet100, svhn, mnist, fashion_mnist
+from data_loaders import cifar10, cifar100, imagenet100, imagenet1000, svhn, mnist, fashion_mnist
 from attacks import FGSM, PGD, GN, SEA
 from functions import create_model, seed_all, BPTT_attack, BPTR_attack, get_logger
 from utils import train, val,generate_id
@@ -37,7 +37,7 @@ parser.add_argument('-enc','--encoding',default='const',type=str,help='encoding'
 # parser.add_argument('-atk_enc','--atk_encoding',default='rate',type=str,help='attack encoding')
 parser.add_argument('--resume', action='store_true', help='resume training from checkpoint')
 parser.add_argument("--TET", action="store_true", help="Use TET loss during training")
-parser.add_argument("--center", action="store_true", help="Enable mean centerring for data")
+parser.add_argument("--center", "--signed", dest="center", action="store_true", help="Enable mean centerring for data")
 
 args = parser.parse_args()
 
@@ -65,6 +65,11 @@ def main():
     elif args.dataset.lower() == 'imagenet100':
         num_labels = 100
         train_dataset, val_dataset, znorm = imagenet100(normalized = args.center)
+    elif args.dataset.lower() == 'imagenet1000':
+        num_labels = 1000
+        train_dataset, val_dataset, znorm = imagenet1000(normalized = args.center)
+    else:
+        raise ValueError(f"Unsupported dataset: {args.dataset}")
 
     log_dir = '%s-checkpoints'% (args.dataset)    
     if not os.path.exists(log_dir):
