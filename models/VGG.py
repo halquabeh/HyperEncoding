@@ -1,5 +1,8 @@
+import torch
 import torch.nn as nn
-from models.layers import TensorNormalization, MergeTemporalDim, ExpandTemporalDim, LIFSpike, rate_encode, const_encode
+from spikingjelly.activation_based import functional, layer, neuron, surrogate
+
+from models.layers import TensorNormalization, rate_encode, const_encode
 
 cfg = {
     'vgg5' : [[64, 'A'], 
@@ -37,6 +40,28 @@ cfg = {
     ]
 }
 
+class SpikeAct(nn.Module):
+    def __init__(self, T, thresh=1.0, gama=1.0):
+        super().__init__()
+        self.T = T
+        self.relu = nn.ReLU(inplace=True)
+        # A very large tau keeps the old near-IF accumulator behavior while
+        # delegating the spike/reset/surrogate implementation to SpikingJelly.
+        self.spike = neuron.LIFNode(
+            tau=1e9,
+            decay_input=False,
+            v_threshold=thresh,
+            v_reset=0.0,
+            surrogate_function=surrogate.PiecewiseQuadratic(alpha=1.0 / gama),
+            detach_reset=False,
+        )
+
+    def forward(self, x):
+        if self.T > 0:
+            return self.spike(x)
+        return self.relu(x)
+
+
 class VGG(nn.Module):
     def __init__(self, vgg_name, encoding, T, num_class, norm, init_c=3,encode_in=False):
         super(VGG, self).__init__()
@@ -60,9 +85,6 @@ class VGG(nn.Module):
         self.layer4 = self._make_layers(cfg[vgg_name][3])
         self.layer5 = self._make_layers(cfg[vgg_name][4])
         self.classifier = self._make_classifier(num_class)
-        
-        self.merge = MergeTemporalDim(T)
-        self.expand = ExpandTemporalDim(T)
 
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
@@ -73,51 +95,73 @@ class VGG(nn.Module):
             elif isinstance(m, nn.Linear):
                 nn.init.zeros_(m.bias)
 
+        self.mode = 'bptt'
+        self.set_simulation_time(T)
+
     def _make_layers(self, cfg):
         layers = []
         for x in cfg:
             if x == 'A':
-                layers.append(nn.AvgPool2d(2))
+                layers.append(layer.AvgPool2d(2))
             else:
-                layers.append(nn.Conv2d(self.init_channels, x, kernel_size=3, padding=1))
-                layers.append(nn.BatchNorm2d(x))
-                layers.append(LIFSpike(self.T))
+                layers.append(layer.Conv2d(self.init_channels, x, kernel_size=3, padding=1))
+                layers.append(layer.BatchNorm2d(x))
+                layers.append(SpikeAct(self.T))
                 self.init_channels = x
         return nn.Sequential(*layers)
 
     def _make_classifier(self, num_class):
-        layer = [nn.Flatten(), nn.Linear(512*self.W, 4096), LIFSpike(self.T), nn.Linear(4096, 4096), LIFSpike(self.T), nn.Linear(4096, num_class)]    
-        return nn.Sequential(*layer)
+        classifier = [
+            layer.Flatten(),
+            layer.Linear(512 * self.W, 4096),
+            SpikeAct(self.T),
+            layer.Linear(4096, 4096),
+            SpikeAct(self.T),
+            layer.Linear(4096, num_class),
+        ]
+        return nn.Sequential(*classifier)
+
+    def _reshape_to_steps(self, x):
+        if self.T <= 0 or x.dim() == 5:
+            return x
+        if x.dim() != 4:
+            raise ValueError(f'expected a 4D flattened time batch or 5D sequence, but got {x.shape}')
+        if x.shape[0] % self.T != 0:
+            raise ValueError(f'input batch dimension {x.shape[0]} is not divisible by T={self.T}')
+        return x.reshape(self.T, x.shape[0] // self.T, *x.shape[1:])
     
     #pass T to determine whether it is an ANN or SNN
     def set_simulation_time(self, T, mode='bptt'):
         self.T = T
+        self.mode = mode
+        functional.set_step_mode(self, 'm' if T > 0 else 's')
+        functional.reset_net(self)
         for module in self.modules():
-            if isinstance(module, (LIFSpike, ExpandTemporalDim)):
+            if isinstance(module, SpikeAct):
                 module.T = T
-                if isinstance(module, LIFSpike):
-                    module.mode = mode
         return
     def forward(self, inputs):
-        if self.encode:
-            if self.T > 0:
-                if self.encoding in ['rate','signed','hypergeometric']:
-                    inputs = rate_encode(inputs, self.T, self.encoding) #rate encoding or signed or hyper
-                elif self.encoding == 'const':
-                    inputs = const_encode(inputs, self.T)    #constant encoding
-                else:
-                    print("--encoding not reconginzed")      
-        out = self.layer1(inputs)
-        out = self.layer2(out)
-        out = self.layer3(out)
-        out = self.layer4(out)
-        out = self.layer5(out)
-        # print(out.shape)
-        out = self.classifier(out)
-        if self.T > 0:
-            out = self.expand(out)
-        # print(out.shape)
-        return out
+        functional.reset_net(self)
+        try:
+            if self.encode:
+                if self.T > 0:
+                    if self.encoding in ['rate','signed','hypergeometric']:
+                        inputs = rate_encode(inputs, self.T, self.encoding) #rate encoding or signed or hyper
+                    elif self.encoding == 'const':
+                        inputs = const_encode(inputs, self.T)    #constant encoding
+                    else:
+                        print("--encoding not reconginzed")
+
+            inputs = self._reshape_to_steps(inputs)
+            out = self.layer1(inputs)
+            out = self.layer2(out)
+            out = self.layer3(out)
+            out = self.layer4(out)
+            out = self.layer5(out)
+            out = self.classifier(out)
+            return out
+        finally:
+            functional.reset_net(self)
     
 
 
