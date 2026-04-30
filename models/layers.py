@@ -84,7 +84,8 @@ class RateBp(torch.autograd.Function):
         # out = out.mean(0).unsqueeze(0)
         # grad_input = grad_output * (out > 0).float()
         # return grad_input
-        surrogate_grad = (1 - torch.abs(avg_rate - 0.5) * 2).clamp(min=0) 
+        # surrogate_grad = (1 - torch.abs(avg_rate - 0.5)*2).clamp(min=0) 
+        surrogate_grad = (1 - torch.abs(avg_rate - 1)).clamp(min=0) 
         
         return grad_output * surrogate_grad
 
