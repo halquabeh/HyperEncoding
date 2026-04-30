@@ -38,6 +38,7 @@ parser.add_argument('-enc','--encoding',default='const',type=str,help='encoding'
 parser.add_argument('--resume', action='store_true', help='resume training from checkpoint')
 parser.add_argument("--TET", action="store_true", help="Use TET loss during training")
 parser.add_argument("--center", "--signed", dest="center", action="store_true", help="Enable mean centerring for data")
+parser.add_argument("--report_spike_rate", action="store_true", help="Report average spike rate during evaluation")
 
 args = parser.parse_args()
 
@@ -142,8 +143,24 @@ def main():
         loss, acc = train(model, device, train_loader, criterion, optimizer, args.time, atk=atk, beta=args.beta, parseval=(args.special == 'reg'),TET=args.TET)
         logger.info('\n Epoch:[{}/{}]\t loss={:.5f}\t acc={:.3f}'.format(epoch , args.epochs, loss, acc))
         scheduler.step()
-        tmp = val(model, test_loader, device, args.time)
-        logger.info('Epoch:[{}/{}]\t Test acc={:.3f}\n'.format(epoch , args.epochs, tmp))
+        val_result = val(model, test_loader, device, args.time, report_spike_rate=args.report_spike_rate)
+        if args.report_spike_rate:
+            tmp, spike_stats = val_result
+            if spike_stats is None or spike_stats['global_rate'] is None:
+                logger.info('Epoch:[{}/{}]\t Test acc={:.3f}\t spike_rate=unavailable\n'.format(epoch , args.epochs, tmp))
+            else:
+                logger.info(
+                    'Epoch:[{}/{}]\t Test acc={:.3f}\t spike_rate={:.6f} ({:.4f}%)\n'.format(
+                        epoch,
+                        args.epochs,
+                        tmp,
+                        spike_stats['global_rate'],
+                        100 * spike_stats['global_rate'],
+                    )
+                )
+        else:
+            tmp = val_result
+            logger.info('Epoch:[{}/{}]\t Test acc={:.3f}\n'.format(epoch , args.epochs, tmp))
         
         checkpoint = {
                 'epoch': epoch,

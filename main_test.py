@@ -37,6 +37,7 @@ parser.add_argument('-enc','--encoding',default='const',type=str,help='encoding'
 parser.add_argument('--resume', action='store_true', help='resume training from checkpoint')
 parser.add_argument("--TET", action="store_true", help="Use TET loss during training")
 parser.add_argument("--center", "--signed", dest="center", action="store_true", help="Enable mean centerring for data")
+parser.add_argument("--report_spike_rate", action="store_true", help="Report average spike rate during inference")
 parser.add_argument('-id','--id',default='cifar10-checkpoints/vgg11_hypergeometric_T4_clean.pth',type=str,help='identifier of model to be test')
 
 args = parser.parse_args()
@@ -141,9 +142,26 @@ def main():
         atk = None
     logger.info('created attack instance!')  
     logger.info('start testing!')  
-    acc = val(model, test_loader, device, args.time, atk)
+    result = val(model, test_loader, device, args.time, atk, report_spike_rate=args.report_spike_rate)
+    if args.report_spike_rate:
+        acc, spike_stats = result
+    else:
+        acc = result
     print('final Test Accu: ', acc)
     logger.info(f'Final Test Accu: {acc}')
+    if args.report_spike_rate:
+        if spike_stats is None or spike_stats['global_rate'] is None:
+            print('average inference spike rate: unavailable')
+            logger.info('Average inference spike rate: unavailable')
+        else:
+            spike_rate = spike_stats['global_rate']
+            print(f'average inference spike rate: {spike_rate:.6f} ({100 * spike_rate:.4f}%)')
+            logger.info(
+                'Average inference spike rate: %.6f (%.4f%%) across %d spike layers',
+                spike_rate,
+                100 * spike_rate,
+                spike_stats['num_layers'],
+            )
 
 if __name__ == "__main__":
     main()

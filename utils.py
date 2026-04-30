@@ -2,8 +2,82 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
+from contextlib import contextmanager
 
 from models.layers import ConvexCombination, rate_encode,const_encode
+
+
+SPIKE_MODULE_NAMES = {'SpikeAct', 'SpikeActIN'}
+
+
+class SpikeRateMeter:
+    """Collect average spike rate over selected SNN forward passes."""
+
+    def __init__(self, model):
+        self.model = model
+        self.enabled = False
+        self.total_spikes = None
+        self.total_events = 0
+        self.layer_totals = {}
+        self.handles = []
+        self._register_hooks()
+
+    def _register_hooks(self):
+        for name, module in self.model.named_modules():
+            if module.__class__.__name__ in SPIKE_MODULE_NAMES:
+                self.handles.append(module.register_forward_hook(self._make_hook(name)))
+
+    def _make_hook(self, name):
+        def hook(module, _, output):
+            if not self.enabled or getattr(module, 'T', 0) <= 0 or not torch.is_tensor(output):
+                return
+
+            spike_sum = output.detach().sum(dtype=torch.float64)
+            self.total_spikes = spike_sum if self.total_spikes is None else self.total_spikes + spike_sum
+            self.total_events += output.numel()
+
+            if name not in self.layer_totals:
+                self.layer_totals[name] = {'spikes': spike_sum, 'events': output.numel()}
+            else:
+                self.layer_totals[name]['spikes'] += spike_sum
+                self.layer_totals[name]['events'] += output.numel()
+
+        return hook
+
+    @contextmanager
+    def capture(self):
+        self.enabled = True
+        try:
+            yield
+        finally:
+            self.enabled = False
+
+    def summary(self):
+        if self.total_spikes is None or self.total_events == 0:
+            return {
+                'global_rate': None,
+                'layer_rates': {},
+                'num_layers': 0,
+                'total_spikes': 0.0,
+                'total_events': 0,
+            }
+
+        layer_rates = {}
+        for name, stats in self.layer_totals.items():
+            layer_rates[name] = float(stats['spikes'].item() / stats['events'])
+
+        return {
+            'global_rate': float(self.total_spikes.item() / self.total_events),
+            'layer_rates': layer_rates,
+            'num_layers': len(layer_rates),
+            'total_spikes': float(self.total_spikes.item()),
+            'total_events': self.total_events,
+        }
+
+    def close(self):
+        for handle in self.handles:
+            handle.remove()
+        self.handles.clear()
 
 def encoding_out(inputs,encoding,T):
     if encoding.lower() == 'const':
@@ -105,38 +179,50 @@ def train(model, device, train_loader, criterion, optimizer, T, atk, beta, parse
         correct += float(predicted.eq(labels.cpu()).sum().item())
     return running_loss, 100 * correct / total
 
-def val(model, test_loader, device, T, atk=None):
+def val(model, test_loader, device, T, atk=None, report_spike_rate=False):
     correct = 0
     total = 0
     model.eval()
-    for batch_idx, (inputs, targets) in enumerate(test_loader):
-        inputs = inputs.to(device)
-   
-        if atk is not None and atk.__class__.__name__ == 'SEA':
-            atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
-            # inputs = rate_encode(inputs, T, model.encoding)
-            inputs = encoding_out(inputs,model.encoding,T)
-            inputs = atk(inputs, targets.to(device))
-        elif atk is not None:
-            # atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
-            _set_attack_model_encoding(atk.model, True)
-            inputs = atk(inputs, targets.to(device))
-            _set_attack_model_encoding(atk.model, False)
-            inputs = encoding_out(inputs,model.encoding,T)
-        else:
-            inputs = encoding_out(inputs,model.encoding,T)
-
-        with torch.no_grad():
-            if T > 0:
-                outputs = model(inputs).mean(0)
+    spike_meter = SpikeRateMeter(model) if report_spike_rate and T > 0 else None
+    try:
+        for batch_idx, (inputs, targets) in enumerate(test_loader):
+            inputs = inputs.to(device)
+    
+            if atk is not None and atk.__class__.__name__ == 'SEA':
+                atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
+                # inputs = rate_encode(inputs, T, model.encoding)
+                inputs = encoding_out(inputs,model.encoding,T)
+                inputs = atk(inputs, targets.to(device))
+            elif atk is not None:
+                # atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
+                _set_attack_model_encoding(atk.model, True)
+                inputs = atk(inputs, targets.to(device))
+                _set_attack_model_encoding(atk.model, False)
+                inputs = encoding_out(inputs,model.encoding,T)
             else:
-                outputs = model(inputs)
-        _, predicted = outputs.cpu().max(1)
-        total += float(targets.size(0))
-        correct += float(predicted.eq(targets).sum().item())
-    final_acc = 100 * correct / total
-    print(total)
-    return final_acc
+                inputs = encoding_out(inputs,model.encoding,T)
+
+            with torch.no_grad():
+                if T > 0:
+                    if spike_meter is not None:
+                        with spike_meter.capture():
+                            outputs = model(inputs).mean(0)
+                    else:
+                        outputs = model(inputs).mean(0)
+                else:
+                    outputs = model(inputs)
+            _, predicted = outputs.cpu().max(1)
+            total += float(targets.size(0))
+            correct += float(predicted.eq(targets).sum().item())
+        final_acc = 100 * correct / total
+        print(total)
+        if report_spike_rate:
+            spike_stats = spike_meter.summary() if spike_meter is not None else None
+            return final_acc, spike_stats
+        return final_acc
+    finally:
+        if spike_meter is not None:
+            spike_meter.close()
 
 def smoothed(model, inputs, m):
 # rate-encodes the input for m times and returns the output
