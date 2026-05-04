@@ -139,60 +139,113 @@ def svhn(normalized=False):
         val_dataset = SVHN(root=path, split='test', download=True, transform=transform_test)
 
     return train_dataset, val_dataset, norm
+import torch
+import numpy as np
+from datasets import load_dataset
+from torchvision import transforms
 
+class ToTupleDataset(torch.utils.data.Dataset):
+    """Wraps a HF dataset to return (image, label) instead of a dict."""
+    def __init__(self, hf_dataset):
+        self.hf_dataset = hf_dataset
+    def __len__(self):
+        return len(self.hf_dataset)
+    def __getitem__(self, i):
+        item = self.hf_dataset[i]
+        return item["pixel_values"], item["label"]
 
-def imagenet100(normalized=False):
-    transform_train = transforms.Compose([transforms.RandomResizedCrop(224), transforms.RandomHorizontalFlip(), transforms.ToTensor()])
-    transform_test = transforms.Compose([transforms.CenterCrop(224), transforms.ToTensor()])
-    norm = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+def imagenet100(normalized=False, num_classes=100):
+    # 1. Define Transforms
+    transform_train = transforms.Compose([
+        transforms.RandomResizedCrop(224),
+        transforms.RandomHorizontalFlip(),
+        transforms.ToTensor(), 
+    ])
+    
+    transform_test = transforms.Compose([
+        transforms.Resize(256),
+        transforms.CenterCrop(224),
+        transforms.ToTensor(),
+    ])
 
-    train_dataset = torchvision.datasets.ImageFolder(os.path.join(os.path.join(path, 'Image100'), 'train.X'), transform_train)
-    val_dataset = torchvision.datasets.ImageFolder(os.path.join(os.path.join(path, 'Image100'), 'val.X'), transform_test)
+    # 2. Load and Select Subset
+    dataset = load_dataset("imagenet-1k", split="train")
+    train_indices = np.where(np.array(dataset._data["label"]) < num_classes)[0]
+    train_subset = dataset.select(train_indices)
 
-    if normalized:
-        norm, _ = get_norms(train_dataset, val_dataset, norm_file='norms/norm_imageNet100.pkl', norm1_file='norms/norm1_imageNet100.pkl')
-        transform_train = transforms.Compose([transforms.RandomResizedCrop(224), transforms.RandomHorizontalFlip(), transforms.ToTensor(), transforms.Normalize(norm, (1,))])
-        transform_test = transforms.Compose([transforms.CenterCrop(224), transforms.ToTensor(), transforms.Normalize(norm, (1,))])
-        train_dataset = torchvision.datasets.ImageFolder(os.path.join(os.path.join(path, 'Image100'), 'train.X'), transform_train)
-        val_dataset = torchvision.datasets.ImageFolder(os.path.join(os.path.join(path, 'Image100'), 'val.X'), transform_test)
+    val_dataset = load_dataset("imagenet-1k", split="validation")
+    val_indices = np.where(np.array(val_dataset._data["label"]) < num_classes)[0]
+    val_subset = val_dataset.select(val_indices)
 
+    # 3. Define Transform Functions
+    def transform_train_fn(examples):
+        return {
+            "pixel_values": [transform_train(img.convert("RGB")) for img in examples["image"]],
+            "label": [int(l) for l in examples["label"]]
+        }
+
+    def transform_val_fn(examples):
+        return {
+            "pixel_values": [transform_test(img.convert("RGB")) for img in examples["image"]],
+            "label": [int(l) for l in examples["label"]]
+        }
+
+    # 4. Apply transforms
+    train_subset.set_transform(transform_train_fn)
+    val_subset.set_transform(transform_val_fn)
+    
+    # 5. Wrap and Return (returning standard PyTorch-compatible objects)
+    return ToTupleDataset(train_subset), ToTupleDataset(val_subset), None
+
+# Usage: 
+# train_ds, val_ds, _ = imagenet100(100)
+
+    # if normalized:
+    #     norm, _ = get_norms(train_dataset, val_dataset, norm_file='norms/norm_imageNet100.pkl', norm1_file='norms/norm1_imageNet100.pkl')
+    #     transform_train = transforms.Compose([transforms.RandomResizedCrop(224), transforms.RandomHorizontalFlip(), transforms.ToTensor(), transforms.Normalize(norm, (1,))])
+    #     transform_test = transforms.Compose([transforms.CenterCrop(224), transforms.ToTensor(), transforms.Normalize(norm, (1,))])
+    #     train_dataset = torchvision.datasets.ImageFolder(os.path.join(os.path.join(path, 'Image100'), 'train.X'), transform_train)
+    #     val_dataset = torchvision.datasets.ImageFolder(os.path.join(os.path.join(path, 'Image100'), 'val.X'), transform_test)
     return train_dataset, val_dataset, norm
 
 
 if __name__ == "__main__":
-    train_dataset, val_dataset, _ = svhn()
+    train_dataset, val_dataset, _ = imagenet100()
+    print(len(train_dataset))
+    print(train_dataset[0])
+    # train_dataset, val_dataset, _ = svhn()
 
-    pixel_sum = 0
-    pixel_sum_sq = 0
-    num_pixels = 0
+    # pixel_sum = 0
+    # pixel_sum_sq = 0
+    # num_pixels = 0
 
-    for data, _ in train_dataset:
-        pixel_sum += torch.sum(data)
-        pixel_sum_sq += torch.sum(data ** 2)
-        num_pixels += data.numel()
-    print(data.shape)
-    mean = pixel_sum / num_pixels
-    std = (pixel_sum_sq / num_pixels - mean ** 2) ** 0.5
+    # for data, _ in train_dataset:
+    #     pixel_sum += torch.sum(data)
+    #     pixel_sum_sq += torch.sum(data ** 2)
+    #     num_pixels += data.numel()
+    # print(data.shape)
+    # mean = pixel_sum / num_pixels
+    # std = (pixel_sum_sq / num_pixels - mean ** 2) ** 0.5
 
-    print(f"Mean of all pixels in training dataset: {mean}")
-    print(f"Standard deviation of all pixels in training dataset: {std}")
-    k1 = 0
-    counter = 0
-    for data, _ in train_dataset:
-        x = data.reshape(-1)
-        counter += 1
-        k1 += (2 * x * (1 - x)).sum()
+    # print(f"Mean of all pixels in training dataset: {mean}")
+    # print(f"Standard deviation of all pixels in training dataset: {std}")
+    # k1 = 0
+    # counter = 0
+    # for data, _ in train_dataset:
+    #     x = data.reshape(-1)
+    #     counter += 1
+    #     k1 += (2 * x * (1 - x)).sum()
 
-    print(f'total={k1}, counter={counter}, avg:{k1/counter}')
+    # print(f'total={k1}, counter={counter}, avg:{k1/counter}')
 
-    train_dataset, val_dataset, _ = svhn(normalized=True)
+    # train_dataset, val_dataset, _ = svhn(normalized=True)
 
-    k2 = 0
-    counter = 0
-    for data, _ in train_dataset:
-        x = data.reshape(-1)
-        counter += 1
-        k2 += (2 * torch.abs(x) * (1 - torch.abs(x))).sum()
+    # k2 = 0
+    # counter = 0
+    # for data, _ in train_dataset:
+    #     x = data.reshape(-1)
+    #     counter += 1
+    #     k2 += (2 * torch.abs(x) * (1 - torch.abs(x))).sum()
 
-    print(f'total={k2}, counter={counter}, avg:{k2/counter}')
-    print(k1 / k2)
+    # print(f'total={k2}, counter={counter}, avg:{k2/counter}')
+    # print(k1 / k2)

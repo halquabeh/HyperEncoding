@@ -100,3 +100,9 @@ def create_model(model_name, encoding, time, num_labels, znorm,encode_in):
     else:
         raise AssertionError("model not supported")
     return model
+if __name__ == '__main__':
+    model = create_model('sew_resnet34', encoding='const', time=8, num_labels=100, znorm=False, encode_in=False)
+    x = torch.rand(8,3,224,224)
+    output = model(x)
+    print(output.shape)
+    

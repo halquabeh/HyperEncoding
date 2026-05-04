@@ -235,7 +235,7 @@ class SEWResNet(nn.Module):
                 elif self.encoding == 'const':
                     x = const_encode(x, self.T)
                 else:
-                    print("--encoding/atk_encoding not reconginzed")     
+                    print("--encoding/atk_encoding not reconginzed") 
         x = self.conv1(x)
         x = self.bn1(x)
         # x.unsqueeze_(0)
@@ -247,14 +247,13 @@ class SEWResNet(nn.Module):
         x = self.layer2(x)
         x = self.layer3(x)
         x = self.layer4(x)
-
         x = self.avgpool(x)
-        # print(x.shape)
         x = torch.flatten(x, 2)
-        # print(x.shape)
-        # return self.fc(x.mean(dim=0))
         x = self.fc(x)
-        return x
+        # x = x.squeeze(1)
+        if self.T > 0:
+            x = self.expand(x)
+        return x.squeeze(1)
 
     def forward(self, x):
         return self._forward_impl(x)

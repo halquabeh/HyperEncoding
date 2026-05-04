@@ -87,7 +87,6 @@ def train(model, device, train_loader, criterion, optimizer, T, atk, beta, parse
             outputs = outs.mean(0)   
         else:
             outputs = model(images)
-
         if TET:
             loss = TET_loss(outs, labels, criterion,T=T)
         else:
