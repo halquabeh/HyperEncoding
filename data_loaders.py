@@ -154,18 +154,27 @@ class ToTupleDataset(torch.utils.data.Dataset):
         item = self.hf_dataset[i]
         return item["pixel_values"], item["label"]
 
+class Clamp01:
+    def __call__(self, tensor):
+        return tensor.clamp(0, 1)
+
 def imagenet100(normalized=False, num_classes=100):
     # 1. Define Transforms
     transform_train = transforms.Compose([
         transforms.RandomResizedCrop(224),
         transforms.RandomHorizontalFlip(),
-        transforms.ToTensor(), 
+        transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.05),
+        transforms.RandomGrayscale(p=0.05),
+        transforms.ToTensor(),
+        transforms.RandomErasing(p=0.25, scale=(0.02, 0.12), ratio=(0.3, 3.3), value=0.0),
+        Clamp01(),
     ])
     
     transform_test = transforms.Compose([
         transforms.Resize(256),
         transforms.CenterCrop(224),
         transforms.ToTensor(),
+        Clamp01(),
     ])
 
     # 2. Load and Select Subset

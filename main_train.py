@@ -127,6 +127,8 @@ def main():
         checkpoint = torch.load(os.path.join(log_dir, '%s.pth'%(identifier+'_last')))
         model.load_state_dict(checkpoint['model_state_dict'])
         optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+        if 'scheduler_state_dict' in checkpoint:
+            scheduler.load_state_dict(checkpoint['scheduler_state_dict'])
         start_epoch = checkpoint['epoch'] + 1
         best_acc = checkpoint['best_acc']
         logger.info('Resuming training from checkpoint: {}'.format(os.path.join(log_dir, '%s.pth'%(identifier+'_last'))))
@@ -139,16 +141,19 @@ def main():
         scheduler.step()
         tmp = val(model, test_loader, device, args.time)
         logger.info('Epoch:[{}/{}]\t Test acc={:.3f}\n'.format(epoch , args.epochs, tmp))
-        
+        is_best = best_acc < tmp
+        if is_best:
+            best_acc = tmp
+
         checkpoint = {
                 'epoch': epoch,
                 'model_state_dict': model.state_dict(),
                 'optimizer_state_dict': optimizer.state_dict(),
-                'best_acc': tmp}
+                'scheduler_state_dict': scheduler.state_dict(),
+                'best_acc': best_acc}
         torch.save(checkpoint, os.path.join(log_dir, '%s.pth'%(identifier+'_last')))
 
-        if best_acc < tmp:
-            best_acc = tmp
+        if is_best:
             torch.save(checkpoint, os.path.join(log_dir, '%s.pth'%(identifier)))
         logger.info('Best Test acc={:.3f}\n'.format(best_acc))
         print(f'Best accuracy: {best_acc:.3f}')

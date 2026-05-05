@@ -137,7 +137,7 @@ def zero_init_blocks(net: nn.Module, connect_f: str):
 
 class SEWResNet(nn.Module):
 
-    def __init__(self, block, layers, encoding='const', signed=False, atk_encoding='rate', model_encode=False,num_classes=100, zero_init_residual=True,
+    def __init__(self, block, layers, encoding='const', signed=False, atk_encoding='rate', model_encode=False,num_classes=100, zero_init_residual=False,
                  groups=1, width_per_group=64, replace_stride_with_dilation=None,
                  norm_layer=None, T=4, connect_f='ADD'):
         super(SEWResNet, self).__init__()

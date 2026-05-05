@@ -60,6 +60,7 @@ def create_model(model_name, encoding, time, num_labels, znorm,encode_in):
             num_classes=num_labels,
             encoding=encoding,
             model_encode=encode_in,
+            zero_init_residual=False,
         )
     elif model_name == 'sewresnet18' or model_name == 'sew_resnet18':
         from models.SEWResNet import sew_resnet18
@@ -69,6 +70,7 @@ def create_model(model_name, encoding, time, num_labels, znorm,encode_in):
             num_classes=num_labels,
             encoding=encoding,
             model_encode=encode_in,
+            zero_init_residual=False,
         )
     elif model_name == 'sewresnet50' or model_name == 'sew_resnet50':
         from models.SEWResNet import sew_resnet50
@@ -78,6 +80,7 @@ def create_model(model_name, encoding, time, num_labels, znorm,encode_in):
             num_classes=num_labels,
             encoding=encoding,
             model_encode=encode_in,
+            zero_init_residual=False,
         )
     elif model_name == 'sewresnet101' or model_name == 'sew_resnet101':
         from models.SEWResNet import sew_resnet101
@@ -87,6 +90,7 @@ def create_model(model_name, encoding, time, num_labels, znorm,encode_in):
             num_classes=num_labels,
             encoding=encoding,
             model_encode=encode_in,
+            zero_init_residual=False,
         )
     elif model_name == 'sewresnet152' or model_name == 'sew_resnet152':
         from models.SEWResNet import sew_resnet152
@@ -96,6 +100,7 @@ def create_model(model_name, encoding, time, num_labels, znorm,encode_in):
             num_classes=num_labels,
             encoding=encoding,
             model_encode=encode_in,
+            zero_init_residual=False,
         )
     else:
         raise AssertionError("model not supported")
@@ -105,4 +110,3 @@ if __name__ == '__main__':
     x = torch.rand(8,3,224,224)
     output = model(x)
     print(output.shape)
-    

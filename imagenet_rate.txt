@@ -1,0 +1,875 @@
+nohup: ignoring input
+INFO:root:{'workers': 2, 'batch_size': 64, 'seed': 42, 'optim': 'sgd', 'suffix': '', 'dataset': 'imagenet100', 'model': 'sewresnet', 'time': 4, 'epochs': 200, 'lr': 0.1, 'device': '3', 'special': 'l2', 'beta': 0.0005, 'attack': '', 'eps': 8, 'bpmode': 'bptt', 'alpha': 2, 'steps': 4, 'encoding': 'rate', 'resume': True, 'TET': False, 'center': False}
+[2026-05-04 23:03:22,943][main_train.py][line:124][INFO] {'workers': 2, 'batch_size': 64, 'seed': 42, 'optim': 'sgd', 'suffix': '', 'dataset': 'imagenet100', 'model': 'sewresnet', 'time': 4, 'epochs': 200, 'lr': 0.1, 'device': '3', 'special': 'l2', 'beta': 0.0005, 'attack': '', 'eps': 8, 'bpmode': 'bptt', 'alpha': 2, 'steps': 4, 'encoding': 'rate', 'resume': True, 'TET': False, 'center': False}
+INFO:root:Resuming training from checkpoint: imagenet100-checkpoints/model_sewresnet_encoding_rate_Time_4_atck_clean_last.pth
+[2026-05-04 23:03:23,087][main_train.py][line:132][INFO] Resuming training from checkpoint: imagenet100-checkpoints/model_sewresnet_encoding_rate_Time_4_atck_clean_last.pth
+INFO:root:
+ Epoch:[1/200]	 loss=8222.25234	 acc=7.855
+[2026-05-04 23:22:33,953][main_train.py][line:138][INFO] 
+ Epoch:[1/200]	 loss=8222.25234	 acc=7.855
+INFO:root:Epoch:[1/200]	 Test acc=7.420
+
+[2026-05-04 23:22:47,125][main_train.py][line:141][INFO] Epoch:[1/200]	 Test acc=7.420
+
+INFO:root:Best Test acc=7.420
+
+[2026-05-04 23:22:47,842][main_train.py][line:153][INFO] Best Test acc=7.420
+
+5000.0
+Best accuracy: 7.420
+INFO:root:
+ Epoch:[2/200]	 loss=8178.40001	 acc=8.222
+[2026-05-04 23:41:57,937][main_train.py][line:138][INFO] 
+ Epoch:[2/200]	 loss=8178.40001	 acc=8.222
+INFO:root:Epoch:[2/200]	 Test acc=7.620
+
+[2026-05-04 23:42:11,070][main_train.py][line:141][INFO] Epoch:[2/200]	 Test acc=7.620
+
+INFO:root:Best Test acc=7.620
+
+[2026-05-04 23:42:11,798][main_train.py][line:153][INFO] Best Test acc=7.620
+
+5000.0
+Best accuracy: 7.620
+INFO:root:
+ Epoch:[3/200]	 loss=8142.30365	 acc=8.503
+[2026-05-05 00:01:21,976][main_train.py][line:138][INFO] 
+ Epoch:[3/200]	 loss=8142.30365	 acc=8.503
+INFO:root:Epoch:[3/200]	 Test acc=7.680
+
+[2026-05-05 00:01:35,075][main_train.py][line:141][INFO] Epoch:[3/200]	 Test acc=7.680
+
+INFO:root:Best Test acc=7.680
+
+[2026-05-05 00:01:35,785][main_train.py][line:153][INFO] Best Test acc=7.680
+
+5000.0
+Best accuracy: 7.680
+INFO:root:
+ Epoch:[4/200]	 loss=8128.63630	 acc=8.734
+[2026-05-05 00:20:46,378][main_train.py][line:138][INFO] 
+ Epoch:[4/200]	 loss=8128.63630	 acc=8.734
+INFO:root:Epoch:[4/200]	 Test acc=9.560
+
+[2026-05-05 00:20:59,547][main_train.py][line:141][INFO] Epoch:[4/200]	 Test acc=9.560
+
+INFO:root:Best Test acc=9.560
+
+[2026-05-05 00:21:00,269][main_train.py][line:153][INFO] Best Test acc=9.560
+
+5000.0
+Best accuracy: 9.560
+INFO:root:
+ Epoch:[5/200]	 loss=8118.12815	 acc=8.858
+[2026-05-05 00:40:10,754][main_train.py][line:138][INFO] 
+ Epoch:[5/200]	 loss=8118.12815	 acc=8.858
+INFO:root:Epoch:[5/200]	 Test acc=5.880
+
+[2026-05-05 00:40:23,907][main_train.py][line:141][INFO] Epoch:[5/200]	 Test acc=5.880
+
+INFO:root:Best Test acc=9.560
+
+[2026-05-05 00:40:24,279][main_train.py][line:153][INFO] Best Test acc=9.560
+
+5000.0
+Best accuracy: 9.560
+INFO:root:
+ Epoch:[6/200]	 loss=8102.00440	 acc=8.966
+[2026-05-05 00:59:34,570][main_train.py][line:138][INFO] 
+ Epoch:[6/200]	 loss=8102.00440	 acc=8.966
+INFO:root:Epoch:[6/200]	 Test acc=8.400
+
+[2026-05-05 00:59:47,685][main_train.py][line:141][INFO] Epoch:[6/200]	 Test acc=8.400
+
+INFO:root:Best Test acc=9.560
+
+[2026-05-05 00:59:48,005][main_train.py][line:153][INFO] Best Test acc=9.560
+
+5000.0
+Best accuracy: 9.560
+INFO:root:
+ Epoch:[7/200]	 loss=8090.82479	 acc=9.122
+[2026-05-05 01:18:58,303][main_train.py][line:138][INFO] 
+ Epoch:[7/200]	 loss=8090.82479	 acc=9.122
+INFO:root:Epoch:[7/200]	 Test acc=9.740
+
+[2026-05-05 01:19:11,432][main_train.py][line:141][INFO] Epoch:[7/200]	 Test acc=9.740
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 01:19:12,045][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[8/200]	 loss=8091.62067	 acc=9.138
+[2026-05-05 01:38:22,104][main_train.py][line:138][INFO] 
+ Epoch:[8/200]	 loss=8091.62067	 acc=9.138
+INFO:root:Epoch:[8/200]	 Test acc=6.460
+
+[2026-05-05 01:38:35,276][main_train.py][line:141][INFO] Epoch:[8/200]	 Test acc=6.460
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 01:38:35,651][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[9/200]	 loss=8091.37493	 acc=9.101
+[2026-05-05 01:57:45,519][main_train.py][line:138][INFO] 
+ Epoch:[9/200]	 loss=8091.37493	 acc=9.101
+INFO:root:Epoch:[9/200]	 Test acc=8.840
+
+[2026-05-05 01:57:58,637][main_train.py][line:141][INFO] Epoch:[9/200]	 Test acc=8.840
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 01:57:59,023][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[10/200]	 loss=8084.84166	 acc=9.136
+[2026-05-05 02:17:09,423][main_train.py][line:138][INFO] 
+ Epoch:[10/200]	 loss=8084.84166	 acc=9.136
+INFO:root:Epoch:[10/200]	 Test acc=8.780
+
+[2026-05-05 02:17:22,552][main_train.py][line:141][INFO] Epoch:[10/200]	 Test acc=8.780
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 02:17:22,863][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[11/200]	 loss=8080.61195	 acc=9.242
+[2026-05-05 02:36:33,828][main_train.py][line:138][INFO] 
+ Epoch:[11/200]	 loss=8080.61195	 acc=9.242
+INFO:root:Epoch:[11/200]	 Test acc=8.600
+
+[2026-05-05 02:36:46,950][main_train.py][line:141][INFO] Epoch:[11/200]	 Test acc=8.600
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 02:36:47,275][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[12/200]	 loss=8082.80955	 acc=9.189
+[2026-05-05 02:55:57,877][main_train.py][line:138][INFO] 
+ Epoch:[12/200]	 loss=8082.80955	 acc=9.189
+INFO:root:Epoch:[12/200]	 Test acc=9.480
+
+[2026-05-05 02:56:11,021][main_train.py][line:141][INFO] Epoch:[12/200]	 Test acc=9.480
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 02:56:11,341][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[13/200]	 loss=8080.66961	 acc=9.250
+[2026-05-05 03:15:21,679][main_train.py][line:138][INFO] 
+ Epoch:[13/200]	 loss=8080.66961	 acc=9.250
+INFO:root:Epoch:[13/200]	 Test acc=9.100
+
+[2026-05-05 03:15:34,821][main_train.py][line:141][INFO] Epoch:[13/200]	 Test acc=9.100
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 03:15:35,143][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[14/200]	 loss=8076.49737	 acc=9.282
+[2026-05-05 03:34:45,574][main_train.py][line:138][INFO] 
+ Epoch:[14/200]	 loss=8076.49737	 acc=9.282
+INFO:root:Epoch:[14/200]	 Test acc=9.180
+
+[2026-05-05 03:34:58,695][main_train.py][line:141][INFO] Epoch:[14/200]	 Test acc=9.180
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 03:34:59,010][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[15/200]	 loss=8071.76090	 acc=9.239
+[2026-05-05 03:54:09,295][main_train.py][line:138][INFO] 
+ Epoch:[15/200]	 loss=8071.76090	 acc=9.239
+INFO:root:Epoch:[15/200]	 Test acc=6.600
+
+[2026-05-05 03:54:22,425][main_train.py][line:141][INFO] Epoch:[15/200]	 Test acc=6.600
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 03:54:22,753][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[16/200]	 loss=8077.98935	 acc=9.198
+[2026-05-05 04:13:33,312][main_train.py][line:138][INFO] 
+ Epoch:[16/200]	 loss=8077.98935	 acc=9.198
+INFO:root:Epoch:[16/200]	 Test acc=9.440
+
+[2026-05-05 04:13:46,437][main_train.py][line:141][INFO] Epoch:[16/200]	 Test acc=9.440
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 04:13:46,754][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[17/200]	 loss=8073.10106	 acc=9.298
+[2026-05-05 04:32:56,818][main_train.py][line:138][INFO] 
+ Epoch:[17/200]	 loss=8073.10106	 acc=9.298
+INFO:root:Epoch:[17/200]	 Test acc=8.560
+
+[2026-05-05 04:33:09,973][main_train.py][line:141][INFO] Epoch:[17/200]	 Test acc=8.560
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 04:33:10,294][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[18/200]	 loss=8064.74593	 acc=9.367
+[2026-05-05 04:52:20,888][main_train.py][line:138][INFO] 
+ Epoch:[18/200]	 loss=8064.74593	 acc=9.367
+INFO:root:Epoch:[18/200]	 Test acc=8.900
+
+[2026-05-05 04:52:34,060][main_train.py][line:141][INFO] Epoch:[18/200]	 Test acc=8.900
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 04:52:34,386][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[19/200]	 loss=8060.00255	 acc=9.463
+[2026-05-05 05:11:44,631][main_train.py][line:138][INFO] 
+ Epoch:[19/200]	 loss=8060.00255	 acc=9.463
+INFO:root:Epoch:[19/200]	 Test acc=9.160
+
+[2026-05-05 05:11:57,768][main_train.py][line:141][INFO] Epoch:[19/200]	 Test acc=9.160
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 05:11:58,097][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[20/200]	 loss=8071.61312	 acc=9.347
+[2026-05-05 05:31:08,096][main_train.py][line:138][INFO] 
+ Epoch:[20/200]	 loss=8071.61312	 acc=9.347
+INFO:root:Epoch:[20/200]	 Test acc=9.020
+
+[2026-05-05 05:31:21,228][main_train.py][line:141][INFO] Epoch:[20/200]	 Test acc=9.020
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 05:31:21,557][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[21/200]	 loss=8063.70852	 acc=9.460
+[2026-05-05 05:50:31,556][main_train.py][line:138][INFO] 
+ Epoch:[21/200]	 loss=8063.70852	 acc=9.460
+INFO:root:Epoch:[21/200]	 Test acc=9.300
+
+[2026-05-05 05:50:44,687][main_train.py][line:141][INFO] Epoch:[21/200]	 Test acc=9.300
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 05:50:45,012][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[22/200]	 loss=8062.84226	 acc=9.252
+[2026-05-05 06:09:55,114][main_train.py][line:138][INFO] 
+ Epoch:[22/200]	 loss=8062.84226	 acc=9.252
+INFO:root:Epoch:[22/200]	 Test acc=7.960
+
+[2026-05-05 06:10:08,245][main_train.py][line:141][INFO] Epoch:[22/200]	 Test acc=7.960
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 06:10:08,569][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[23/200]	 loss=8060.42086	 acc=9.220
+[2026-05-05 06:29:18,585][main_train.py][line:138][INFO] 
+ Epoch:[23/200]	 loss=8060.42086	 acc=9.220
+INFO:root:Epoch:[23/200]	 Test acc=9.540
+
+[2026-05-05 06:29:31,723][main_train.py][line:141][INFO] Epoch:[23/200]	 Test acc=9.540
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 06:29:32,045][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[24/200]	 loss=8060.19773	 acc=9.340
+[2026-05-05 06:48:42,110][main_train.py][line:138][INFO] 
+ Epoch:[24/200]	 loss=8060.19773	 acc=9.340
+INFO:root:Epoch:[24/200]	 Test acc=7.600
+
+[2026-05-05 06:48:55,230][main_train.py][line:141][INFO] Epoch:[24/200]	 Test acc=7.600
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 06:48:55,553][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[25/200]	 loss=8064.69896	 acc=9.319
+[2026-05-05 07:08:05,705][main_train.py][line:138][INFO] 
+ Epoch:[25/200]	 loss=8064.69896	 acc=9.319
+INFO:root:Epoch:[25/200]	 Test acc=7.520
+
+[2026-05-05 07:08:18,842][main_train.py][line:141][INFO] Epoch:[25/200]	 Test acc=7.520
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 07:08:19,165][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[26/200]	 loss=8060.61801	 acc=9.330
+[2026-05-05 07:27:29,675][main_train.py][line:138][INFO] 
+ Epoch:[26/200]	 loss=8060.61801	 acc=9.330
+INFO:root:Epoch:[26/200]	 Test acc=7.320
+
+[2026-05-05 07:27:42,798][main_train.py][line:141][INFO] Epoch:[26/200]	 Test acc=7.320
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 07:27:43,116][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[27/200]	 loss=8060.87723	 acc=9.384
+[2026-05-05 07:46:53,879][main_train.py][line:138][INFO] 
+ Epoch:[27/200]	 loss=8060.87723	 acc=9.384
+INFO:root:Epoch:[27/200]	 Test acc=8.420
+
+[2026-05-05 07:47:07,020][main_train.py][line:141][INFO] Epoch:[27/200]	 Test acc=8.420
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 07:47:07,340][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[28/200]	 loss=8062.77640	 acc=9.316
+[2026-05-05 08:06:17,600][main_train.py][line:138][INFO] 
+ Epoch:[28/200]	 loss=8062.77640	 acc=9.316
+INFO:root:Epoch:[28/200]	 Test acc=9.420
+
+[2026-05-05 08:06:30,760][main_train.py][line:141][INFO] Epoch:[28/200]	 Test acc=9.420
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 08:06:31,076][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[29/200]	 loss=8052.97475	 acc=9.541
+[2026-05-05 08:25:41,300][main_train.py][line:138][INFO] 
+ Epoch:[29/200]	 loss=8052.97475	 acc=9.541
+INFO:root:Epoch:[29/200]	 Test acc=7.020
+
+[2026-05-05 08:25:54,448][main_train.py][line:141][INFO] Epoch:[29/200]	 Test acc=7.020
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 08:25:54,760][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[30/200]	 loss=8059.59694	 acc=9.409
+[2026-05-05 08:45:05,007][main_train.py][line:138][INFO] 
+ Epoch:[30/200]	 loss=8059.59694	 acc=9.409
+INFO:root:Epoch:[30/200]	 Test acc=8.180
+
+[2026-05-05 08:45:18,140][main_train.py][line:141][INFO] Epoch:[30/200]	 Test acc=8.180
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 08:45:18,470][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[31/200]	 loss=8054.12986	 acc=9.502
+[2026-05-05 09:04:28,412][main_train.py][line:138][INFO] 
+ Epoch:[31/200]	 loss=8054.12986	 acc=9.502
+INFO:root:Epoch:[31/200]	 Test acc=8.960
+
+[2026-05-05 09:04:41,558][main_train.py][line:141][INFO] Epoch:[31/200]	 Test acc=8.960
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 09:04:41,889][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[32/200]	 loss=8051.99861	 acc=9.471
+[2026-05-05 09:23:52,009][main_train.py][line:138][INFO] 
+ Epoch:[32/200]	 loss=8051.99861	 acc=9.471
+INFO:root:Epoch:[32/200]	 Test acc=7.640
+
+[2026-05-05 09:24:05,137][main_train.py][line:141][INFO] Epoch:[32/200]	 Test acc=7.640
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 09:24:05,453][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[33/200]	 loss=8057.00629	 acc=9.537
+[2026-05-05 09:43:15,569][main_train.py][line:138][INFO] 
+ Epoch:[33/200]	 loss=8057.00629	 acc=9.537
+INFO:root:Epoch:[33/200]	 Test acc=8.520
+
+[2026-05-05 09:43:28,717][main_train.py][line:141][INFO] Epoch:[33/200]	 Test acc=8.520
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 09:43:29,039][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[34/200]	 loss=8057.11525	 acc=9.542
+[2026-05-05 10:02:39,212][main_train.py][line:138][INFO] 
+ Epoch:[34/200]	 loss=8057.11525	 acc=9.542
+INFO:root:Epoch:[34/200]	 Test acc=6.320
+
+[2026-05-05 10:02:52,352][main_train.py][line:141][INFO] Epoch:[34/200]	 Test acc=6.320
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 10:02:52,666][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[35/200]	 loss=8052.27513	 acc=9.506
+[2026-05-05 10:22:02,698][main_train.py][line:138][INFO] 
+ Epoch:[35/200]	 loss=8052.27513	 acc=9.506
+INFO:root:Epoch:[35/200]	 Test acc=7.900
+
+[2026-05-05 10:22:15,834][main_train.py][line:141][INFO] Epoch:[35/200]	 Test acc=7.900
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 10:22:16,135][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[36/200]	 loss=8056.59085	 acc=9.539
+[2026-05-05 10:41:26,178][main_train.py][line:138][INFO] 
+ Epoch:[36/200]	 loss=8056.59085	 acc=9.539
+INFO:root:Epoch:[36/200]	 Test acc=8.400
+
+[2026-05-05 10:41:39,303][main_train.py][line:141][INFO] Epoch:[36/200]	 Test acc=8.400
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 10:41:39,619][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[37/200]	 loss=8048.28110	 acc=9.516
+[2026-05-05 11:00:50,115][main_train.py][line:138][INFO] 
+ Epoch:[37/200]	 loss=8048.28110	 acc=9.516
+INFO:root:Epoch:[37/200]	 Test acc=7.800
+
+[2026-05-05 11:01:03,249][main_train.py][line:141][INFO] Epoch:[37/200]	 Test acc=7.800
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 11:01:03,577][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[38/200]	 loss=8052.45682	 acc=9.432
+[2026-05-05 11:20:14,215][main_train.py][line:138][INFO] 
+ Epoch:[38/200]	 loss=8052.45682	 acc=9.432
+INFO:root:Epoch:[38/200]	 Test acc=9.640
+
+[2026-05-05 11:20:27,354][main_train.py][line:141][INFO] Epoch:[38/200]	 Test acc=9.640
+
+INFO:root:Best Test acc=9.740
+
+[2026-05-05 11:20:27,668][main_train.py][line:153][INFO] Best Test acc=9.740
+
+5000.0
+Best accuracy: 9.740
+INFO:root:
+ Epoch:[39/200]	 loss=8047.75787	 acc=9.563
+[2026-05-05 11:39:38,409][main_train.py][line:138][INFO] 
+ Epoch:[39/200]	 loss=8047.75787	 acc=9.563
+INFO:root:Epoch:[39/200]	 Test acc=10.360
+
+[2026-05-05 11:39:51,523][main_train.py][line:141][INFO] Epoch:[39/200]	 Test acc=10.360
+
+INFO:root:Best Test acc=10.360
+
+[2026-05-05 11:39:52,146][main_train.py][line:153][INFO] Best Test acc=10.360
+
+5000.0
+Best accuracy: 10.360
+INFO:root:
+ Epoch:[40/200]	 loss=8045.39309	 acc=9.579
+[2026-05-05 11:59:02,611][main_train.py][line:138][INFO] 
+ Epoch:[40/200]	 loss=8045.39309	 acc=9.579
+INFO:root:Epoch:[40/200]	 Test acc=8.200
+
+[2026-05-05 11:59:15,775][main_train.py][line:141][INFO] Epoch:[40/200]	 Test acc=8.200
+
+INFO:root:Best Test acc=10.360
+
+[2026-05-05 11:59:16,102][main_train.py][line:153][INFO] Best Test acc=10.360
+
+5000.0
+Best accuracy: 10.360
+INFO:root:
+ Epoch:[41/200]	 loss=8050.51211	 acc=9.611
+[2026-05-05 12:18:26,218][main_train.py][line:138][INFO] 
+ Epoch:[41/200]	 loss=8050.51211	 acc=9.611
+INFO:root:Epoch:[41/200]	 Test acc=9.460
+
+[2026-05-05 12:18:39,354][main_train.py][line:141][INFO] Epoch:[41/200]	 Test acc=9.460
+
+INFO:root:Best Test acc=10.360
+
+[2026-05-05 12:18:39,678][main_train.py][line:153][INFO] Best Test acc=10.360
+
+5000.0
+Best accuracy: 10.360
+INFO:root:
+ Epoch:[42/200]	 loss=8041.82532	 acc=9.642
+[2026-05-05 12:37:50,112][main_train.py][line:138][INFO] 
+ Epoch:[42/200]	 loss=8041.82532	 acc=9.642
+INFO:root:Epoch:[42/200]	 Test acc=8.620
+
+[2026-05-05 12:38:03,261][main_train.py][line:141][INFO] Epoch:[42/200]	 Test acc=8.620
+
+INFO:root:Best Test acc=10.360
+
+[2026-05-05 12:38:03,579][main_train.py][line:153][INFO] Best Test acc=10.360
+
+5000.0
+Best accuracy: 10.360
+INFO:root:
+ Epoch:[43/200]	 loss=8047.87656	 acc=9.656
+[2026-05-05 12:57:13,943][main_train.py][line:138][INFO] 
+ Epoch:[43/200]	 loss=8047.87656	 acc=9.656
+INFO:root:Epoch:[43/200]	 Test acc=9.800
+
+[2026-05-05 12:57:27,100][main_train.py][line:141][INFO] Epoch:[43/200]	 Test acc=9.800
+
+INFO:root:Best Test acc=10.360
+
+[2026-05-05 12:57:27,418][main_train.py][line:153][INFO] Best Test acc=10.360
+
+5000.0
+Best accuracy: 10.360
+INFO:root:
+ Epoch:[44/200]	 loss=8050.96830	 acc=9.554
+[2026-05-05 13:16:38,048][main_train.py][line:138][INFO] 
+ Epoch:[44/200]	 loss=8050.96830	 acc=9.554
+INFO:root:Epoch:[44/200]	 Test acc=9.000
+
+[2026-05-05 13:16:51,192][main_train.py][line:141][INFO] Epoch:[44/200]	 Test acc=9.000
+
+INFO:root:Best Test acc=10.360
+
+[2026-05-05 13:16:51,515][main_train.py][line:153][INFO] Best Test acc=10.360
+
+5000.0
+Best accuracy: 10.360
+INFO:root:
+ Epoch:[45/200]	 loss=8043.27957	 acc=9.498
+[2026-05-05 13:36:01,730][main_train.py][line:138][INFO] 
+ Epoch:[45/200]	 loss=8043.27957	 acc=9.498
+INFO:root:Epoch:[45/200]	 Test acc=7.320
+
+[2026-05-05 13:36:14,856][main_train.py][line:141][INFO] Epoch:[45/200]	 Test acc=7.320
+
+INFO:root:Best Test acc=10.360
+
+[2026-05-05 13:36:15,185][main_train.py][line:153][INFO] Best Test acc=10.360
+
+5000.0
+Best accuracy: 10.360
+INFO:root:
+ Epoch:[46/200]	 loss=8042.67874	 acc=9.684
+[2026-05-05 13:55:43,395][main_train.py][line:138][INFO] 
+ Epoch:[46/200]	 loss=8042.67874	 acc=9.684
+INFO:root:Epoch:[46/200]	 Test acc=8.200
+
+[2026-05-05 13:55:56,743][main_train.py][line:141][INFO] Epoch:[46/200]	 Test acc=8.200
+
+INFO:root:Best Test acc=10.360
+
+[2026-05-05 13:55:57,058][main_train.py][line:153][INFO] Best Test acc=10.360
+
+5000.0
+Best accuracy: 10.360
+nohup: ignoring input
+Traceback (most recent call last):
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 402, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://huggingface.co/datasets/ILSVRC/imagenet-1k/resolve/49e2ee26f3810fb5a7536bbf732a7b07389a47b5/imagenet-1k.py
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 985, in dataset_module_factory
+    api.hf_hub_download(
+    ~~~~~~~~~~~~~~~~~~~^
+        repo_id=path,
+        ^^^^^^^^^^^^^
+    ...<3 lines>...
+        proxies=download_config.proxies,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 5467, in hf_hub_download
+    return hf_hub_download(
+        repo_id=repo_id,
+    ...<18 lines>...
+        local_files_only=local_files_only,
+    )
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/huggingface_hub/file_download.py", line 1007, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+        # Destination
+    ...<14 lines>...
+        force_download=force_download,
+    )
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/huggingface_hub/file_download.py", line 1070, in _hf_hub_download_to_cache_dir
+    (url_to_download, etag, commit_hash, expected_size, xet_file_data, head_call_error) = _get_metadata_or_catch_error(
+                                                                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        repo_id=repo_id,
+        ^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        relative_filename=relative_filename,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/huggingface_hub/file_download.py", line 1543, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+        url=url, proxies=proxies, timeout=etag_timeout, headers=headers, token=token, endpoint=endpoint
+    )
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/huggingface_hub/file_download.py", line 1460, in get_hf_file_metadata
+    r = _request_wrapper(
+        method="HEAD",
+    ...<5 lines>...
+        timeout=timeout,
+    )
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/huggingface_hub/file_download.py", line 302, in _request_wrapper
+    return _request_wrapper(method=method, url=next_url, follow_relative_redirects=True, **params)
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/huggingface_hub/file_download.py", line 283, in _request_wrapper
+    response = _request_wrapper(
+        method=method,
+    ...<2 lines>...
+        **params,
+    )
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/huggingface_hub/file_download.py", line 307, in _request_wrapper
+    hf_raise_for_status(response)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 413, in hf_raise_for_status
+    raise _format(EntryNotFoundError, message, response) from e
+huggingface_hub.errors.EntryNotFoundError: 404 Client Error. (Request ID: Root=1-69f9c0f2-3c5ca3b8377b63300745192f;415a2b2d-0629-4da0-b870-68390a6e09e2)
+
+Entry Not Found for url: https://huggingface.co/datasets/ILSVRC/imagenet-1k/resolve/49e2ee26f3810fb5a7536bbf732a7b07389a47b5/imagenet-1k.py.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hilal/prjs/prj_gist/HyperEncoding/main_train.py", line 162, in <module>
+    main()
+    ~~~~^^
+  File "/home/hilal/prjs/prj_gist/HyperEncoding/main_train.py", line 67, in main
+    train_dataset, val_dataset, znorm = imagenet100(normalized = args.center)
+                                        ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hilal/prjs/prj_gist/HyperEncoding/data_loaders.py", line 181, in imagenet100
+    dataset = load_dataset("imagenet-1k", split="train")
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 1488, in load_dataset
+    builder_instance = load_dataset_builder(
+        path=path,
+    ...<10 lines>...
+        **config_kwargs,
+    )
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 1133, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+        path,
+    ...<5 lines>...
+        cache_dir=cache_dir,
+    )
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 999, in dataset_module_factory
+    return HubDatasetModuleFactory(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        path,
+        ^^^^^
+    ...<5 lines>...
+        use_exported_dataset_infos=use_exported_dataset_infos,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ).get_module()
+    ^
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 567, in __init__
+    increase_load_count(name)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 193, in increase_load_count
+    get_session().head(
+    ~~~~~~~~~~~~~~~~~~^
+        "/".join((config.S3_DATASETS_BUCKET_PREFIX, name, name + ".py")),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        headers={"User-Agent": get_datasets_user_agent()},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        timeout=3,
+        ^^^^^^^^^^
+    )
+    ^
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/requests/sessions.py", line 624, in head
+    return self.request("HEAD", url, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 95, in send
+    return super().send(request, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/home/hilal/miniconda3/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+KeyboardInterrupt
+nohup: ignoring input
+INFO:root:{'workers': 6, 'batch_size': 128, 'seed': 42, 'optim': 'sgd', 'suffix': '', 'dataset': 'imagenet100', 'model': 'sewresnet', 'time': 4, 'epochs': 200, 'lr': 0.1, 'device': '2', 'special': 'l2', 'beta': 0.0005, 'attack': '', 'eps': 8, 'bpmode': 'bptt', 'alpha': 2, 'steps': 4, 'encoding': 'rate', 'resume': False, 'TET': False, 'center': False}
+[2026-05-05 14:06:40,684][main_train.py][line:124][INFO] {'workers': 6, 'batch_size': 128, 'seed': 42, 'optim': 'sgd', 'suffix': '', 'dataset': 'imagenet100', 'model': 'sewresnet', 'time': 4, 'epochs': 200, 'lr': 0.1, 'device': '2', 'special': 'l2', 'beta': 0.0005, 'attack': '', 'eps': 8, 'bpmode': 'bptt', 'alpha': 2, 'steps': 4, 'encoding': 'rate', 'resume': False, 'TET': False, 'center': False}
+INFO:root:start training!
+[2026-05-05 14:06:40,684][main_train.py][line:136][INFO] start training!
+INFO:root:
+ Epoch:[0/200]	 loss=4273.52585	 acc=5.530
+[2026-05-05 14:25:49,932][main_train.py][line:140][INFO] 
+ Epoch:[0/200]	 loss=4273.52585	 acc=5.530
+5000.0
+INFO:root:Epoch:[0/200]	 Test acc=8.500
+
+[2026-05-05 14:26:03,388][main_train.py][line:143][INFO] Epoch:[0/200]	 Test acc=8.500
+
+INFO:root:Best Test acc=8.500
+
+[2026-05-05 14:26:04,132][main_train.py][line:158][INFO] Best Test acc=8.500
+
+Best accuracy: 8.500
+INFO:root:
+ Epoch:[1/200]	 loss=3761.64578	 acc=12.793
+[2026-05-05 14:44:53,942][main_train.py][line:140][INFO] 
+ Epoch:[1/200]	 loss=3761.64578	 acc=12.793
+5000.0
+INFO:root:Epoch:[1/200]	 Test acc=7.820
+
+[2026-05-05 14:45:07,304][main_train.py][line:143][INFO] Epoch:[1/200]	 Test acc=7.820
+
+INFO:root:Best Test acc=8.500
+
+[2026-05-05 14:45:07,679][main_train.py][line:158][INFO] Best Test acc=8.500
+
+Best accuracy: 8.500
+INFO:root:
+ Epoch:[2/200]	 loss=3452.76306	 acc=18.296
+[2026-05-05 15:03:56,977][main_train.py][line:140][INFO] 
+ Epoch:[2/200]	 loss=3452.76306	 acc=18.296
+5000.0
+INFO:root:Epoch:[2/200]	 Test acc=22.020
+
+[2026-05-05 15:04:10,366][main_train.py][line:143][INFO] Epoch:[2/200]	 Test acc=22.020
+
+INFO:root:Best Test acc=22.020
+
+[2026-05-05 15:04:11,005][main_train.py][line:158][INFO] Best Test acc=22.020
+
+Best accuracy: 22.020
+INFO:root:
+ Epoch:[3/200]	 loss=3237.49202	 acc=22.474
+[2026-05-05 15:22:59,806][main_train.py][line:140][INFO] 
+ Epoch:[3/200]	 loss=3237.49202	 acc=22.474
+5000.0
+INFO:root:Epoch:[3/200]	 Test acc=21.780
+
+[2026-05-05 15:23:13,185][main_train.py][line:143][INFO] Epoch:[3/200]	 Test acc=21.780
+
+INFO:root:Best Test acc=22.020
+
+[2026-05-05 15:23:13,546][main_train.py][line:158][INFO] Best Test acc=22.020
+
+Best accuracy: 22.020
