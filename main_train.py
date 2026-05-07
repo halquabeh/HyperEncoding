@@ -5,7 +5,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 from data_loaders import cifar10, cifar100, imagenet100, svhn, mnist, fashion_mnist
-from attacks import FGSM, PGD, GN, SEA
+from attacks import FGSM, PGD, GN, SEA, Retiming
 from functions import create_model, seed_all, BPTT_attack, BPTR_attack, get_logger
 from utils import train, val,generate_id
 
@@ -46,6 +46,16 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 if device.type == "cpu":
     raise RuntimeError("It's better to run on a GPU.")
+
+def retiming_norm(attack_name):
+    name = attack_name.lower().replace('-', '_')
+    if name in ['retiming_0', 'retiming_l0']:
+        return 'l0'
+    if name in ['retiming_1', 'retiming_l1']:
+        return 'l1'
+    if name in ['retiming_infty', 'retiming_inf', 'retiming_linf']:
+        return 'linf'
+    return None
 
 def main():
     global args
@@ -92,6 +102,7 @@ def main():
     else:
         ff = None
 
+    timing_norm = retiming_norm(args.attack)
     if args.attack.lower() == 'fgsm':
         atk = FGSM(model, device, forward_function=ff, eps=args.eps / 255, T=args.time, signed=args.center)
     elif args.attack.lower() == 'sea':
@@ -100,6 +111,8 @@ def main():
         atk = PGD(model, device, forward_function=ff, eps=args.eps / 255, alpha=args.alpha / 255, steps=args.steps, T=args.time, signed=args.center)
     elif args.attack.lower() == 'gn':
         atk = GN(model, device, eps=args.eps / 255, signed=args.center)
+    elif timing_norm is not None:
+        atk = Retiming(model, device, T=args.time, norm=timing_norm, eps=args.eps, steps=args.steps)
     else:
         atk = None
 

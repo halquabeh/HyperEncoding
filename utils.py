@@ -19,9 +19,12 @@ def _set_attack_model_encoding(model, enabled):
     if hasattr(model, "model_encode"):
         model.model_encode = enabled
 
+def _is_retiming_attack(atk):
+    return atk is not None and atk.__class__.__name__ == 'Retiming'
+
 def generate_id(args):
     identifier = f'model_{args.model}_encoding_{args.encoding}_Time_{args.time}'
-    if args.attack.lower() in ['fgsm','pgd','gn','sea']:
+    if args.attack.lower() in ['fgsm','pgd','gn','sea'] or args.attack.lower().startswith('retiming'):
         identifier += f'_atck_{args.attack}'
         identifier += '_eps_[%f]' %( args.eps)
     else:
@@ -67,7 +70,12 @@ def train(model, device, train_loader, criterion, optimizer, T, atk, beta, parse
         optimizer.zero_grad()
         labels = labels.to(device)
         images = images.to(device)
-        if atk is not None and atk.__class__.__name__ == 'SEA':
+        if _is_retiming_attack(atk):
+            atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
+            _set_attack_model_encoding(atk.model, False)
+            images = encoding_out(images, model.encoding, T)
+            images = atk(images, labels.to(device))
+        elif atk is not None and atk.__class__.__name__ == 'SEA':
             atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
             # images = rate_encode(images, T, model.encoding) 
             images = encoding_out(images,model.encoding,T)
@@ -111,7 +119,13 @@ def val(model, test_loader, device, T, atk=None):
     for batch_idx, (inputs, targets) in enumerate(test_loader):
         inputs = inputs.to(device)
    
-        if atk is not None and atk.__class__.__name__ == 'SEA':
+        if _is_retiming_attack(atk):
+            atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
+            _set_attack_model_encoding(atk.model, False)
+            inputs = encoding_out(inputs, model.encoding, T)
+            inputs = atk(inputs, targets.to(device))
+            _set_attack_model_encoding(atk.model, False)
+        elif atk is not None and atk.__class__.__name__ == 'SEA':
             atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
             # inputs = rate_encode(inputs, T, model.encoding)
             inputs = encoding_out(inputs,model.encoding,T)
@@ -136,6 +150,60 @@ def val(model, test_loader, device, T, atk=None):
     final_acc = 100 * correct / total
     print(total)
     return final_acc
+
+def val_foolrate(model, test_loader, device, T, atk=None):
+    clean_correct = 0
+    adv_correct = 0
+    fooled = 0
+    total = 0
+    model.eval()
+    for batch_idx, (inputs, targets) in enumerate(test_loader):
+        inputs = inputs.to(device)
+        labels = targets.to(device)
+
+        clean_inputs = encoding_out(inputs, model.encoding, T)
+        with torch.no_grad():
+            if T > 0:
+                clean_outputs = model(clean_inputs).mean(0)
+            else:
+                clean_outputs = model(clean_inputs)
+        clean_pred = clean_outputs.cpu().max(1)[1]
+
+        if _is_retiming_attack(atk):
+            atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
+            _set_attack_model_encoding(atk.model, False)
+            adv_inputs = atk(clean_inputs.clone(), labels)
+            _set_attack_model_encoding(atk.model, False)
+        elif atk is not None and atk.__class__.__name__ == 'SEA':
+            atk.set_model_training_mode(model_training=False, batchnorm_training=False, dropout_training=False)
+            adv_inputs = atk(clean_inputs.clone(), labels)
+        elif atk is not None:
+            _set_attack_model_encoding(atk.model, True)
+            adv_raw = atk(inputs, labels)
+            _set_attack_model_encoding(atk.model, False)
+            adv_inputs = encoding_out(adv_raw, model.encoding, T)
+        else:
+            adv_inputs = clean_inputs
+
+        with torch.no_grad():
+            if T > 0:
+                adv_outputs = model(adv_inputs).mean(0)
+            else:
+                adv_outputs = model(adv_inputs)
+        adv_pred = adv_outputs.cpu().max(1)[1]
+
+        clean_ok = clean_pred.eq(targets)
+        adv_ok = adv_pred.eq(targets)
+        total += float(targets.size(0))
+        clean_correct += float(clean_ok.sum().item())
+        adv_correct += float(adv_ok.sum().item())
+        fooled += float((clean_ok & (~adv_ok)).sum().item())
+
+    clean_acc = 100 * clean_correct / total
+    adv_acc = 100 * adv_correct / total
+    fool_rate = 100 * fooled / clean_correct if clean_correct > 0 else 0
+    print(total)
+    return clean_acc, adv_acc, fool_rate
 
 def smoothed(model, inputs, m):
 # rate-encodes the input for m times and returns the output

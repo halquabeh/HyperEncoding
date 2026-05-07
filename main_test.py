@@ -6,8 +6,8 @@ import torch
 import torch.nn as nn
 from data_loaders import cifar10, cifar100, imagenet100, svhn, mnist, fashion_mnist
 from functions import create_model, BPTT_attack, BPTR_attack, get_logger, seed_all
-from utils import train, val,generate_id
-from attacks import FGSM,PGD,GN,SEA
+from utils import train, val, val_foolrate,generate_id
+from attacks import FGSM, PGD, GN, SEA, Retiming
 parser = argparse.ArgumentParser()
 parser.add_argument('-j','--workers',default=8, type=int,metavar='N',help='number of data loading workers')
 parser.add_argument('-b','--batch_size',default=128, type=int,metavar='N',help='mini-batch size')
@@ -37,15 +37,26 @@ parser.add_argument('-enc','--encoding',default='const',type=str,help='encoding'
 parser.add_argument('--resume', action='store_true', help='resume training from checkpoint')
 parser.add_argument("--TET", action="store_true", help="Use TET loss during training")
 parser.add_argument("--center", action="store_true", help="Enable mean centerring for data")
-parser.add_argument('-id','--id',default='cifar10-checkpoints/vgg11_hypergeometric_T4_clean.pth',type=str,help='identifier of model to be test')
+parser.add_argument("--foolrate", action="store_true", help="Measure fooling rate over clean-correct samples")
+parser.add_argument('-id','--id',default='imagenet100-checkpoints/model_sewresnet_encoding_rate_Time_4_atck_clean.pth',type=str,help='identifier of model to be test')
 
 args = parser.parse_args()
-
+args.foolrate =True #set foolrate always true, that report all accuracies clean robust if any and foolrate if any
 os.environ["CUDA_VISIBLE_DEVICES"] = args.device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 if device.type == "cpu":
     raise RuntimeError("It's better to run on a GPU.")
+
+def retiming_norm(attack_name):
+    name = attack_name.lower().replace('-', '_')
+    if name in ['retiming_0', 'retiming_l0']:
+        return 'l0'
+    if name in ['retiming_1', 'retiming_l1']:
+        return 'l1'
+    if name in ['retiming_infty', 'retiming_inf', 'retiming_linf']:
+        return 'linf'
+    return None
 
 def main():
     global args
@@ -110,6 +121,7 @@ def main():
         ff = BPTR_attack
     else:
         ff = None
+    timing_norm = retiming_norm(args.attack)
     if args.attack.lower() == 'fgsm':
         atk = FGSM(model, device, forward_function=ff, eps=args.eps / 255, T=args.time, signed=args.center)
     elif args.attack.lower() == 'sea':
@@ -118,6 +130,8 @@ def main():
         atk = PGD(model, device, forward_function=ff, eps=args.eps / 255, alpha=args.alpha / 255, steps=args.steps, T=args.time, signed=args.center)
     elif args.attack.lower() == 'gn':
         atk = GN(model, device, eps=args.eps / 255, signed = args.center)
+    elif timing_norm is not None:
+        atk = Retiming(model, device, T=args.time, norm=timing_norm, eps=args.eps, steps=args.steps)
     elif args.attack.lower() == 'apgd_l1':
         print(f'APGD_L1,  model encoding:{model.encoding} , attack encoding: {atkmodel.atk_encoding} , eps={args.eps}')
         class TemporalMeanWrapper(nn.Module):
@@ -136,9 +150,18 @@ def main():
         atk = None
     logger.info('created attack instance!')  
     logger.info('start testing!')  
-    acc = val(model, test_loader, device, args.time, atk)
-    print('final Test Accu: ', acc)
-    logger.info(f'Final Test Accu: {acc}')
+    if args.foolrate:
+        clean_acc, adv_acc, fool_rate = val_foolrate(model, test_loader, device, args.time, atk)
+        print('Clean Accu: ', clean_acc)
+        print('Attack Accu: ', adv_acc)
+        print('Fooling Rate: ', fool_rate)
+        logger.info(f'Clean Accu: {clean_acc}')
+        logger.info(f'Attack Accu: {adv_acc}')
+        logger.info(f'Fooling Rate: {fool_rate}')
+    else:
+        acc = val(model, test_loader, device, args.time, atk)
+        print('final Test Accu: ', acc)
+        logger.info(f'Final Test Accu: {acc}')
 
 if __name__ == "__main__":
     main()

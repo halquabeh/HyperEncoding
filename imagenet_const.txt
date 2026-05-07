@@ -722,3 +722,2019 @@ INFO:root:Best Test acc=28.840
 
 5000.0
 Best accuracy: 28.840
+INFO:root:
+ Epoch:[5/200]	 loss=2797.24157	 acc=31.337
+[2026-05-05 15:59:29,663][main_train.py][line:140][INFO] 
+ Epoch:[5/200]	 loss=2797.24157	 acc=31.337
+INFO:root:Epoch:[5/200]	 Test acc=32.300
+
+[2026-05-05 15:59:43,174][main_train.py][line:143][INFO] Epoch:[5/200]	 Test acc=32.300
+
+INFO:root:Best Test acc=32.300
+
+[2026-05-05 15:59:43,896][main_train.py][line:158][INFO] Best Test acc=32.300
+
+5000.0
+Best accuracy: 32.300
+INFO:root:
+ Epoch:[6/200]	 loss=2679.32957	 acc=33.807
+[2026-05-05 16:18:40,495][main_train.py][line:140][INFO] 
+ Epoch:[6/200]	 loss=2679.32957	 acc=33.807
+INFO:root:Epoch:[6/200]	 Test acc=27.620
+
+[2026-05-05 16:18:54,074][main_train.py][line:143][INFO] Epoch:[6/200]	 Test acc=27.620
+
+INFO:root:Best Test acc=32.300
+
+[2026-05-05 16:18:54,451][main_train.py][line:158][INFO] Best Test acc=32.300
+
+5000.0
+Best accuracy: 32.300
+INFO:root:
+ Epoch:[7/200]	 loss=2578.51057	 acc=36.011
+[2026-05-05 16:37:51,015][main_train.py][line:140][INFO] 
+ Epoch:[7/200]	 loss=2578.51057	 acc=36.011
+INFO:root:Epoch:[7/200]	 Test acc=35.900
+
+[2026-05-05 16:38:04,560][main_train.py][line:143][INFO] Epoch:[7/200]	 Test acc=35.900
+
+INFO:root:Best Test acc=35.900
+
+[2026-05-05 16:38:05,317][main_train.py][line:158][INFO] Best Test acc=35.900
+
+5000.0
+Best accuracy: 35.900
+INFO:root:
+ Epoch:[8/200]	 loss=2503.59212	 acc=37.890
+[2026-05-05 16:57:01,610][main_train.py][line:140][INFO] 
+ Epoch:[8/200]	 loss=2503.59212	 acc=37.890
+INFO:root:Epoch:[8/200]	 Test acc=37.740
+
+[2026-05-05 16:57:15,122][main_train.py][line:143][INFO] Epoch:[8/200]	 Test acc=37.740
+
+INFO:root:Best Test acc=37.740
+
+[2026-05-05 16:57:15,873][main_train.py][line:158][INFO] Best Test acc=37.740
+
+5000.0
+Best accuracy: 37.740
+INFO:root:
+ Epoch:[9/200]	 loss=2434.78030	 acc=39.205
+[2026-05-05 17:16:11,840][main_train.py][line:140][INFO] 
+ Epoch:[9/200]	 loss=2434.78030	 acc=39.205
+INFO:root:Epoch:[9/200]	 Test acc=40.040
+
+[2026-05-05 17:16:25,343][main_train.py][line:143][INFO] Epoch:[9/200]	 Test acc=40.040
+
+INFO:root:Best Test acc=40.040
+
+[2026-05-05 17:16:26,213][main_train.py][line:158][INFO] Best Test acc=40.040
+
+5000.0
+Best accuracy: 40.040
+INFO:root:
+ Epoch:[10/200]	 loss=2395.12559	 acc=40.080
+[2026-05-05 17:35:21,897][main_train.py][line:140][INFO] 
+ Epoch:[10/200]	 loss=2395.12559	 acc=40.080
+INFO:root:Epoch:[10/200]	 Test acc=40.940
+
+[2026-05-05 17:35:35,414][main_train.py][line:143][INFO] Epoch:[10/200]	 Test acc=40.940
+
+INFO:root:Best Test acc=40.940
+
+[2026-05-05 17:35:36,160][main_train.py][line:158][INFO] Best Test acc=40.940
+
+5000.0
+Best accuracy: 40.940
+INFO:root:
+ Epoch:[11/200]	 loss=2379.15581	 acc=40.542
+[2026-05-05 17:54:32,039][main_train.py][line:140][INFO] 
+ Epoch:[11/200]	 loss=2379.15581	 acc=40.542
+INFO:root:Epoch:[11/200]	 Test acc=39.300
+
+[2026-05-05 17:54:45,554][main_train.py][line:143][INFO] Epoch:[11/200]	 Test acc=39.300
+
+INFO:root:Best Test acc=40.940
+
+[2026-05-05 17:54:45,964][main_train.py][line:158][INFO] Best Test acc=40.940
+
+5000.0
+Best accuracy: 40.940
+INFO:root:
+ Epoch:[12/200]	 loss=2336.81687	 acc=41.455
+[2026-05-05 18:13:41,877][main_train.py][line:140][INFO] 
+ Epoch:[12/200]	 loss=2336.81687	 acc=41.455
+INFO:root:Epoch:[12/200]	 Test acc=41.520
+
+[2026-05-05 18:13:55,358][main_train.py][line:143][INFO] Epoch:[12/200]	 Test acc=41.520
+
+INFO:root:Best Test acc=41.520
+
+[2026-05-05 18:13:56,125][main_train.py][line:158][INFO] Best Test acc=41.520
+
+5000.0
+Best accuracy: 41.520
+INFO:root:
+ Epoch:[13/200]	 loss=2308.62830	 acc=42.245
+[2026-05-05 18:32:51,623][main_train.py][line:140][INFO] 
+ Epoch:[13/200]	 loss=2308.62830	 acc=42.245
+INFO:root:Epoch:[13/200]	 Test acc=38.140
+
+[2026-05-05 18:33:05,093][main_train.py][line:143][INFO] Epoch:[13/200]	 Test acc=38.140
+
+INFO:root:Best Test acc=41.520
+
+[2026-05-05 18:33:05,489][main_train.py][line:158][INFO] Best Test acc=41.520
+
+5000.0
+Best accuracy: 41.520
+INFO:root:
+ Epoch:[14/200]	 loss=2288.40769	 acc=42.384
+[2026-05-05 18:52:00,702][main_train.py][line:140][INFO] 
+ Epoch:[14/200]	 loss=2288.40769	 acc=42.384
+INFO:root:Epoch:[14/200]	 Test acc=44.360
+
+[2026-05-05 18:52:14,305][main_train.py][line:143][INFO] Epoch:[14/200]	 Test acc=44.360
+
+INFO:root:Best Test acc=44.360
+
+[2026-05-05 18:52:15,042][main_train.py][line:158][INFO] Best Test acc=44.360
+
+5000.0
+Best accuracy: 44.360
+INFO:root:
+ Epoch:[15/200]	 loss=2286.00895	 acc=42.609
+[2026-05-05 19:11:10,106][main_train.py][line:140][INFO] 
+ Epoch:[15/200]	 loss=2286.00895	 acc=42.609
+INFO:root:Epoch:[15/200]	 Test acc=44.800
+
+[2026-05-05 19:11:23,587][main_train.py][line:143][INFO] Epoch:[15/200]	 Test acc=44.800
+
+INFO:root:Best Test acc=44.800
+
+[2026-05-05 19:11:24,319][main_train.py][line:158][INFO] Best Test acc=44.800
+
+5000.0
+Best accuracy: 44.800
+INFO:root:
+ Epoch:[16/200]	 loss=2269.93411	 acc=42.977
+[2026-05-05 19:30:19,034][main_train.py][line:140][INFO] 
+ Epoch:[16/200]	 loss=2269.93411	 acc=42.977
+INFO:root:Epoch:[16/200]	 Test acc=41.300
+
+[2026-05-05 19:30:32,526][main_train.py][line:143][INFO] Epoch:[16/200]	 Test acc=41.300
+
+INFO:root:Best Test acc=44.800
+
+[2026-05-05 19:30:32,897][main_train.py][line:158][INFO] Best Test acc=44.800
+
+5000.0
+Best accuracy: 44.800
+INFO:root:
+ Epoch:[17/200]	 loss=2269.89381	 acc=43.022
+[2026-05-05 19:49:27,540][main_train.py][line:140][INFO] 
+ Epoch:[17/200]	 loss=2269.89381	 acc=43.022
+INFO:root:Epoch:[17/200]	 Test acc=41.600
+
+[2026-05-05 19:49:41,057][main_train.py][line:143][INFO] Epoch:[17/200]	 Test acc=41.600
+
+INFO:root:Best Test acc=44.800
+
+[2026-05-05 19:49:41,469][main_train.py][line:158][INFO] Best Test acc=44.800
+
+5000.0
+Best accuracy: 44.800
+INFO:root:
+ Epoch:[18/200]	 loss=2249.36059	 acc=43.446
+[2026-05-05 20:08:35,996][main_train.py][line:140][INFO] 
+ Epoch:[18/200]	 loss=2249.36059	 acc=43.446
+INFO:root:Epoch:[18/200]	 Test acc=40.460
+
+[2026-05-05 20:08:49,508][main_train.py][line:143][INFO] Epoch:[18/200]	 Test acc=40.460
+
+INFO:root:Best Test acc=44.800
+
+[2026-05-05 20:08:49,909][main_train.py][line:158][INFO] Best Test acc=44.800
+
+5000.0
+Best accuracy: 44.800
+INFO:root:
+ Epoch:[19/200]	 loss=2245.96663	 acc=43.375
+[2026-05-05 20:27:44,083][main_train.py][line:140][INFO] 
+ Epoch:[19/200]	 loss=2245.96663	 acc=43.375
+INFO:root:Epoch:[19/200]	 Test acc=39.220
+
+[2026-05-05 20:27:57,625][main_train.py][line:143][INFO] Epoch:[19/200]	 Test acc=39.220
+
+INFO:root:Best Test acc=44.800
+
+[2026-05-05 20:27:58,024][main_train.py][line:158][INFO] Best Test acc=44.800
+
+5000.0
+Best accuracy: 44.800
+INFO:root:
+ Epoch:[20/200]	 loss=2232.14481	 acc=43.837
+[2026-05-05 20:46:51,992][main_train.py][line:140][INFO] 
+ Epoch:[20/200]	 loss=2232.14481	 acc=43.837
+INFO:root:Epoch:[20/200]	 Test acc=35.980
+
+[2026-05-05 20:47:05,467][main_train.py][line:143][INFO] Epoch:[20/200]	 Test acc=35.980
+
+INFO:root:Best Test acc=44.800
+
+[2026-05-05 20:47:05,862][main_train.py][line:158][INFO] Best Test acc=44.800
+
+5000.0
+Best accuracy: 44.800
+INFO:root:
+ Epoch:[21/200]	 loss=2234.46875	 acc=43.846
+[2026-05-05 21:05:59,525][main_train.py][line:140][INFO] 
+ Epoch:[21/200]	 loss=2234.46875	 acc=43.846
+INFO:root:Epoch:[21/200]	 Test acc=40.120
+
+[2026-05-05 21:06:13,021][main_train.py][line:143][INFO] Epoch:[21/200]	 Test acc=40.120
+
+INFO:root:Best Test acc=44.800
+
+[2026-05-05 21:06:13,411][main_train.py][line:158][INFO] Best Test acc=44.800
+
+5000.0
+Best accuracy: 44.800
+INFO:root:
+ Epoch:[22/200]	 loss=2220.25422	 acc=44.108
+[2026-05-05 21:25:06,972][main_train.py][line:140][INFO] 
+ Epoch:[22/200]	 loss=2220.25422	 acc=44.108
+INFO:root:Epoch:[22/200]	 Test acc=46.240
+
+[2026-05-05 21:25:20,478][main_train.py][line:143][INFO] Epoch:[22/200]	 Test acc=46.240
+
+INFO:root:Best Test acc=46.240
+
+[2026-05-05 21:25:21,223][main_train.py][line:158][INFO] Best Test acc=46.240
+
+5000.0
+Best accuracy: 46.240
+INFO:root:
+ Epoch:[23/200]	 loss=2216.97775	 acc=44.288
+[2026-05-05 21:44:14,970][main_train.py][line:140][INFO] 
+ Epoch:[23/200]	 loss=2216.97775	 acc=44.288
+INFO:root:Epoch:[23/200]	 Test acc=38.820
+
+[2026-05-05 21:44:28,476][main_train.py][line:143][INFO] Epoch:[23/200]	 Test acc=38.820
+
+INFO:root:Best Test acc=46.240
+
+[2026-05-05 21:44:28,853][main_train.py][line:158][INFO] Best Test acc=46.240
+
+5000.0
+Best accuracy: 46.240
+INFO:root:
+ Epoch:[24/200]	 loss=2223.48297	 acc=44.050
+[2026-05-05 22:03:22,985][main_train.py][line:140][INFO] 
+ Epoch:[24/200]	 loss=2223.48297	 acc=44.050
+INFO:root:Epoch:[24/200]	 Test acc=38.960
+
+[2026-05-05 22:03:36,542][main_train.py][line:143][INFO] Epoch:[24/200]	 Test acc=38.960
+
+INFO:root:Best Test acc=46.240
+
+[2026-05-05 22:03:36,900][main_train.py][line:158][INFO] Best Test acc=46.240
+
+5000.0
+Best accuracy: 46.240
+INFO:root:
+ Epoch:[25/200]	 loss=2213.93707	 acc=44.271
+[2026-05-05 22:22:35,764][main_train.py][line:140][INFO] 
+ Epoch:[25/200]	 loss=2213.93707	 acc=44.271
+INFO:root:Epoch:[25/200]	 Test acc=48.320
+
+[2026-05-05 22:22:49,301][main_train.py][line:143][INFO] Epoch:[25/200]	 Test acc=48.320
+
+INFO:root:Best Test acc=48.320
+
+[2026-05-05 22:22:50,079][main_train.py][line:158][INFO] Best Test acc=48.320
+
+5000.0
+Best accuracy: 48.320
+INFO:root:
+ Epoch:[26/200]	 loss=2207.49743	 acc=44.499
+[2026-05-05 22:41:44,448][main_train.py][line:140][INFO] 
+ Epoch:[26/200]	 loss=2207.49743	 acc=44.499
+INFO:root:Epoch:[26/200]	 Test acc=47.700
+
+[2026-05-05 22:41:57,958][main_train.py][line:143][INFO] Epoch:[26/200]	 Test acc=47.700
+
+INFO:root:Best Test acc=48.320
+
+[2026-05-05 22:41:58,340][main_train.py][line:158][INFO] Best Test acc=48.320
+
+5000.0
+Best accuracy: 48.320
+INFO:root:
+ Epoch:[27/200]	 loss=2192.78904	 acc=44.967
+[2026-05-05 23:00:52,801][main_train.py][line:140][INFO] 
+ Epoch:[27/200]	 loss=2192.78904	 acc=44.967
+INFO:root:Epoch:[27/200]	 Test acc=41.460
+
+[2026-05-05 23:01:06,294][main_train.py][line:143][INFO] Epoch:[27/200]	 Test acc=41.460
+
+INFO:root:Best Test acc=48.320
+
+[2026-05-05 23:01:06,673][main_train.py][line:158][INFO] Best Test acc=48.320
+
+5000.0
+Best accuracy: 48.320
+INFO:root:
+ Epoch:[28/200]	 loss=2189.06878	 acc=44.971
+[2026-05-05 23:20:00,504][main_train.py][line:140][INFO] 
+ Epoch:[28/200]	 loss=2189.06878	 acc=44.971
+INFO:root:Epoch:[28/200]	 Test acc=45.920
+
+[2026-05-05 23:20:14,017][main_train.py][line:143][INFO] Epoch:[28/200]	 Test acc=45.920
+
+INFO:root:Best Test acc=48.320
+
+[2026-05-05 23:20:14,383][main_train.py][line:158][INFO] Best Test acc=48.320
+
+5000.0
+Best accuracy: 48.320
+INFO:root:
+ Epoch:[29/200]	 loss=2191.62906	 acc=44.832
+[2026-05-05 23:39:08,583][main_train.py][line:140][INFO] 
+ Epoch:[29/200]	 loss=2191.62906	 acc=44.832
+INFO:root:Epoch:[29/200]	 Test acc=47.980
+
+[2026-05-05 23:39:22,103][main_train.py][line:143][INFO] Epoch:[29/200]	 Test acc=47.980
+
+INFO:root:Best Test acc=48.320
+
+[2026-05-05 23:39:22,471][main_train.py][line:158][INFO] Best Test acc=48.320
+
+5000.0
+Best accuracy: 48.320
+INFO:root:
+ Epoch:[30/200]	 loss=2183.70601	 acc=45.210
+[2026-05-05 23:58:16,504][main_train.py][line:140][INFO] 
+ Epoch:[30/200]	 loss=2183.70601	 acc=45.210
+INFO:root:Epoch:[30/200]	 Test acc=46.400
+
+[2026-05-05 23:58:30,001][main_train.py][line:143][INFO] Epoch:[30/200]	 Test acc=46.400
+
+INFO:root:Best Test acc=48.320
+
+[2026-05-05 23:58:30,371][main_train.py][line:158][INFO] Best Test acc=48.320
+
+5000.0
+Best accuracy: 48.320
+INFO:root:
+ Epoch:[31/200]	 loss=2182.49882	 acc=45.140
+[2026-05-06 00:17:24,620][main_train.py][line:140][INFO] 
+ Epoch:[31/200]	 loss=2182.49882	 acc=45.140
+INFO:root:Epoch:[31/200]	 Test acc=27.680
+
+[2026-05-06 00:17:38,112][main_train.py][line:143][INFO] Epoch:[31/200]	 Test acc=27.680
+
+INFO:root:Best Test acc=48.320
+
+[2026-05-06 00:17:38,481][main_train.py][line:158][INFO] Best Test acc=48.320
+
+5000.0
+Best accuracy: 48.320
+INFO:root:
+ Epoch:[32/200]	 loss=2182.13833	 acc=45.145
+[2026-05-06 00:36:33,134][main_train.py][line:140][INFO] 
+ Epoch:[32/200]	 loss=2182.13833	 acc=45.145
+INFO:root:Epoch:[32/200]	 Test acc=37.340
+
+[2026-05-06 00:36:46,632][main_train.py][line:143][INFO] Epoch:[32/200]	 Test acc=37.340
+
+INFO:root:Best Test acc=48.320
+
+[2026-05-06 00:36:47,015][main_train.py][line:158][INFO] Best Test acc=48.320
+
+5000.0
+Best accuracy: 48.320
+INFO:root:
+ Epoch:[33/200]	 loss=2174.30429	 acc=45.322
+[2026-05-06 00:55:41,174][main_train.py][line:140][INFO] 
+ Epoch:[33/200]	 loss=2174.30429	 acc=45.322
+INFO:root:Epoch:[33/200]	 Test acc=38.420
+
+[2026-05-06 00:55:54,705][main_train.py][line:143][INFO] Epoch:[33/200]	 Test acc=38.420
+
+INFO:root:Best Test acc=48.320
+
+[2026-05-06 00:55:55,094][main_train.py][line:158][INFO] Best Test acc=48.320
+
+5000.0
+Best accuracy: 48.320
+INFO:root:
+ Epoch:[34/200]	 loss=2165.83627	 acc=45.401
+[2026-05-06 01:14:49,429][main_train.py][line:140][INFO] 
+ Epoch:[34/200]	 loss=2165.83627	 acc=45.401
+INFO:root:Epoch:[34/200]	 Test acc=42.700
+
+[2026-05-06 01:15:02,939][main_train.py][line:143][INFO] Epoch:[34/200]	 Test acc=42.700
+
+INFO:root:Best Test acc=48.320
+
+[2026-05-06 01:15:03,310][main_train.py][line:158][INFO] Best Test acc=48.320
+
+5000.0
+Best accuracy: 48.320
+INFO:root:
+ Epoch:[35/200]	 loss=2172.35589	 acc=45.302
+[2026-05-06 01:33:57,446][main_train.py][line:140][INFO] 
+ Epoch:[35/200]	 loss=2172.35589	 acc=45.302
+INFO:root:Epoch:[35/200]	 Test acc=44.040
+
+[2026-05-06 01:34:10,964][main_train.py][line:143][INFO] Epoch:[35/200]	 Test acc=44.040
+
+INFO:root:Best Test acc=48.320
+
+[2026-05-06 01:34:11,362][main_train.py][line:158][INFO] Best Test acc=48.320
+
+5000.0
+Best accuracy: 48.320
+INFO:root:
+ Epoch:[36/200]	 loss=2179.13015	 acc=45.190
+[2026-05-06 01:53:05,500][main_train.py][line:140][INFO] 
+ Epoch:[36/200]	 loss=2179.13015	 acc=45.190
+INFO:root:Epoch:[36/200]	 Test acc=44.020
+
+[2026-05-06 01:53:18,996][main_train.py][line:143][INFO] Epoch:[36/200]	 Test acc=44.020
+
+INFO:root:Best Test acc=48.320
+
+[2026-05-06 01:53:19,371][main_train.py][line:158][INFO] Best Test acc=48.320
+
+5000.0
+Best accuracy: 48.320
+INFO:root:
+ Epoch:[37/200]	 loss=2176.60946	 acc=45.390
+[2026-05-06 02:12:13,132][main_train.py][line:140][INFO] 
+ Epoch:[37/200]	 loss=2176.60946	 acc=45.390
+INFO:root:Epoch:[37/200]	 Test acc=42.920
+
+[2026-05-06 02:12:26,617][main_train.py][line:143][INFO] Epoch:[37/200]	 Test acc=42.920
+
+INFO:root:Best Test acc=48.320
+
+[2026-05-06 02:12:26,990][main_train.py][line:158][INFO] Best Test acc=48.320
+
+5000.0
+Best accuracy: 48.320
+INFO:root:
+ Epoch:[38/200]	 loss=2183.41002	 acc=45.249
+[2026-05-06 02:31:20,785][main_train.py][line:140][INFO] 
+ Epoch:[38/200]	 loss=2183.41002	 acc=45.249
+INFO:root:Epoch:[38/200]	 Test acc=46.280
+
+[2026-05-06 02:31:34,346][main_train.py][line:143][INFO] Epoch:[38/200]	 Test acc=46.280
+
+INFO:root:Best Test acc=48.320
+
+[2026-05-06 02:31:34,716][main_train.py][line:158][INFO] Best Test acc=48.320
+
+5000.0
+Best accuracy: 48.320
+INFO:root:
+ Epoch:[39/200]	 loss=2182.13394	 acc=44.972
+[2026-05-06 02:50:28,582][main_train.py][line:140][INFO] 
+ Epoch:[39/200]	 loss=2182.13394	 acc=44.972
+INFO:root:Epoch:[39/200]	 Test acc=34.820
+
+[2026-05-06 02:50:42,106][main_train.py][line:143][INFO] Epoch:[39/200]	 Test acc=34.820
+
+INFO:root:Best Test acc=48.320
+
+[2026-05-06 02:50:42,489][main_train.py][line:158][INFO] Best Test acc=48.320
+
+5000.0
+Best accuracy: 48.320
+INFO:root:
+ Epoch:[40/200]	 loss=2186.95108	 acc=45.058
+[2026-05-06 03:09:36,692][main_train.py][line:140][INFO] 
+ Epoch:[40/200]	 loss=2186.95108	 acc=45.058
+INFO:root:Epoch:[40/200]	 Test acc=42.040
+
+[2026-05-06 03:09:50,161][main_train.py][line:143][INFO] Epoch:[40/200]	 Test acc=42.040
+
+INFO:root:Best Test acc=48.320
+
+[2026-05-06 03:09:50,558][main_train.py][line:158][INFO] Best Test acc=48.320
+
+5000.0
+Best accuracy: 48.320
+INFO:root:
+ Epoch:[41/200]	 loss=2174.62653	 acc=45.300
+[2026-05-06 03:28:44,283][main_train.py][line:140][INFO] 
+ Epoch:[41/200]	 loss=2174.62653	 acc=45.300
+INFO:root:Epoch:[41/200]	 Test acc=48.640
+
+[2026-05-06 03:28:57,753][main_train.py][line:143][INFO] Epoch:[41/200]	 Test acc=48.640
+
+INFO:root:Best Test acc=48.640
+
+[2026-05-06 03:28:58,495][main_train.py][line:158][INFO] Best Test acc=48.640
+
+5000.0
+Best accuracy: 48.640
+INFO:root:
+ Epoch:[42/200]	 loss=2173.12746	 acc=45.216
+[2026-05-06 03:47:52,767][main_train.py][line:140][INFO] 
+ Epoch:[42/200]	 loss=2173.12746	 acc=45.216
+INFO:root:Epoch:[42/200]	 Test acc=45.780
+
+[2026-05-06 03:48:06,271][main_train.py][line:143][INFO] Epoch:[42/200]	 Test acc=45.780
+
+INFO:root:Best Test acc=48.640
+
+[2026-05-06 03:48:06,657][main_train.py][line:158][INFO] Best Test acc=48.640
+
+5000.0
+Best accuracy: 48.640
+INFO:root:
+ Epoch:[43/200]	 loss=2175.84027	 acc=45.490
+[2026-05-06 04:07:01,189][main_train.py][line:140][INFO] 
+ Epoch:[43/200]	 loss=2175.84027	 acc=45.490
+INFO:root:Epoch:[43/200]	 Test acc=34.760
+
+[2026-05-06 04:07:14,680][main_train.py][line:143][INFO] Epoch:[43/200]	 Test acc=34.760
+
+INFO:root:Best Test acc=48.640
+
+[2026-05-06 04:07:15,110][main_train.py][line:158][INFO] Best Test acc=48.640
+
+5000.0
+Best accuracy: 48.640
+INFO:root:
+ Epoch:[44/200]	 loss=2201.46843	 acc=44.800
+[2026-05-06 04:26:09,435][main_train.py][line:140][INFO] 
+ Epoch:[44/200]	 loss=2201.46843	 acc=44.800
+INFO:root:Epoch:[44/200]	 Test acc=45.200
+
+[2026-05-06 04:26:22,939][main_train.py][line:143][INFO] Epoch:[44/200]	 Test acc=45.200
+
+INFO:root:Best Test acc=48.640
+
+[2026-05-06 04:26:23,404][main_train.py][line:158][INFO] Best Test acc=48.640
+
+5000.0
+Best accuracy: 48.640
+INFO:root:
+ Epoch:[45/200]	 loss=2182.79417	 acc=45.258
+[2026-05-06 04:45:18,161][main_train.py][line:140][INFO] 
+ Epoch:[45/200]	 loss=2182.79417	 acc=45.258
+INFO:root:Epoch:[45/200]	 Test acc=43.960
+
+[2026-05-06 04:45:31,658][main_train.py][line:143][INFO] Epoch:[45/200]	 Test acc=43.960
+
+INFO:root:Best Test acc=48.640
+
+[2026-05-06 04:45:32,019][main_train.py][line:158][INFO] Best Test acc=48.640
+
+5000.0
+Best accuracy: 48.640
+INFO:root:
+ Epoch:[46/200]	 loss=2171.45922	 acc=45.574
+[2026-05-06 05:04:26,999][main_train.py][line:140][INFO] 
+ Epoch:[46/200]	 loss=2171.45922	 acc=45.574
+INFO:root:Epoch:[46/200]	 Test acc=35.920
+
+[2026-05-06 05:04:40,493][main_train.py][line:143][INFO] Epoch:[46/200]	 Test acc=35.920
+
+INFO:root:Best Test acc=48.640
+
+[2026-05-06 05:04:40,908][main_train.py][line:158][INFO] Best Test acc=48.640
+
+5000.0
+Best accuracy: 48.640
+INFO:root:
+ Epoch:[47/200]	 loss=2166.63472	 acc=45.462
+[2026-05-06 05:23:35,706][main_train.py][line:140][INFO] 
+ Epoch:[47/200]	 loss=2166.63472	 acc=45.462
+INFO:root:Epoch:[47/200]	 Test acc=51.520
+
+[2026-05-06 05:23:49,199][main_train.py][line:143][INFO] Epoch:[47/200]	 Test acc=51.520
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 05:23:49,928][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[48/200]	 loss=2162.28121	 acc=45.603
+[2026-05-06 05:42:44,663][main_train.py][line:140][INFO] 
+ Epoch:[48/200]	 loss=2162.28121	 acc=45.603
+INFO:root:Epoch:[48/200]	 Test acc=45.680
+
+[2026-05-06 05:42:58,175][main_train.py][line:143][INFO] Epoch:[48/200]	 Test acc=45.680
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 05:42:58,551][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[49/200]	 loss=2158.90709	 acc=45.735
+[2026-05-06 06:01:53,339][main_train.py][line:140][INFO] 
+ Epoch:[49/200]	 loss=2158.90709	 acc=45.735
+INFO:root:Epoch:[49/200]	 Test acc=46.260
+
+[2026-05-06 06:02:06,848][main_train.py][line:143][INFO] Epoch:[49/200]	 Test acc=46.260
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 06:02:07,227][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[50/200]	 loss=2160.24952	 acc=45.584
+[2026-05-06 06:21:02,410][main_train.py][line:140][INFO] 
+ Epoch:[50/200]	 loss=2160.24952	 acc=45.584
+INFO:root:Epoch:[50/200]	 Test acc=47.140
+
+[2026-05-06 06:21:15,978][main_train.py][line:143][INFO] Epoch:[50/200]	 Test acc=47.140
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 06:21:16,344][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[51/200]	 loss=2150.88480	 acc=45.955
+[2026-05-06 06:40:11,110][main_train.py][line:140][INFO] 
+ Epoch:[51/200]	 loss=2150.88480	 acc=45.955
+INFO:root:Epoch:[51/200]	 Test acc=49.160
+
+[2026-05-06 06:40:24,615][main_train.py][line:143][INFO] Epoch:[51/200]	 Test acc=49.160
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 06:40:25,032][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[52/200]	 loss=2143.11317	 acc=46.123
+[2026-05-06 06:59:19,852][main_train.py][line:140][INFO] 
+ Epoch:[52/200]	 loss=2143.11317	 acc=46.123
+INFO:root:Epoch:[52/200]	 Test acc=39.880
+
+[2026-05-06 06:59:33,320][main_train.py][line:143][INFO] Epoch:[52/200]	 Test acc=39.880
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 06:59:33,720][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[53/200]	 loss=2129.79980	 acc=46.469
+[2026-05-06 07:18:28,203][main_train.py][line:140][INFO] 
+ Epoch:[53/200]	 loss=2129.79980	 acc=46.469
+INFO:root:Epoch:[53/200]	 Test acc=45.740
+
+[2026-05-06 07:18:41,688][main_train.py][line:143][INFO] Epoch:[53/200]	 Test acc=45.740
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 07:18:42,051][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[54/200]	 loss=2136.57978	 acc=46.238
+[2026-05-06 07:37:36,717][main_train.py][line:140][INFO] 
+ Epoch:[54/200]	 loss=2136.57978	 acc=46.238
+INFO:root:Epoch:[54/200]	 Test acc=34.040
+
+[2026-05-06 07:37:50,219][main_train.py][line:143][INFO] Epoch:[54/200]	 Test acc=34.040
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 07:37:50,590][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[55/200]	 loss=2123.31700	 acc=46.525
+[2026-05-06 07:56:44,927][main_train.py][line:140][INFO] 
+ Epoch:[55/200]	 loss=2123.31700	 acc=46.525
+INFO:root:Epoch:[55/200]	 Test acc=43.520
+
+[2026-05-06 07:56:58,431][main_train.py][line:143][INFO] Epoch:[55/200]	 Test acc=43.520
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 07:56:58,814][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[56/200]	 loss=2140.14069	 acc=46.052
+[2026-05-06 08:15:53,025][main_train.py][line:140][INFO] 
+ Epoch:[56/200]	 loss=2140.14069	 acc=46.052
+INFO:root:Epoch:[56/200]	 Test acc=47.580
+
+[2026-05-06 08:16:06,512][main_train.py][line:143][INFO] Epoch:[56/200]	 Test acc=47.580
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 08:16:06,897][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[57/200]	 loss=2126.76286	 acc=46.728
+[2026-05-06 08:35:01,124][main_train.py][line:140][INFO] 
+ Epoch:[57/200]	 loss=2126.76286	 acc=46.728
+INFO:root:Epoch:[57/200]	 Test acc=46.960
+
+[2026-05-06 08:35:14,587][main_train.py][line:143][INFO] Epoch:[57/200]	 Test acc=46.960
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 08:35:14,962][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[58/200]	 loss=2123.04498	 acc=46.546
+[2026-05-06 08:54:09,100][main_train.py][line:140][INFO] 
+ Epoch:[58/200]	 loss=2123.04498	 acc=46.546
+INFO:root:Epoch:[58/200]	 Test acc=42.160
+
+[2026-05-06 08:54:22,583][main_train.py][line:143][INFO] Epoch:[58/200]	 Test acc=42.160
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 08:54:22,938][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[59/200]	 loss=2148.26702	 acc=45.922
+[2026-05-06 09:13:18,529][main_train.py][line:140][INFO] 
+ Epoch:[59/200]	 loss=2148.26702	 acc=45.922
+INFO:root:Epoch:[59/200]	 Test acc=41.540
+
+[2026-05-06 09:13:32,033][main_train.py][line:143][INFO] Epoch:[59/200]	 Test acc=41.540
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 09:13:32,434][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[60/200]	 loss=2129.33117	 acc=46.479
+[2026-05-06 09:32:27,017][main_train.py][line:140][INFO] 
+ Epoch:[60/200]	 loss=2129.33117	 acc=46.479
+INFO:root:Epoch:[60/200]	 Test acc=48.880
+
+[2026-05-06 09:32:40,524][main_train.py][line:143][INFO] Epoch:[60/200]	 Test acc=48.880
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 09:32:40,909][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[61/200]	 loss=2127.95937	 acc=46.367
+[2026-05-06 09:51:35,312][main_train.py][line:140][INFO] 
+ Epoch:[61/200]	 loss=2127.95937	 acc=46.367
+INFO:root:Epoch:[61/200]	 Test acc=47.280
+
+[2026-05-06 09:51:48,819][main_train.py][line:143][INFO] Epoch:[61/200]	 Test acc=47.280
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 09:51:49,198][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[62/200]	 loss=2133.39869	 acc=46.346
+[2026-05-06 10:10:44,043][main_train.py][line:140][INFO] 
+ Epoch:[62/200]	 loss=2133.39869	 acc=46.346
+INFO:root:Epoch:[62/200]	 Test acc=38.300
+
+[2026-05-06 10:10:57,535][main_train.py][line:143][INFO] Epoch:[62/200]	 Test acc=38.300
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 10:10:57,911][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[63/200]	 loss=2165.55597	 acc=45.591
+[2026-05-06 10:29:52,102][main_train.py][line:140][INFO] 
+ Epoch:[63/200]	 loss=2165.55597	 acc=45.591
+INFO:root:Epoch:[63/200]	 Test acc=37.220
+
+[2026-05-06 10:30:05,615][main_train.py][line:143][INFO] Epoch:[63/200]	 Test acc=37.220
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 10:30:05,995][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[64/200]	 loss=2159.69593	 acc=45.705
+[2026-05-06 10:49:00,606][main_train.py][line:140][INFO] 
+ Epoch:[64/200]	 loss=2159.69593	 acc=45.705
+INFO:root:Epoch:[64/200]	 Test acc=42.120
+
+[2026-05-06 10:49:14,083][main_train.py][line:143][INFO] Epoch:[64/200]	 Test acc=42.120
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 10:49:14,476][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[65/200]	 loss=2175.07922	 acc=45.505
+[2026-05-06 11:08:09,671][main_train.py][line:140][INFO] 
+ Epoch:[65/200]	 loss=2175.07922	 acc=45.505
+INFO:root:Epoch:[65/200]	 Test acc=36.720
+
+[2026-05-06 11:08:23,168][main_train.py][line:143][INFO] Epoch:[65/200]	 Test acc=36.720
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 11:08:23,569][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[66/200]	 loss=2149.63036	 acc=46.027
+[2026-05-06 11:27:18,349][main_train.py][line:140][INFO] 
+ Epoch:[66/200]	 loss=2149.63036	 acc=46.027
+INFO:root:Epoch:[66/200]	 Test acc=50.320
+
+[2026-05-06 11:27:31,866][main_train.py][line:143][INFO] Epoch:[66/200]	 Test acc=50.320
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 11:27:32,250][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[67/200]	 loss=2152.35132	 acc=46.010
+[2026-05-06 11:46:27,033][main_train.py][line:140][INFO] 
+ Epoch:[67/200]	 loss=2152.35132	 acc=46.010
+INFO:root:Epoch:[67/200]	 Test acc=49.420
+
+[2026-05-06 11:46:40,516][main_train.py][line:143][INFO] Epoch:[67/200]	 Test acc=49.420
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 11:46:40,890][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[68/200]	 loss=2148.12065	 acc=45.887
+[2026-05-06 12:05:36,233][main_train.py][line:140][INFO] 
+ Epoch:[68/200]	 loss=2148.12065	 acc=45.887
+INFO:root:Epoch:[68/200]	 Test acc=48.320
+
+[2026-05-06 12:05:49,749][main_train.py][line:143][INFO] Epoch:[68/200]	 Test acc=48.320
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 12:05:50,143][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[69/200]	 loss=2142.78218	 acc=46.198
+[2026-05-06 12:24:46,033][main_train.py][line:140][INFO] 
+ Epoch:[69/200]	 loss=2142.78218	 acc=46.198
+INFO:root:Epoch:[69/200]	 Test acc=46.400
+
+[2026-05-06 12:24:59,581][main_train.py][line:143][INFO] Epoch:[69/200]	 Test acc=46.400
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 12:24:59,961][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[70/200]	 loss=2165.65350	 acc=45.637
+[2026-05-06 12:43:55,356][main_train.py][line:140][INFO] 
+ Epoch:[70/200]	 loss=2165.65350	 acc=45.637
+INFO:root:Epoch:[70/200]	 Test acc=46.040
+
+[2026-05-06 12:44:08,836][main_train.py][line:143][INFO] Epoch:[70/200]	 Test acc=46.040
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 12:44:09,217][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[71/200]	 loss=2164.55959	 acc=45.695
+[2026-05-06 13:03:04,655][main_train.py][line:140][INFO] 
+ Epoch:[71/200]	 loss=2164.55959	 acc=45.695
+INFO:root:Epoch:[71/200]	 Test acc=42.960
+
+[2026-05-06 13:03:18,168][main_train.py][line:143][INFO] Epoch:[71/200]	 Test acc=42.960
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 13:03:18,557][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[72/200]	 loss=2186.08618	 acc=45.239
+[2026-05-06 13:22:13,611][main_train.py][line:140][INFO] 
+ Epoch:[72/200]	 loss=2186.08618	 acc=45.239
+INFO:root:Epoch:[72/200]	 Test acc=44.560
+
+[2026-05-06 13:22:27,091][main_train.py][line:143][INFO] Epoch:[72/200]	 Test acc=44.560
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 13:22:27,412][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[73/200]	 loss=2172.66417	 acc=45.465
+[2026-05-06 13:41:22,448][main_train.py][line:140][INFO] 
+ Epoch:[73/200]	 loss=2172.66417	 acc=45.465
+INFO:root:Epoch:[73/200]	 Test acc=37.940
+
+[2026-05-06 13:41:35,965][main_train.py][line:143][INFO] Epoch:[73/200]	 Test acc=37.940
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 13:41:36,291][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[74/200]	 loss=2157.21201	 acc=45.927
+[2026-05-06 14:00:31,493][main_train.py][line:140][INFO] 
+ Epoch:[74/200]	 loss=2157.21201	 acc=45.927
+INFO:root:Epoch:[74/200]	 Test acc=49.120
+
+[2026-05-06 14:00:44,995][main_train.py][line:143][INFO] Epoch:[74/200]	 Test acc=49.120
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 14:00:45,321][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[75/200]	 loss=2150.48639	 acc=46.125
+[2026-05-06 14:19:40,685][main_train.py][line:140][INFO] 
+ Epoch:[75/200]	 loss=2150.48639	 acc=46.125
+INFO:root:Epoch:[75/200]	 Test acc=49.620
+
+[2026-05-06 14:19:54,212][main_train.py][line:143][INFO] Epoch:[75/200]	 Test acc=49.620
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 14:19:54,551][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[76/200]	 loss=2154.35172	 acc=46.084
+[2026-05-06 14:38:50,243][main_train.py][line:140][INFO] 
+ Epoch:[76/200]	 loss=2154.35172	 acc=46.084
+INFO:root:Epoch:[76/200]	 Test acc=41.220
+
+[2026-05-06 14:39:03,754][main_train.py][line:143][INFO] Epoch:[76/200]	 Test acc=41.220
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 14:39:04,080][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[77/200]	 loss=2134.77197	 acc=46.316
+[2026-05-06 14:57:59,472][main_train.py][line:140][INFO] 
+ Epoch:[77/200]	 loss=2134.77197	 acc=46.316
+INFO:root:Epoch:[77/200]	 Test acc=38.920
+
+[2026-05-06 14:58:12,968][main_train.py][line:143][INFO] Epoch:[77/200]	 Test acc=38.920
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 14:58:13,303][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[78/200]	 loss=2123.60575	 acc=46.665
+[2026-05-06 15:17:08,519][main_train.py][line:140][INFO] 
+ Epoch:[78/200]	 loss=2123.60575	 acc=46.665
+INFO:root:Epoch:[78/200]	 Test acc=45.060
+
+[2026-05-06 15:17:22,025][main_train.py][line:143][INFO] Epoch:[78/200]	 Test acc=45.060
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 15:17:22,357][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[79/200]	 loss=2137.76861	 acc=46.287
+[2026-05-06 15:36:18,539][main_train.py][line:140][INFO] 
+ Epoch:[79/200]	 loss=2137.76861	 acc=46.287
+INFO:root:Epoch:[79/200]	 Test acc=48.540
+
+[2026-05-06 15:36:32,072][main_train.py][line:143][INFO] Epoch:[79/200]	 Test acc=48.540
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 15:36:32,412][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[80/200]	 loss=2118.52764	 acc=46.826
+[2026-05-06 15:55:27,669][main_train.py][line:140][INFO] 
+ Epoch:[80/200]	 loss=2118.52764	 acc=46.826
+INFO:root:Epoch:[80/200]	 Test acc=42.420
+
+[2026-05-06 15:55:41,155][main_train.py][line:143][INFO] Epoch:[80/200]	 Test acc=42.420
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 15:55:41,491][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[81/200]	 loss=2099.18671	 acc=47.171
+[2026-05-06 16:14:37,407][main_train.py][line:140][INFO] 
+ Epoch:[81/200]	 loss=2099.18671	 acc=47.171
+INFO:root:Epoch:[81/200]	 Test acc=47.540
+
+[2026-05-06 16:14:50,899][main_train.py][line:143][INFO] Epoch:[81/200]	 Test acc=47.540
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 16:14:51,236][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[82/200]	 loss=2080.76183	 acc=47.496
+[2026-05-06 16:33:46,754][main_train.py][line:140][INFO] 
+ Epoch:[82/200]	 loss=2080.76183	 acc=47.496
+INFO:root:Epoch:[82/200]	 Test acc=44.200
+
+[2026-05-06 16:34:00,271][main_train.py][line:143][INFO] Epoch:[82/200]	 Test acc=44.200
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 16:34:00,623][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[83/200]	 loss=2072.30250	 acc=47.662
+[2026-05-06 16:52:56,016][main_train.py][line:140][INFO] 
+ Epoch:[83/200]	 loss=2072.30250	 acc=47.662
+INFO:root:Epoch:[83/200]	 Test acc=48.700
+
+[2026-05-06 16:53:09,532][main_train.py][line:143][INFO] Epoch:[83/200]	 Test acc=48.700
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 16:53:09,868][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[84/200]	 loss=2070.02038	 acc=47.608
+[2026-05-06 17:12:04,981][main_train.py][line:140][INFO] 
+ Epoch:[84/200]	 loss=2070.02038	 acc=47.608
+INFO:root:Epoch:[84/200]	 Test acc=50.300
+
+[2026-05-06 17:12:18,507][main_train.py][line:143][INFO] Epoch:[84/200]	 Test acc=50.300
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 17:12:18,846][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[85/200]	 loss=2064.75152	 acc=47.966
+[2026-05-06 17:31:14,457][main_train.py][line:140][INFO] 
+ Epoch:[85/200]	 loss=2064.75152	 acc=47.966
+INFO:root:Epoch:[85/200]	 Test acc=48.200
+
+[2026-05-06 17:31:27,964][main_train.py][line:143][INFO] Epoch:[85/200]	 Test acc=48.200
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 17:31:28,290][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[86/200]	 loss=2040.98498	 acc=48.406
+[2026-05-06 17:50:23,871][main_train.py][line:140][INFO] 
+ Epoch:[86/200]	 loss=2040.98498	 acc=48.406
+INFO:root:Epoch:[86/200]	 Test acc=30.620
+
+[2026-05-06 17:50:37,357][main_train.py][line:143][INFO] Epoch:[86/200]	 Test acc=30.620
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 17:50:37,731][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[87/200]	 loss=2049.50952	 acc=48.131
+[2026-05-06 18:09:33,228][main_train.py][line:140][INFO] 
+ Epoch:[87/200]	 loss=2049.50952	 acc=48.131
+INFO:root:Epoch:[87/200]	 Test acc=49.600
+
+[2026-05-06 18:09:46,737][main_train.py][line:143][INFO] Epoch:[87/200]	 Test acc=49.600
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 18:09:47,117][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[88/200]	 loss=2041.53467	 acc=48.462
+[2026-05-06 18:28:42,736][main_train.py][line:140][INFO] 
+ Epoch:[88/200]	 loss=2041.53467	 acc=48.462
+INFO:root:Epoch:[88/200]	 Test acc=50.300
+
+[2026-05-06 18:28:56,238][main_train.py][line:143][INFO] Epoch:[88/200]	 Test acc=50.300
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 18:28:56,616][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[89/200]	 loss=2028.41277	 acc=48.823
+[2026-05-06 18:47:51,622][main_train.py][line:140][INFO] 
+ Epoch:[89/200]	 loss=2028.41277	 acc=48.823
+INFO:root:Epoch:[89/200]	 Test acc=47.560
+
+[2026-05-06 18:48:05,125][main_train.py][line:143][INFO] Epoch:[89/200]	 Test acc=47.560
+
+INFO:root:Best Test acc=51.520
+
+[2026-05-06 18:48:05,515][main_train.py][line:158][INFO] Best Test acc=51.520
+
+5000.0
+Best accuracy: 51.520
+INFO:root:
+ Epoch:[90/200]	 loss=2025.43259	 acc=48.655
+[2026-05-06 19:07:01,048][main_train.py][line:140][INFO] 
+ Epoch:[90/200]	 loss=2025.43259	 acc=48.655
+INFO:root:Epoch:[90/200]	 Test acc=51.940
+
+[2026-05-06 19:07:14,530][main_train.py][line:143][INFO] Epoch:[90/200]	 Test acc=51.940
+
+INFO:root:Best Test acc=51.940
+
+[2026-05-06 19:07:15,242][main_train.py][line:158][INFO] Best Test acc=51.940
+
+5000.0
+Best accuracy: 51.940
+INFO:root:
+ Epoch:[91/200]	 loss=2030.95026	 acc=48.634
+[2026-05-06 19:26:10,125][main_train.py][line:140][INFO] 
+ Epoch:[91/200]	 loss=2030.95026	 acc=48.634
+INFO:root:Epoch:[91/200]	 Test acc=50.840
+
+[2026-05-06 19:26:23,614][main_train.py][line:143][INFO] Epoch:[91/200]	 Test acc=50.840
+
+INFO:root:Best Test acc=51.940
+
+[2026-05-06 19:26:23,989][main_train.py][line:158][INFO] Best Test acc=51.940
+
+5000.0
+Best accuracy: 51.940
+INFO:root:
+ Epoch:[92/200]	 loss=2016.79671	 acc=48.976
+[2026-05-06 19:45:18,822][main_train.py][line:140][INFO] 
+ Epoch:[92/200]	 loss=2016.79671	 acc=48.976
+INFO:root:Epoch:[92/200]	 Test acc=45.940
+
+[2026-05-06 19:45:32,305][main_train.py][line:143][INFO] Epoch:[92/200]	 Test acc=45.940
+
+INFO:root:Best Test acc=51.940
+
+[2026-05-06 19:45:32,696][main_train.py][line:158][INFO] Best Test acc=51.940
+
+5000.0
+Best accuracy: 51.940
+INFO:root:
+ Epoch:[93/200]	 loss=1995.09641	 acc=49.524
+[2026-05-06 20:04:28,025][main_train.py][line:140][INFO] 
+ Epoch:[93/200]	 loss=1995.09641	 acc=49.524
+INFO:root:Epoch:[93/200]	 Test acc=50.680
+
+[2026-05-06 20:04:41,533][main_train.py][line:143][INFO] Epoch:[93/200]	 Test acc=50.680
+
+INFO:root:Best Test acc=51.940
+
+[2026-05-06 20:04:41,906][main_train.py][line:158][INFO] Best Test acc=51.940
+
+5000.0
+Best accuracy: 51.940
+INFO:root:
+ Epoch:[94/200]	 loss=1983.12312	 acc=49.735
+[2026-05-06 20:23:36,460][main_train.py][line:140][INFO] 
+ Epoch:[94/200]	 loss=1983.12312	 acc=49.735
+INFO:root:Epoch:[94/200]	 Test acc=40.300
+
+[2026-05-06 20:23:49,956][main_train.py][line:143][INFO] Epoch:[94/200]	 Test acc=40.300
+
+INFO:root:Best Test acc=51.940
+
+[2026-05-06 20:23:50,333][main_train.py][line:158][INFO] Best Test acc=51.940
+
+5000.0
+Best accuracy: 51.940
+INFO:root:
+ Epoch:[95/200]	 loss=1980.52824	 acc=49.805
+[2026-05-06 20:42:45,005][main_train.py][line:140][INFO] 
+ Epoch:[95/200]	 loss=1980.52824	 acc=49.805
+INFO:root:Epoch:[95/200]	 Test acc=48.700
+
+[2026-05-06 20:42:58,499][main_train.py][line:143][INFO] Epoch:[95/200]	 Test acc=48.700
+
+INFO:root:Best Test acc=51.940
+
+[2026-05-06 20:42:58,866][main_train.py][line:158][INFO] Best Test acc=51.940
+
+5000.0
+Best accuracy: 51.940
+INFO:root:
+ Epoch:[96/200]	 loss=1980.49752	 acc=49.673
+[2026-05-06 21:01:54,414][main_train.py][line:140][INFO] 
+ Epoch:[96/200]	 loss=1980.49752	 acc=49.673
+INFO:root:Epoch:[96/200]	 Test acc=48.500
+
+[2026-05-06 21:02:07,920][main_train.py][line:143][INFO] Epoch:[96/200]	 Test acc=48.500
+
+INFO:root:Best Test acc=51.940
+
+[2026-05-06 21:02:08,309][main_train.py][line:158][INFO] Best Test acc=51.940
+
+5000.0
+Best accuracy: 51.940
+INFO:root:
+ Epoch:[97/200]	 loss=1963.46612	 acc=50.208
+[2026-05-06 21:21:03,085][main_train.py][line:140][INFO] 
+ Epoch:[97/200]	 loss=1963.46612	 acc=50.208
+INFO:root:Epoch:[97/200]	 Test acc=52.960
+
+[2026-05-06 21:21:16,604][main_train.py][line:143][INFO] Epoch:[97/200]	 Test acc=52.960
+
+INFO:root:Best Test acc=52.960
+
+[2026-05-06 21:21:17,346][main_train.py][line:158][INFO] Best Test acc=52.960
+
+5000.0
+Best accuracy: 52.960
+INFO:root:
+ Epoch:[98/200]	 loss=1970.34475	 acc=50.015
+[2026-05-06 21:40:12,458][main_train.py][line:140][INFO] 
+ Epoch:[98/200]	 loss=1970.34475	 acc=50.015
+INFO:root:Epoch:[98/200]	 Test acc=49.180
+
+[2026-05-06 21:40:25,939][main_train.py][line:143][INFO] Epoch:[98/200]	 Test acc=49.180
+
+INFO:root:Best Test acc=52.960
+
+[2026-05-06 21:40:26,329][main_train.py][line:158][INFO] Best Test acc=52.960
+
+5000.0
+Best accuracy: 52.960
+INFO:root:
+ Epoch:[99/200]	 loss=1944.38614	 acc=50.582
+[2026-05-06 21:59:21,865][main_train.py][line:140][INFO] 
+ Epoch:[99/200]	 loss=1944.38614	 acc=50.582
+INFO:root:Epoch:[99/200]	 Test acc=47.360
+
+[2026-05-06 21:59:35,378][main_train.py][line:143][INFO] Epoch:[99/200]	 Test acc=47.360
+
+INFO:root:Best Test acc=52.960
+
+[2026-05-06 21:59:35,706][main_train.py][line:158][INFO] Best Test acc=52.960
+
+5000.0
+Best accuracy: 52.960
+INFO:root:
+ Epoch:[100/200]	 loss=1934.68810	 acc=50.693
+[2026-05-06 22:18:30,805][main_train.py][line:140][INFO] 
+ Epoch:[100/200]	 loss=1934.68810	 acc=50.693
+INFO:root:Epoch:[100/200]	 Test acc=39.900
+
+[2026-05-06 22:18:44,267][main_train.py][line:143][INFO] Epoch:[100/200]	 Test acc=39.900
+
+INFO:root:Best Test acc=52.960
+
+[2026-05-06 22:18:44,600][main_train.py][line:158][INFO] Best Test acc=52.960
+
+5000.0
+Best accuracy: 52.960
+INFO:root:
+ Epoch:[101/200]	 loss=1938.22182	 acc=50.769
+[2026-05-06 22:37:40,233][main_train.py][line:140][INFO] 
+ Epoch:[101/200]	 loss=1938.22182	 acc=50.769
+INFO:root:Epoch:[101/200]	 Test acc=53.140
+
+[2026-05-06 22:37:53,729][main_train.py][line:143][INFO] Epoch:[101/200]	 Test acc=53.140
+
+INFO:root:Best Test acc=53.140
+
+[2026-05-06 22:37:54,393][main_train.py][line:158][INFO] Best Test acc=53.140
+
+5000.0
+Best accuracy: 53.140
+INFO:root:
+ Epoch:[102/200]	 loss=1924.64904	 acc=51.067
+[2026-05-06 22:56:50,407][main_train.py][line:140][INFO] 
+ Epoch:[102/200]	 loss=1924.64904	 acc=51.067
+INFO:root:Epoch:[102/200]	 Test acc=49.240
+
+[2026-05-06 22:57:03,912][main_train.py][line:143][INFO] Epoch:[102/200]	 Test acc=49.240
+
+INFO:root:Best Test acc=53.140
+
+[2026-05-06 22:57:04,290][main_train.py][line:158][INFO] Best Test acc=53.140
+
+5000.0
+Best accuracy: 53.140
+INFO:root:
+ Epoch:[103/200]	 loss=1911.70947	 acc=51.387
+[2026-05-06 23:15:59,940][main_train.py][line:140][INFO] 
+ Epoch:[103/200]	 loss=1911.70947	 acc=51.387
+INFO:root:Epoch:[103/200]	 Test acc=54.360
+
+[2026-05-06 23:16:13,429][main_train.py][line:143][INFO] Epoch:[103/200]	 Test acc=54.360
+
+INFO:root:Best Test acc=54.360
+
+[2026-05-06 23:16:14,177][main_train.py][line:158][INFO] Best Test acc=54.360
+
+5000.0
+Best accuracy: 54.360
+INFO:root:
+ Epoch:[104/200]	 loss=1902.36077	 acc=51.558
+[2026-05-06 23:35:10,134][main_train.py][line:140][INFO] 
+ Epoch:[104/200]	 loss=1902.36077	 acc=51.558
+INFO:root:Epoch:[104/200]	 Test acc=55.640
+
+[2026-05-06 23:35:23,644][main_train.py][line:143][INFO] Epoch:[104/200]	 Test acc=55.640
+
+INFO:root:Best Test acc=55.640
+
+[2026-05-06 23:35:24,343][main_train.py][line:158][INFO] Best Test acc=55.640
+
+5000.0
+Best accuracy: 55.640
+INFO:root:
+ Epoch:[105/200]	 loss=1893.44985	 acc=51.745
+[2026-05-06 23:54:20,411][main_train.py][line:140][INFO] 
+ Epoch:[105/200]	 loss=1893.44985	 acc=51.745
+INFO:root:Epoch:[105/200]	 Test acc=53.580
+
+[2026-05-06 23:54:33,907][main_train.py][line:143][INFO] Epoch:[105/200]	 Test acc=53.580
+
+INFO:root:Best Test acc=55.640
+
+[2026-05-06 23:54:34,296][main_train.py][line:158][INFO] Best Test acc=55.640
+
+5000.0
+Best accuracy: 55.640
+INFO:root:
+ Epoch:[106/200]	 loss=1889.38827	 acc=51.825
+[2026-05-07 00:13:29,715][main_train.py][line:140][INFO] 
+ Epoch:[106/200]	 loss=1889.38827	 acc=51.825
+INFO:root:Epoch:[106/200]	 Test acc=48.480
+
+[2026-05-07 00:13:43,189][main_train.py][line:143][INFO] Epoch:[106/200]	 Test acc=48.480
+
+INFO:root:Best Test acc=55.640
+
+[2026-05-07 00:13:43,561][main_train.py][line:158][INFO] Best Test acc=55.640
+
+5000.0
+Best accuracy: 55.640
+INFO:root:
+ Epoch:[107/200]	 loss=1874.37589	 acc=52.278
+[2026-05-07 00:32:39,399][main_train.py][line:140][INFO] 
+ Epoch:[107/200]	 loss=1874.37589	 acc=52.278
+INFO:root:Epoch:[107/200]	 Test acc=55.140
+
+[2026-05-07 00:32:52,923][main_train.py][line:143][INFO] Epoch:[107/200]	 Test acc=55.140
+
+INFO:root:Best Test acc=55.640
+
+[2026-05-07 00:32:53,303][main_train.py][line:158][INFO] Best Test acc=55.640
+
+5000.0
+Best accuracy: 55.640
+INFO:root:
+ Epoch:[108/200]	 loss=1871.83141	 acc=52.307
+[2026-05-07 00:51:49,294][main_train.py][line:140][INFO] 
+ Epoch:[108/200]	 loss=1871.83141	 acc=52.307
+INFO:root:Epoch:[108/200]	 Test acc=54.360
+
+[2026-05-07 00:52:02,771][main_train.py][line:143][INFO] Epoch:[108/200]	 Test acc=54.360
+
+INFO:root:Best Test acc=55.640
+
+[2026-05-07 00:52:03,139][main_train.py][line:158][INFO] Best Test acc=55.640
+
+5000.0
+Best accuracy: 55.640
+INFO:root:
+ Epoch:[109/200]	 loss=1865.74591	 acc=52.393
+[2026-05-07 01:10:58,474][main_train.py][line:140][INFO] 
+ Epoch:[109/200]	 loss=1865.74591	 acc=52.393
+INFO:root:Epoch:[109/200]	 Test acc=51.080
+
+[2026-05-07 01:11:11,941][main_train.py][line:143][INFO] Epoch:[109/200]	 Test acc=51.080
+
+INFO:root:Best Test acc=55.640
+
+[2026-05-07 01:11:12,308][main_train.py][line:158][INFO] Best Test acc=55.640
+
+5000.0
+Best accuracy: 55.640
+INFO:root:
+ Epoch:[110/200]	 loss=1853.72010	 acc=52.697
+[2026-05-07 01:30:07,307][main_train.py][line:140][INFO] 
+ Epoch:[110/200]	 loss=1853.72010	 acc=52.697
+INFO:root:Epoch:[110/200]	 Test acc=53.860
+
+[2026-05-07 01:30:20,838][main_train.py][line:143][INFO] Epoch:[110/200]	 Test acc=53.860
+
+INFO:root:Best Test acc=55.640
+
+[2026-05-07 01:30:21,226][main_train.py][line:158][INFO] Best Test acc=55.640
+
+5000.0
+Best accuracy: 55.640
+INFO:root:
+ Epoch:[111/200]	 loss=1846.58069	 acc=52.913
+[2026-05-07 01:49:15,679][main_train.py][line:140][INFO] 
+ Epoch:[111/200]	 loss=1846.58069	 acc=52.913
+INFO:root:Epoch:[111/200]	 Test acc=52.900
+
+[2026-05-07 01:49:29,171][main_train.py][line:143][INFO] Epoch:[111/200]	 Test acc=52.900
+
+INFO:root:Best Test acc=55.640
+
+[2026-05-07 01:49:29,539][main_train.py][line:158][INFO] Best Test acc=55.640
+
+5000.0
+Best accuracy: 55.640
+INFO:root:
+ Epoch:[112/200]	 loss=1828.00003	 acc=53.223
+[2026-05-07 02:08:23,901][main_train.py][line:140][INFO] 
+ Epoch:[112/200]	 loss=1828.00003	 acc=53.223
+INFO:root:Epoch:[112/200]	 Test acc=51.460
+
+[2026-05-07 02:08:37,387][main_train.py][line:143][INFO] Epoch:[112/200]	 Test acc=51.460
+
+INFO:root:Best Test acc=55.640
+
+[2026-05-07 02:08:37,758][main_train.py][line:158][INFO] Best Test acc=55.640
+
+5000.0
+Best accuracy: 55.640
+INFO:root:
+ Epoch:[113/200]	 loss=1826.26117	 acc=53.205
+[2026-05-07 02:27:33,234][main_train.py][line:140][INFO] 
+ Epoch:[113/200]	 loss=1826.26117	 acc=53.205
+INFO:root:Epoch:[113/200]	 Test acc=56.100
+
+[2026-05-07 02:27:46,694][main_train.py][line:143][INFO] Epoch:[113/200]	 Test acc=56.100
+
+INFO:root:Best Test acc=56.100
+
+[2026-05-07 02:27:47,454][main_train.py][line:158][INFO] Best Test acc=56.100
+
+5000.0
+Best accuracy: 56.100
+INFO:root:
+ Epoch:[114/200]	 loss=1807.26888	 acc=53.935
+[2026-05-07 02:46:42,436][main_train.py][line:140][INFO] 
+ Epoch:[114/200]	 loss=1807.26888	 acc=53.935
+INFO:root:Epoch:[114/200]	 Test acc=54.500
+
+[2026-05-07 02:46:55,932][main_train.py][line:143][INFO] Epoch:[114/200]	 Test acc=54.500
+
+INFO:root:Best Test acc=56.100
+
+[2026-05-07 02:46:56,336][main_train.py][line:158][INFO] Best Test acc=56.100
+
+5000.0
+Best accuracy: 56.100
+INFO:root:
+ Epoch:[115/200]	 loss=1808.76990	 acc=53.684
+[2026-05-07 03:05:51,273][main_train.py][line:140][INFO] 
+ Epoch:[115/200]	 loss=1808.76990	 acc=53.684
+INFO:root:Epoch:[115/200]	 Test acc=58.440
+
+[2026-05-07 03:06:04,760][main_train.py][line:143][INFO] Epoch:[115/200]	 Test acc=58.440
+
+INFO:root:Best Test acc=58.440
+
+[2026-05-07 03:06:05,531][main_train.py][line:158][INFO] Best Test acc=58.440
+
+5000.0
+Best accuracy: 58.440
+INFO:root:
+ Epoch:[116/200]	 loss=1794.57042	 acc=54.134
+[2026-05-07 03:25:00,645][main_train.py][line:140][INFO] 
+ Epoch:[116/200]	 loss=1794.57042	 acc=54.134
+INFO:root:Epoch:[116/200]	 Test acc=54.880
+
+[2026-05-07 03:25:14,129][main_train.py][line:143][INFO] Epoch:[116/200]	 Test acc=54.880
+
+INFO:root:Best Test acc=58.440
+
+[2026-05-07 03:25:14,514][main_train.py][line:158][INFO] Best Test acc=58.440
+
+5000.0
+Best accuracy: 58.440
+INFO:root:
+ Epoch:[117/200]	 loss=1776.88463	 acc=54.473
+[2026-05-07 03:44:09,470][main_train.py][line:140][INFO] 
+ Epoch:[117/200]	 loss=1776.88463	 acc=54.473
+INFO:root:Epoch:[117/200]	 Test acc=56.600
+
+[2026-05-07 03:44:22,975][main_train.py][line:143][INFO] Epoch:[117/200]	 Test acc=56.600
+
+INFO:root:Best Test acc=58.440
+
+[2026-05-07 03:44:23,345][main_train.py][line:158][INFO] Best Test acc=58.440
+
+5000.0
+Best accuracy: 58.440
+INFO:root:
+ Epoch:[118/200]	 loss=1785.11324	 acc=54.236
+[2026-05-07 04:03:18,508][main_train.py][line:140][INFO] 
+ Epoch:[118/200]	 loss=1785.11324	 acc=54.236
+INFO:root:Epoch:[118/200]	 Test acc=47.300
+
+[2026-05-07 04:03:32,022][main_train.py][line:143][INFO] Epoch:[118/200]	 Test acc=47.300
+
+INFO:root:Best Test acc=58.440
+
+[2026-05-07 04:03:32,407][main_train.py][line:158][INFO] Best Test acc=58.440
+
+5000.0
+Best accuracy: 58.440
+INFO:root:
+ Epoch:[119/200]	 loss=1760.89724	 acc=54.729
+[2026-05-07 04:22:27,546][main_train.py][line:140][INFO] 
+ Epoch:[119/200]	 loss=1760.89724	 acc=54.729
+INFO:root:Epoch:[119/200]	 Test acc=55.380
+
+[2026-05-07 04:22:41,035][main_train.py][line:143][INFO] Epoch:[119/200]	 Test acc=55.380
+
+INFO:root:Best Test acc=58.440
+
+[2026-05-07 04:22:41,442][main_train.py][line:158][INFO] Best Test acc=58.440
+
+5000.0
+Best accuracy: 58.440
+INFO:root:
+ Epoch:[120/200]	 loss=1759.43284	 acc=54.919
+[2026-05-07 04:41:37,039][main_train.py][line:140][INFO] 
+ Epoch:[120/200]	 loss=1759.43284	 acc=54.919
+INFO:root:Epoch:[120/200]	 Test acc=51.200
+
+[2026-05-07 04:41:50,605][main_train.py][line:143][INFO] Epoch:[120/200]	 Test acc=51.200
+
+INFO:root:Best Test acc=58.440
+
+[2026-05-07 04:41:50,979][main_train.py][line:158][INFO] Best Test acc=58.440
+
+5000.0
+Best accuracy: 58.440
+INFO:root:
+ Epoch:[121/200]	 loss=1748.47303	 acc=55.076
+[2026-05-07 05:00:46,772][main_train.py][line:140][INFO] 
+ Epoch:[121/200]	 loss=1748.47303	 acc=55.076
+INFO:root:Epoch:[121/200]	 Test acc=44.360
+
+[2026-05-07 05:01:00,273][main_train.py][line:143][INFO] Epoch:[121/200]	 Test acc=44.360
+
+INFO:root:Best Test acc=58.440
+
+[2026-05-07 05:01:00,651][main_train.py][line:158][INFO] Best Test acc=58.440
+
+5000.0
+Best accuracy: 58.440
+INFO:root:
+ Epoch:[122/200]	 loss=1742.57097	 acc=55.293
+[2026-05-07 05:19:55,966][main_train.py][line:140][INFO] 
+ Epoch:[122/200]	 loss=1742.57097	 acc=55.293
+INFO:root:Epoch:[122/200]	 Test acc=55.180
+
+[2026-05-07 05:20:09,447][main_train.py][line:143][INFO] Epoch:[122/200]	 Test acc=55.180
+
+INFO:root:Best Test acc=58.440
+
+[2026-05-07 05:20:09,840][main_train.py][line:158][INFO] Best Test acc=58.440
+
+5000.0
+Best accuracy: 58.440
+INFO:root:
+ Epoch:[123/200]	 loss=1731.82307	 acc=55.490
+[2026-05-07 05:39:05,126][main_train.py][line:140][INFO] 
+ Epoch:[123/200]	 loss=1731.82307	 acc=55.490
+INFO:root:Epoch:[123/200]	 Test acc=55.220
+
+[2026-05-07 05:39:18,582][main_train.py][line:143][INFO] Epoch:[123/200]	 Test acc=55.220
+
+INFO:root:Best Test acc=58.440
+
+[2026-05-07 05:39:18,971][main_train.py][line:158][INFO] Best Test acc=58.440
+
+5000.0
+Best accuracy: 58.440
+INFO:root:
+ Epoch:[124/200]	 loss=1721.46408	 acc=55.649
+[2026-05-07 05:58:14,262][main_train.py][line:140][INFO] 
+ Epoch:[124/200]	 loss=1721.46408	 acc=55.649
+INFO:root:Epoch:[124/200]	 Test acc=55.200
+
+[2026-05-07 05:58:27,784][main_train.py][line:143][INFO] Epoch:[124/200]	 Test acc=55.200
+
+INFO:root:Best Test acc=58.440
+
+[2026-05-07 05:58:28,166][main_train.py][line:158][INFO] Best Test acc=58.440
+
+5000.0
+Best accuracy: 58.440
+INFO:root:
+ Epoch:[125/200]	 loss=1730.76447	 acc=55.495
+[2026-05-07 06:17:24,825][main_train.py][line:140][INFO] 
+ Epoch:[125/200]	 loss=1730.76447	 acc=55.495
+INFO:root:Epoch:[125/200]	 Test acc=56.460
+
+[2026-05-07 06:17:38,332][main_train.py][line:143][INFO] Epoch:[125/200]	 Test acc=56.460
+
+INFO:root:Best Test acc=58.440
+
+[2026-05-07 06:17:38,730][main_train.py][line:158][INFO] Best Test acc=58.440
+
+5000.0
+Best accuracy: 58.440
+INFO:root:
+ Epoch:[126/200]	 loss=1701.88759	 acc=56.175
+[2026-05-07 06:36:34,447][main_train.py][line:140][INFO] 
+ Epoch:[126/200]	 loss=1701.88759	 acc=56.175
+INFO:root:Epoch:[126/200]	 Test acc=59.400
+
+[2026-05-07 06:36:47,961][main_train.py][line:143][INFO] Epoch:[126/200]	 Test acc=59.400
+
+INFO:root:Best Test acc=59.400
+
+[2026-05-07 06:36:48,746][main_train.py][line:158][INFO] Best Test acc=59.400
+
+5000.0
+Best accuracy: 59.400
+INFO:root:
+ Epoch:[127/200]	 loss=1698.70101	 acc=56.153
+[2026-05-07 06:55:44,839][main_train.py][line:140][INFO] 
+ Epoch:[127/200]	 loss=1698.70101	 acc=56.153
+INFO:root:Epoch:[127/200]	 Test acc=60.060
+
+[2026-05-07 06:55:58,335][main_train.py][line:143][INFO] Epoch:[127/200]	 Test acc=60.060
+
+INFO:root:Best Test acc=60.060
+
+[2026-05-07 06:55:59,082][main_train.py][line:158][INFO] Best Test acc=60.060
+
+5000.0
+Best accuracy: 60.060
+INFO:root:
+ Epoch:[128/200]	 loss=1678.37069	 acc=56.719
+[2026-05-07 07:14:54,357][main_train.py][line:140][INFO] 
+ Epoch:[128/200]	 loss=1678.37069	 acc=56.719
+INFO:root:Epoch:[128/200]	 Test acc=56.960
+
+[2026-05-07 07:15:07,863][main_train.py][line:143][INFO] Epoch:[128/200]	 Test acc=56.960
+
+INFO:root:Best Test acc=60.060
+
+[2026-05-07 07:15:08,252][main_train.py][line:158][INFO] Best Test acc=60.060
+
+5000.0
+Best accuracy: 60.060
+INFO:root:
+ Epoch:[129/200]	 loss=1668.75289	 acc=56.877
+[2026-05-07 07:34:04,288][main_train.py][line:140][INFO] 
+ Epoch:[129/200]	 loss=1668.75289	 acc=56.877
+INFO:root:Epoch:[129/200]	 Test acc=59.720
+
+[2026-05-07 07:34:17,789][main_train.py][line:143][INFO] Epoch:[129/200]	 Test acc=59.720
+
+INFO:root:Best Test acc=60.060
+
+[2026-05-07 07:34:18,159][main_train.py][line:158][INFO] Best Test acc=60.060
+
+5000.0
+Best accuracy: 60.060
+INFO:root:
+ Epoch:[130/200]	 loss=1664.14569	 acc=56.950
+[2026-05-07 07:53:13,752][main_train.py][line:140][INFO] 
+ Epoch:[130/200]	 loss=1664.14569	 acc=56.950
+INFO:root:Epoch:[130/200]	 Test acc=55.060
+
+[2026-05-07 07:53:27,257][main_train.py][line:143][INFO] Epoch:[130/200]	 Test acc=55.060
+
+INFO:root:Best Test acc=60.060
+
+[2026-05-07 07:53:27,632][main_train.py][line:158][INFO] Best Test acc=60.060
+
+5000.0
+Best accuracy: 60.060
+INFO:root:
+ Epoch:[131/200]	 loss=1652.99185	 acc=57.290
+[2026-05-07 08:12:23,746][main_train.py][line:140][INFO] 
+ Epoch:[131/200]	 loss=1652.99185	 acc=57.290
+INFO:root:Epoch:[131/200]	 Test acc=59.680
+
+[2026-05-07 08:12:37,237][main_train.py][line:143][INFO] Epoch:[131/200]	 Test acc=59.680
+
+INFO:root:Best Test acc=60.060
+
+[2026-05-07 08:12:37,642][main_train.py][line:158][INFO] Best Test acc=60.060
+
+5000.0
+Best accuracy: 60.060
+INFO:root:
+ Epoch:[132/200]	 loss=1633.80007	 acc=57.702
+[2026-05-07 08:31:33,413][main_train.py][line:140][INFO] 
+ Epoch:[132/200]	 loss=1633.80007	 acc=57.702
+INFO:root:Epoch:[132/200]	 Test acc=60.620
+
+[2026-05-07 08:31:46,904][main_train.py][line:143][INFO] Epoch:[132/200]	 Test acc=60.620
+
+INFO:root:Best Test acc=60.620
+
+[2026-05-07 08:31:47,663][main_train.py][line:158][INFO] Best Test acc=60.620
+
+5000.0
+Best accuracy: 60.620
+INFO:root:
+ Epoch:[133/200]	 loss=1633.07165	 acc=57.621
+[2026-05-07 08:50:43,006][main_train.py][line:140][INFO] 
+ Epoch:[133/200]	 loss=1633.07165	 acc=57.621
+INFO:root:Epoch:[133/200]	 Test acc=46.720
+
+[2026-05-07 08:50:56,506][main_train.py][line:143][INFO] Epoch:[133/200]	 Test acc=46.720
+
+INFO:root:Best Test acc=60.620
+
+[2026-05-07 08:50:56,886][main_train.py][line:158][INFO] Best Test acc=60.620
+
+5000.0
+Best accuracy: 60.620
+INFO:root:
+ Epoch:[134/200]	 loss=1619.08919	 acc=57.973
+[2026-05-07 09:09:53,031][main_train.py][line:140][INFO] 
+ Epoch:[134/200]	 loss=1619.08919	 acc=57.973
+INFO:root:Epoch:[134/200]	 Test acc=59.760
+
+[2026-05-07 09:10:06,535][main_train.py][line:143][INFO] Epoch:[134/200]	 Test acc=59.760
+
+INFO:root:Best Test acc=60.620
+
+[2026-05-07 09:10:06,921][main_train.py][line:158][INFO] Best Test acc=60.620
+
+5000.0
+Best accuracy: 60.620
+INFO:root:
+ Epoch:[135/200]	 loss=1600.36991	 acc=58.490
+[2026-05-07 09:29:02,839][main_train.py][line:140][INFO] 
+ Epoch:[135/200]	 loss=1600.36991	 acc=58.490
+INFO:root:Epoch:[135/200]	 Test acc=62.400
+
+[2026-05-07 09:29:16,292][main_train.py][line:143][INFO] Epoch:[135/200]	 Test acc=62.400
+
+INFO:root:Best Test acc=62.400
+
+[2026-05-07 09:29:17,062][main_train.py][line:158][INFO] Best Test acc=62.400
+
+5000.0
+Best accuracy: 62.400
+INFO:root:
+ Epoch:[136/200]	 loss=1601.85119	 acc=58.540
+[2026-05-07 09:48:12,931][main_train.py][line:140][INFO] 
+ Epoch:[136/200]	 loss=1601.85119	 acc=58.540
+INFO:root:Epoch:[136/200]	 Test acc=62.640
+
+[2026-05-07 09:48:26,432][main_train.py][line:143][INFO] Epoch:[136/200]	 Test acc=62.640
+
+INFO:root:Best Test acc=62.640
+
+[2026-05-07 09:48:27,207][main_train.py][line:158][INFO] Best Test acc=62.640
+
+5000.0
+Best accuracy: 62.640
+INFO:root:
+ Epoch:[137/200]	 loss=1586.44991	 acc=58.869
+[2026-05-07 10:07:23,204][main_train.py][line:140][INFO] 
+ Epoch:[137/200]	 loss=1586.44991	 acc=58.869
+INFO:root:Epoch:[137/200]	 Test acc=60.680
+
+[2026-05-07 10:07:36,708][main_train.py][line:143][INFO] Epoch:[137/200]	 Test acc=60.680
+
+INFO:root:Best Test acc=62.640
+
+[2026-05-07 10:07:37,105][main_train.py][line:158][INFO] Best Test acc=62.640
+
+5000.0
+Best accuracy: 62.640
+INFO:root:
+ Epoch:[138/200]	 loss=1571.07404	 acc=59.245
+[2026-05-07 10:26:32,779][main_train.py][line:140][INFO] 
+ Epoch:[138/200]	 loss=1571.07404	 acc=59.245
+INFO:root:Epoch:[138/200]	 Test acc=62.000
+
+[2026-05-07 10:26:46,321][main_train.py][line:143][INFO] Epoch:[138/200]	 Test acc=62.000
+
+INFO:root:Best Test acc=62.640
+
+[2026-05-07 10:26:46,707][main_train.py][line:158][INFO] Best Test acc=62.640
+
+5000.0
+Best accuracy: 62.640
+INFO:root:
+ Epoch:[139/200]	 loss=1556.85396	 acc=59.539
+[2026-05-07 10:45:41,731][main_train.py][line:140][INFO] 
+ Epoch:[139/200]	 loss=1556.85396	 acc=59.539
+INFO:root:Epoch:[139/200]	 Test acc=62.380
+
+[2026-05-07 10:45:55,228][main_train.py][line:143][INFO] Epoch:[139/200]	 Test acc=62.380
+
+INFO:root:Best Test acc=62.640
+
+[2026-05-07 10:45:55,628][main_train.py][line:158][INFO] Best Test acc=62.640
+
+5000.0
+Best accuracy: 62.640
+INFO:root:
+ Epoch:[140/200]	 loss=1541.34234	 acc=59.870
+[2026-05-07 11:04:50,493][main_train.py][line:140][INFO] 
+ Epoch:[140/200]	 loss=1541.34234	 acc=59.870
+INFO:root:Epoch:[140/200]	 Test acc=60.300
+
+[2026-05-07 11:05:03,991][main_train.py][line:143][INFO] Epoch:[140/200]	 Test acc=60.300
+
+INFO:root:Best Test acc=62.640
+
+[2026-05-07 11:05:04,392][main_train.py][line:158][INFO] Best Test acc=62.640
+
+5000.0
+Best accuracy: 62.640
+INFO:root:
+ Epoch:[141/200]	 loss=1537.07371	 acc=60.097
+[2026-05-07 11:23:59,825][main_train.py][line:140][INFO] 
+ Epoch:[141/200]	 loss=1537.07371	 acc=60.097
+INFO:root:Epoch:[141/200]	 Test acc=63.160
+
+[2026-05-07 11:24:13,330][main_train.py][line:143][INFO] Epoch:[141/200]	 Test acc=63.160
+
+INFO:root:Best Test acc=63.160
+
+[2026-05-07 11:24:14,117][main_train.py][line:158][INFO] Best Test acc=63.160
+
+5000.0
+Best accuracy: 63.160
+INFO:root:
+ Epoch:[142/200]	 loss=1529.97484	 acc=60.259
+[2026-05-07 11:43:09,499][main_train.py][line:140][INFO] 
+ Epoch:[142/200]	 loss=1529.97484	 acc=60.259
+INFO:root:Epoch:[142/200]	 Test acc=61.720
+
+[2026-05-07 11:43:22,988][main_train.py][line:143][INFO] Epoch:[142/200]	 Test acc=61.720
+
+INFO:root:Best Test acc=63.160
+
+[2026-05-07 11:43:23,376][main_train.py][line:158][INFO] Best Test acc=63.160
+
+5000.0
+Best accuracy: 63.160
+INFO:root:
+ Epoch:[143/200]	 loss=1511.76018	 acc=60.667
+[2026-05-07 12:02:19,655][main_train.py][line:140][INFO] 
+ Epoch:[143/200]	 loss=1511.76018	 acc=60.667
+INFO:root:Epoch:[143/200]	 Test acc=62.580
+
+[2026-05-07 12:02:33,127][main_train.py][line:143][INFO] Epoch:[143/200]	 Test acc=62.580
+
+INFO:root:Best Test acc=63.160
+
+[2026-05-07 12:02:33,519][main_train.py][line:158][INFO] Best Test acc=63.160
+
+5000.0
+Best accuracy: 63.160
+INFO:root:
+ Epoch:[144/200]	 loss=1502.37414	 acc=60.866
+[2026-05-07 12:21:28,493][main_train.py][line:140][INFO] 
+ Epoch:[144/200]	 loss=1502.37414	 acc=60.866
+INFO:root:Epoch:[144/200]	 Test acc=62.600
+
+[2026-05-07 12:21:41,986][main_train.py][line:143][INFO] Epoch:[144/200]	 Test acc=62.600
+
+INFO:root:Best Test acc=63.160
+
+[2026-05-07 12:21:42,373][main_train.py][line:158][INFO] Best Test acc=63.160
+
+5000.0
+Best accuracy: 63.160
+INFO:root:
+ Epoch:[145/200]	 loss=1492.34126	 acc=60.947
+[2026-05-07 12:40:38,387][main_train.py][line:140][INFO] 
+ Epoch:[145/200]	 loss=1492.34126	 acc=60.947
+INFO:root:Epoch:[145/200]	 Test acc=62.720
+
+[2026-05-07 12:40:51,887][main_train.py][line:143][INFO] Epoch:[145/200]	 Test acc=62.720
+
+INFO:root:Best Test acc=63.160
+
+[2026-05-07 12:40:52,277][main_train.py][line:158][INFO] Best Test acc=63.160
+
+5000.0
+Best accuracy: 63.160
+INFO:root:
+ Epoch:[146/200]	 loss=1478.80262	 acc=61.444
+[2026-05-07 12:59:48,076][main_train.py][line:140][INFO] 
+ Epoch:[146/200]	 loss=1478.80262	 acc=61.444
+INFO:root:Epoch:[146/200]	 Test acc=63.360
+
+[2026-05-07 13:00:01,553][main_train.py][line:143][INFO] Epoch:[146/200]	 Test acc=63.360
+
+INFO:root:Best Test acc=63.360
+
+[2026-05-07 13:00:02,346][main_train.py][line:158][INFO] Best Test acc=63.360
+
+5000.0
+Best accuracy: 63.360
+INFO:root:
+ Epoch:[147/200]	 loss=1469.51414	 acc=61.649
+[2026-05-07 13:19:02,693][main_train.py][line:140][INFO] 
+ Epoch:[147/200]	 loss=1469.51414	 acc=61.649
+INFO:root:Epoch:[147/200]	 Test acc=56.340
+
+[2026-05-07 13:19:16,367][main_train.py][line:143][INFO] Epoch:[147/200]	 Test acc=56.340
+
+INFO:root:Best Test acc=63.360
+
+[2026-05-07 13:19:16,781][main_train.py][line:158][INFO] Best Test acc=63.360
+
+5000.0
+Best accuracy: 63.360
+INFO:root:
+ Epoch:[148/200]	 loss=1453.03856	 acc=61.885
+[2026-05-07 13:38:21,234][main_train.py][line:140][INFO] 
+ Epoch:[148/200]	 loss=1453.03856	 acc=61.885
+INFO:root:Epoch:[148/200]	 Test acc=63.040
+
+[2026-05-07 13:38:34,855][main_train.py][line:143][INFO] Epoch:[148/200]	 Test acc=63.040
+
+INFO:root:Best Test acc=63.360
+
+[2026-05-07 13:38:35,227][main_train.py][line:158][INFO] Best Test acc=63.360
+
+5000.0
+Best accuracy: 63.360
